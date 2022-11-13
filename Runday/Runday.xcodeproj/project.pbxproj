@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		876D2A7729218DE300EA19F2 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D2A7629218DE300EA19F2 /* UIFont+.swift */; };
+		876D2A7829218FE900EA19F2 /* RopaMixPro-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 87DFF03A29217123008D0FEF /* RopaMixPro-ExtraBoldItalic.otf */; };
+		876D2A7929218FEC00EA19F2 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 87DFF03929216FA1008D0FEF /* NotoSansKR-Bold.otf */; };
+		876D2A7A29218FEE00EA19F2 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 87DFF03729216FA0008D0FEF /* NotoSansKR-Medium.otf */; };
+		876D2A7B29218FF000EA19F2 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 87DFF03829216FA1008D0FEF /* NotoSansKR-Regular.otf */; };
 		87DFEFE5291F69B3008D0FEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFEFE4291F69B3008D0FEF /* AppDelegate.swift */; };
 		87DFEFE7291F69B3008D0FEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFEFE6291F69B3008D0FEF /* SceneDelegate.swift */; };
 		87DFEFE9291F69B3008D0FEF /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFEFE8291F69B3008D0FEF /* BaseTabBarController.swift */; };
@@ -16,8 +21,8 @@
 		87DFF00929215339008D0FEF /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFF00829215339008D0FEF /* UIView+.swift */; };
 		87DFF00B29215346008D0FEF /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFF00A29215346008D0FEF /* UIStackView+.swift */; };
 		87DFF00D2921535F008D0FEF /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFF00C2921535F008D0FEF /* UIColor+.swift */; };
-		87DFF00F29215379008D0FEF /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFF00E29215379008D0FEF /* UITableView+.swift */; };
-		87DFF0112921538E008D0FEF /* UICollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFF0102921538E008D0FEF /* UICollectionView+.swift */; };
+		87DFF00F29215379008D0FEF /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFF00E29215379008D0FEF /* UITableViewCell+.swift */; };
+		87DFF0112921538E008D0FEF /* UICollectionViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFF0102921538E008D0FEF /* UICollectionViewCell+.swift */; };
 		87DFF015292157CD008D0FEF /* BaseNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFF014292157CD008D0FEF /* BaseNavigationView.swift */; };
 		87DFF0182921587E008D0FEF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 87DFF0172921587E008D0FEF /* SnapKit */; };
 		87DFF01B2921588D008D0FEF /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 87DFF01A2921588D008D0FEF /* Then */; };
@@ -32,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		876D2A7629218DE300EA19F2 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		87DFEFE1291F69B3008D0FEF /* Runday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87DFEFE4291F69B3008D0FEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87DFEFE6291F69B3008D0FEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,8 +49,8 @@
 		87DFF00829215339008D0FEF /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+.swift"; path = "Runday/Global/Extension/UIView+.swift"; sourceTree = SOURCE_ROOT; };
 		87DFF00A29215346008D0FEF /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIStackView+.swift"; path = "Runday/Global/Extension/UIStackView+.swift"; sourceTree = SOURCE_ROOT; };
 		87DFF00C2921535F008D0FEF /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIColor+.swift"; path = "Runday/Global/Extension/UIColor+.swift"; sourceTree = SOURCE_ROOT; };
-		87DFF00E29215379008D0FEF /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITableView+.swift"; path = "Runday/Global/Extension/UITableView+.swift"; sourceTree = SOURCE_ROOT; };
-		87DFF0102921538E008D0FEF /* UICollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UICollectionView+.swift"; path = "Runday/Global/Extension/UICollectionView+.swift"; sourceTree = SOURCE_ROOT; };
+		87DFF00E29215379008D0FEF /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITableViewCell+.swift"; path = "Runday/Global/Extension/UITableViewCell+.swift"; sourceTree = SOURCE_ROOT; };
+		87DFF0102921538E008D0FEF /* UICollectionViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UICollectionViewCell+.swift"; path = "Runday/Global/Extension/UICollectionViewCell+.swift"; sourceTree = SOURCE_ROOT; };
 		87DFF014292157CD008D0FEF /* BaseNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationView.swift; sourceTree = "<group>"; };
 		87DFF01C292158DA008D0FEF /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		87DFF01E29215900008D0FEF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -103,7 +109,7 @@
 		87DFEFF8291F69D4008D0FEF /* Global */ = {
 			isa = PBXGroup;
 			children = (
-				87DFF04229217E0E008D0FEF /* Constatnt */,
+				87DFF04229217E0E008D0FEF /* Constant */,
 				87DFF03F29217B27008D0FEF /* Extension */,
 			);
 			path = Global;
@@ -250,19 +256,20 @@
 			children = (
 				87DFF00829215339008D0FEF /* UIView+.swift */,
 				87DFF00A29215346008D0FEF /* UIStackView+.swift */,
-				87DFF00E29215379008D0FEF /* UITableView+.swift */,
-				87DFF0102921538E008D0FEF /* UICollectionView+.swift */,
+				87DFF00E29215379008D0FEF /* UITableViewCell+.swift */,
+				87DFF0102921538E008D0FEF /* UICollectionViewCell+.swift */,
 				87DFF00C2921535F008D0FEF /* UIColor+.swift */,
+				876D2A7629218DE300EA19F2 /* UIFont+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		87DFF04229217E0E008D0FEF /* Constatnt */ = {
+		87DFF04229217E0E008D0FEF /* Constant */ = {
 			isa = PBXGroup;
 			children = (
 				87DFF04329217E17008D0FEF /* Constant.swift */,
 			);
-			path = Constatnt;
+			path = Constant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,8 +339,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				87DFF04129217B67008D0FEF /* voice.json in Resources */,
+				876D2A7829218FE900EA19F2 /* RopaMixPro-ExtraBoldItalic.otf in Resources */,
+				876D2A7A29218FEE00EA19F2 /* NotoSansKR-Medium.otf in Resources */,
 				87DFEFF1291F69C1008D0FEF /* LaunchScreen.storyboard in Resources */,
 				87DFEFEE291F69C1008D0FEF /* Assets.xcassets in Resources */,
+				876D2A7929218FEC00EA19F2 /* NotoSansKR-Bold.otf in Resources */,
+				876D2A7B29218FF000EA19F2 /* NotoSansKR-Regular.otf in Resources */,
 				87DFEFEC291F69B3008D0FEF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,16 +357,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				87DFF0232921593F008D0FEF /* MyProfileViewController.swift in Sources */,
+				876D2A7729218DE300EA19F2 /* UIFont+.swift in Sources */,
 				87DFEFE9291F69B3008D0FEF /* BaseTabBarController.swift in Sources */,
 				87DFF015292157CD008D0FEF /* BaseNavigationView.swift in Sources */,
 				87DFF04429217E17008D0FEF /* Constant.swift in Sources */,
-				87DFF00F29215379008D0FEF /* UITableView+.swift in Sources */,
+				87DFF00F29215379008D0FEF /* UITableViewCell+.swift in Sources */,
 				87DFF02129215924008D0FEF /* MenuViewController.swift in Sources */,
 				87DFF00D2921535F008D0FEF /* UIColor+.swift in Sources */,
 				87DFF03029216B6C008D0FEF /* URLConstant.swift in Sources */,
 				87DFF02529215952008D0FEF /* RunningViewController.swift in Sources */,
 				87DFF00B29215346008D0FEF /* UIStackView+.swift in Sources */,
-				87DFF0112921538E008D0FEF /* UICollectionView+.swift in Sources */,
+				87DFF0112921538E008D0FEF /* UICollectionViewCell+.swift in Sources */,
 				87DFF01D292158DA008D0FEF /* BaseNavigationController.swift in Sources */,
 				87DFEFE5291F69B3008D0FEF /* AppDelegate.swift in Sources */,
 				87DFEFE7291F69B3008D0FEF /* SceneDelegate.swift in Sources */,

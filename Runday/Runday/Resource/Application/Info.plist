@@ -4,10 +4,10 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>NotoSansKR-Bold</string>
-		<string>NotoSansKR-Medium</string>
-		<string>NotoSansKR-Regular</string>
-		<string>RopaMixPro-ExtraBoldItalic</string>
+		<string>NotoSansKR-Bold.otf</string>
+		<string>NotoSansKR-Medium.otf</string>
+		<string>NotoSansKR-Regular.otf</string>
+		<string>RopaMixPro-ExtraBoldItalic.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

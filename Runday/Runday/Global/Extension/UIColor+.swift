@@ -6,13 +6,20 @@
 //
 
 import UIKit
+
 extension UIColor {
     
     convenience init(r: Int, g: Int, b: Int) {
         self.init(red: CGFloat(r)/255,green: CGFloat(g)/255, blue: CGFloat(b)/255, alpha: 1)
     }
+}
+
+//MARK: - Custom Color
+extension UIColor{
     
-    @nonobjc class var rundayBlue: UIColor {
+    class var rundayBlue: UIColor {
         return UIColor(r: 59, g: 109, b: 255)
     }
+    
+    
 }

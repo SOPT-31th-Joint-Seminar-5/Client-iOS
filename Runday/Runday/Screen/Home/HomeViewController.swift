@@ -5,10 +5,8 @@
 //  Created by 장석우 on 2022/11/14.
 //
 
-import Foundation
 import UIKit
 import SnapKit
-
 
 //MARK: -  김민 화이팅!!
 
