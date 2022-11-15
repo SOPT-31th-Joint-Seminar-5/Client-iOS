@@ -21,5 +21,41 @@ extension UIColor{
         return UIColor(r: 59, g: 109, b: 255)
     }
     
+    class var rundayPurple: UIColor {
+        return UIColor(r: 99, g: 78, b: 255)
+    }
+    
+    class var rundayWhite: UIColor {
+        return UIColor(r: 255, g: 255, b: 255)
+    }
+    
+    class var rundayGray1: UIColor {
+        return UIColor(r: 232, g: 234, b: 241)
+    }
+    
+    class var rundayGray2: UIColor {
+        return UIColor(r: 194, g: 198, b: 206)
+    }
+    
+    class var rundayGray3: UIColor {
+        return UIColor(r: 144, g: 148, b: 158)
+    }
+    
+    class var rundayGray4: UIColor {
+        return UIColor(r: 114, g: 119, b: 133)
+    }
+    
+    class var rundayGray5: UIColor {
+        return UIColor(r: 86, g: 93, b: 111)
+    }
+    
+    class var rundayBlack: UIColor {
+        return UIColor(r: 28, g: 31, b: 39)
+    }
+    
+    
+    
+    
+    
     
 }
