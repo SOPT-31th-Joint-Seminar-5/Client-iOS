@@ -62,7 +62,7 @@ class RunningViewController : UIViewController{
     
     private let timerLabel : UILabel = {
         let label = UILabel()
-        label.text = "04:58"
+        label.text = "00:00"
         label.font = .rundayRopaMixProExtraBoldItalic(ofSize: 96)
         label.textColor = .rundayBlack
         return label
@@ -310,6 +310,7 @@ class RunningViewController : UIViewController{
         do {
             try runningTimer.decreaseTime(0.05)
         } catch {
+            // 시간초과 발생시 타이머 중지 및 label 0초로 초기화.
             timer?.invalidate()
             timerLabel.text = "00:00"
         }
