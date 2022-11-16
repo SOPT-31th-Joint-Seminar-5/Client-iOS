@@ -11,6 +11,7 @@ import SnapKit
 //MARK: -  승헌이형 가보즈아~
 
 class MyProfileViewController : UIViewController{
+    var myProfileView: MyProfileView?
     
     //MARK: - Properties
     
@@ -23,6 +24,13 @@ class MyProfileViewController : UIViewController{
         
         setUI()
         setLayout()
+    }
+    
+    override func loadView() {
+        super.loadView()
+        
+        myProfileView = MyProfileView(frame: self.view.frame)
+        self.view = myProfileView
     }
     
     //MARK: - Custom Method
