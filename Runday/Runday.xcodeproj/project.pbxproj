@@ -38,6 +38,7 @@
 		87E221D5292424C7003EE72A /* RunStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221D4292424C7003EE72A /* RunStepView.swift */; };
 		87E221D729242589003EE72A /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221D629242589003EE72A /* Speed.swift */; };
 		87E221D929243440003EE72A /* RunGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221D829243440003EE72A /* RunGaugeView.swift */; };
+		AB1CAE0F2924D458000AB433 /* TabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1CAE0E2924D458000AB433 /* TabCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		87E221D4292424C7003EE72A /* RunStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunStepView.swift; sourceTree = "<group>"; };
 		87E221D629242589003EE72A /* Speed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
 		87E221D829243440003EE72A /* RunGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunGaugeView.swift; sourceTree = "<group>"; };
+		AB1CAE0E2924D458000AB433 /* TabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,6 +322,7 @@
 		AB1CAE0B2924ACE3000AB433 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AB1CAE0D2924D40B000AB433 /* Reusable */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -330,6 +333,14 @@
 				87DFF01E29215900008D0FEF /* HomeViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AB1CAE0D2924D40B000AB433 /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				AB1CAE0E2924D458000AB433 /* TabCollectionViewCell.swift */,
+			);
+			path = Reusable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,6 +431,7 @@
 				876D2A7729218DE300EA19F2 /* UIFont+.swift in Sources */,
 				87DFEFE9291F69B3008D0FEF /* BaseTabBarController.swift in Sources */,
 				87E221D729242589003EE72A /* Speed.swift in Sources */,
+				AB1CAE0F2924D458000AB433 /* TabCollectionViewCell.swift in Sources */,
 				87DFF015292157CD008D0FEF /* BaseNavigationView.swift in Sources */,
 				87DFF04429217E17008D0FEF /* Constant.swift in Sources */,
 				87DFF00F29215379008D0FEF /* UITableViewCell+.swift in Sources */,
