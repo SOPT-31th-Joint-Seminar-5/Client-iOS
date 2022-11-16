@@ -23,6 +23,7 @@ class TabCollectionViewCell: UICollectionViewCell {
     private let tabLabel = UILabel().then {
         $0.text = "나의 운동"
         $0.font = .rundayMedium(ofSize: 16)
+        $0.textColor = .rundayGray3
     }
     
     // MARK: - Life Cycles
@@ -47,7 +48,7 @@ class TabCollectionViewCell: UICollectionViewCell {
         contentView.addSubviews(tabLabel)
         
         tabLabel.snp.makeConstraints {
-            $0.centerY.centerY.equalToSuperview()
+            $0.centerX.centerY.equalToSuperview()
         }
     }
 }
