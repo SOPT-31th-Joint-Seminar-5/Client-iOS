@@ -35,6 +35,9 @@
 		87DFF03029216B6C008D0FEF /* URLConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFF02F29216B6C008D0FEF /* URLConstant.swift */; };
 		87DFF04129217B67008D0FEF /* voice.json in Resources */ = {isa = PBXBuildFile; fileRef = 87DFF04029217B67008D0FEF /* voice.json */; };
 		87DFF04429217E17008D0FEF /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFF04329217E17008D0FEF /* Constant.swift */; };
+		87E221D5292424C7003EE72A /* RunStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221D4292424C7003EE72A /* RunStepView.swift */; };
+		87E221D729242589003EE72A /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221D629242589003EE72A /* Speed.swift */; };
+		87E221D929243440003EE72A /* RunGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221D829243440003EE72A /* RunGaugeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +69,9 @@
 		87DFF03A29217123008D0FEF /* RopaMixPro-ExtraBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RopaMixPro-ExtraBoldItalic.otf"; sourceTree = "<group>"; };
 		87DFF04029217B67008D0FEF /* voice.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = voice.json; sourceTree = "<group>"; };
 		87DFF04329217E17008D0FEF /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		87E221D4292424C7003EE72A /* RunStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunStepView.swift; sourceTree = "<group>"; };
+		87E221D629242589003EE72A /* Speed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
+		87E221D829243440003EE72A /* RunGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunGaugeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,7 +211,9 @@
 		87DFF007291F92D8008D0FEF /* Running */ = {
 			isa = PBXGroup;
 			children = (
-				87DFF02429215952008D0FEF /* RunningViewController.swift */,
+				87E221D3292424AD003EE72A /* Model */,
+				87E221D1292424A2003EE72A /* View */,
+				87E221D2292424A8003EE72A /* Controller */,
 			);
 			path = Running;
 			sourceTree = "<group>";
@@ -273,6 +281,31 @@
 				87DFF04329217E17008D0FEF /* Constant.swift */,
 			);
 			path = Constant;
+			sourceTree = "<group>";
+		};
+		87E221D1292424A2003EE72A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				87E221D4292424C7003EE72A /* RunStepView.swift */,
+				87E221D829243440003EE72A /* RunGaugeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		87E221D2292424A8003EE72A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				87DFF02429215952008D0FEF /* RunningViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		87E221D3292424AD003EE72A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87E221D629242589003EE72A /* Speed.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +395,7 @@
 				87DFF0232921593F008D0FEF /* MyProfileViewController.swift in Sources */,
 				876D2A7729218DE300EA19F2 /* UIFont+.swift in Sources */,
 				87DFEFE9291F69B3008D0FEF /* BaseTabBarController.swift in Sources */,
+				87E221D729242589003EE72A /* Speed.swift in Sources */,
 				87DFF015292157CD008D0FEF /* BaseNavigationView.swift in Sources */,
 				87DFF04429217E17008D0FEF /* Constant.swift in Sources */,
 				87DFF00F29215379008D0FEF /* UITableViewCell+.swift in Sources */,
@@ -374,9 +408,11 @@
 				87DFF01D292158DA008D0FEF /* BaseNavigationController.swift in Sources */,
 				87DFEFE5291F69B3008D0FEF /* AppDelegate.swift in Sources */,
 				87DFEFE7291F69B3008D0FEF /* SceneDelegate.swift in Sources */,
+				87E221D929243440003EE72A /* RunGaugeView.swift in Sources */,
 				87DFF01F29215900008D0FEF /* HomeViewController.swift in Sources */,
 				87DFF00929215339008D0FEF /* UIView+.swift in Sources */,
 				871B12792924114C000C6D6D /* Adjusted+.swift in Sources */,
+				87E221D5292424C7003EE72A /* RunStepView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
