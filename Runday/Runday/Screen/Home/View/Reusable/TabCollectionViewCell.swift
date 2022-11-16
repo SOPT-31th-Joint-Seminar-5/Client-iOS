@@ -51,4 +51,8 @@ class TabCollectionViewCell: UICollectionViewCell {
             $0.centerX.centerY.equalToSuperview()
         }
     }
+    
+    func dataBind(tabName: String) {
+        tabLabel.text = tabName
+    }
 }
