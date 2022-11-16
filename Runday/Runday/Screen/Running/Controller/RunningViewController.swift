@@ -15,8 +15,13 @@ class RunningViewController : UIViewController{
     
     //MARK: - Properties
     
+    var totalTime : Float = 10{
+        didSet{
+            runningTimer = RunningTimer(second: totalTime)
+        }
+    }
     var timer : Timer?
-    var runningTimer : RunningTimer = RunningTimer(second: 10)
+    lazy var runningTimer = RunningTimer(second: totalTime)
     
     //MARK: - UI Components
     
@@ -122,6 +127,8 @@ class RunningViewController : UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setDelegate()
         setUI()
         setLayout()
         playAnimation()
@@ -129,6 +136,10 @@ class RunningViewController : UIViewController{
     }
     
     //MARK: - Custom Method
+    
+    private func setDelegate(){
+        runningTimer.delegate = self
+    }
     
     private func setUI(){
         view.backgroundColor = .rundayGray1
@@ -300,8 +311,21 @@ class RunningViewController : UIViewController{
             try runningTimer.decreaseTime(0.05)
         } catch {
             timer?.invalidate()
+            timerLabel.text = "00:00"
         }
+        
         progressView.progress = runningTimer.ratio
+        
     }
+    
+}
+
+//MARK: - RunningTimerDelegate
+extension RunningViewController : RunningTimerDelegate{
+    func secondsChange(_ timeString: String) {
+        print(timeString)
+        timerLabel.text = timeString
+    }
+    
     
 }
