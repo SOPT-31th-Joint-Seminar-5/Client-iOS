@@ -20,6 +20,12 @@ class HomeViewController : UIViewController {
     final let tabInterItemSpacing: CGFloat = 16
     final let tabCellHeight: CGFloat = 33
     
+    var currentPage: Int = 0 {
+        didSet {
+            setPageView(oldValue: oldValue, newValue: currentPage)
+        }
+    }
+    
     //MARK: - UI Components
     
     private let barView = UIView()
@@ -48,21 +54,63 @@ class HomeViewController : UIViewController {
         
         return collectionView
     }()
+    
+    lazy var vc1 = UIViewController().then {
+        $0.view.backgroundColor = .red
+    }
+    
+    lazy var vc2 = UIViewController().then {
+        $0.view.backgroundColor = .orange
+    }
+    
+    lazy var vc3 = UIViewController().then {
+        $0.view.backgroundColor = .yellow
+    }
+    
+    lazy var vc4 = UIViewController().then {
+        $0.view.backgroundColor = .green
+    }
+
+    lazy var dataViewControllers: [UIViewController] = {
+        return [vc1, vc2, vc3, vc4]
+    }()
+    
+    lazy var pageViewController: UIPageViewController = {
+        let vc = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
+        
+        vc.delegate = self
+        vc.dataSource = self
+        return vc
+    }()
      
     //MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        setUI()
         setLayout()
         register()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        currentPage = 0
+    }
+    
     //MARK: - Custom Method
+    
+    private func setUI() {
+        if let firstVC = dataViewControllers.first {
+            pageViewController.setViewControllers([firstVC], direction: .forward, animated: true)
+        }
+    }
     
     private func setLayout(){
         
-        view.addSubviews(barView, tabCollectionView)
+        addChild(pageViewController)
+        view.addSubviews(barView, tabCollectionView, pageViewController.view)
         barView.addSubviews(logoImageView, menuButton, noticeButton)
         
         barView.snp.makeConstraints {
@@ -91,10 +139,23 @@ class HomeViewController : UIViewController {
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(tabCellHeight)
         }
+        
+        pageViewController.view.snp.makeConstraints {
+            $0.top.equalTo(tabCollectionView.snp.bottom)
+            $0.leading.trailing.bottom.equalToSuperview()
+        }
+        
+        pageViewController.didMove(toParent: self)
     }
     
     private func register() {
         tabCollectionView.register(TabCollectionViewCell.self, forCellWithReuseIdentifier: TabCollectionViewCell.identifier)
+    }
+    
+    private func setPageView(oldValue: Int, newValue: Int) {
+        
+        let direction: UIPageViewController.NavigationDirection = oldValue < newValue ? .forward: .reverse
+        pageViewController.setViewControllers([dataViewControllers[currentPage]], direction: direction, animated: true)
     }
     
     //MARK: - Action Method
@@ -111,8 +172,23 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TabCollectionViewCell.identifier, for: indexPath) as? TabCollectionViewCell else {return UICollectionViewCell()}
         
+        if indexPath.row == 0 {
+            collectionView.selectItem(at: indexPath, animated: true, scrollPosition: [])
+        }
+        
         cell.dataBind(tabName: tabList[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! TabCollectionViewCell
+        cell.toggleSelected()
+        currentPage = indexPath.item
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! TabCollectionViewCell
+        cell.toggleSelected()
     }
 }
 
@@ -131,5 +207,38 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return tabInterItemSpacing
+    }
+}
+
+// MARK: - UIPageViewControllerDataSource, UIPageViewControllerDelegate
+
+extension HomeViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        guard let index = dataViewControllers.firstIndex(of: viewController) else {return nil}
+        let previousIndex = index - 1
+        
+        if previousIndex < 0 {
+            return nil
+        }
+        
+        return dataViewControllers[previousIndex]
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        guard let index = dataViewControllers.firstIndex(of: viewController) else {return nil}
+        let nextIndex = index + 1
+        
+        if nextIndex == dataViewControllers.count {
+            return nil
+        }
+        
+        return dataViewControllers[nextIndex]
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        guard let currentVC = pageViewController.viewControllers?.first,
+              let currentIndex = dataViewControllers.firstIndex(of: currentVC) else {return}
+        
+        currentPage = currentIndex
     }
 }

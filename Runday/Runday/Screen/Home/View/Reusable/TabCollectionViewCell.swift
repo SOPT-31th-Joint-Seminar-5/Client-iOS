@@ -21,9 +21,13 @@ class TabCollectionViewCell: UICollectionViewCell {
     // MARK: - UI Components
     
     private let tabLabel = UILabel().then {
-        $0.text = "나의 운동"
         $0.font = .rundayMedium(ofSize: 16)
         $0.textColor = .rundayGray3
+    }
+    
+    private let indicatorView = UIView().then {
+        $0.backgroundColor = .rundayBlack
+        $0.isHidden = true
     }
     
     // MARK: - Life Cycles
@@ -32,6 +36,14 @@ class TabCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         
         setLayout()
+    }
+    
+    // MARK: - Properties
+    
+    override var isSelected: Bool {
+        didSet {
+            indicatorView.isHidden = isSelected ? false : true
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -45,14 +57,31 @@ class TabCollectionViewCell: UICollectionViewCell {
         backgroundColor = .clear
         contentView.backgroundColor = .clear
         
-        contentView.addSubviews(tabLabel)
+        contentView.addSubviews(tabLabel, indicatorView)
         
         tabLabel.snp.makeConstraints {
             $0.centerX.centerY.equalToSuperview()
+        }
+        
+        indicatorView.snp.makeConstraints {
+            $0.top.equalTo(tabLabel.snp.bottom).offset(6)
+            $0.height.equalTo(2)
+            $0.leading.equalToSuperview().offset(6)
+            $0.trailing.equalToSuperview().offset(-5)
+            $0.bottom.equalToSuperview()
         }
     }
     
     func dataBind(tabName: String) {
         tabLabel.text = tabName
+    }
+    
+    
+    func toggleSelected() {
+        if isSelected {
+            indicatorView.isHidden = false
+        } else {
+            indicatorView.isHidden = true
+        }
     }
 }
