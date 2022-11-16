@@ -38,6 +38,7 @@
 		87E221D5292424C7003EE72A /* RunStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221D4292424C7003EE72A /* RunStepView.swift */; };
 		87E221D729242589003EE72A /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221D629242589003EE72A /* Speed.swift */; };
 		87E221D929243440003EE72A /* RunGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221D829243440003EE72A /* RunGaugeView.swift */; };
+		87E221DE29254D7A003EE72A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 87E221DD29254D7A003EE72A /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 			files = (
 				87DFF0182921587E008D0FEF /* SnapKit in Frameworks */,
 				87DFF01B2921588D008D0FEF /* Then in Frameworks */,
+				87E221DE29254D7A003EE72A /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +329,7 @@
 			packageProductDependencies = (
 				87DFF0172921587E008D0FEF /* SnapKit */,
 				87DFF01A2921588D008D0FEF /* Then */,
+				87E221DD29254D7A003EE72A /* Lottie */,
 			);
 			productName = Runday;
 			productReference = 87DFEFE1291F69B3008D0FEF /* Runday.app */;
@@ -359,6 +362,7 @@
 			packageReferences = (
 				87DFF0162921587E008D0FEF /* XCRemoteSwiftPackageReference "SnapKit" */,
 				87DFF0192921588D008D0FEF /* XCRemoteSwiftPackageReference "Then" */,
+				87E221DC29254D7A003EE72A /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 87DFEFE2291F69B3008D0FEF /* Products */;
 			projectDirPath = "";
@@ -648,6 +652,14 @@
 				kind = branch;
 			};
 		};
+		87E221DC29254D7A003EE72A /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -660,6 +672,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 87DFF0192921588D008D0FEF /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		87E221DD29254D7A003EE72A /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 87E221DC29254D7A003EE72A /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
