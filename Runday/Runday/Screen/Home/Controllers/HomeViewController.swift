@@ -55,24 +55,29 @@ class HomeViewController : UIViewController {
         return collectionView
     }()
     
-    lazy var vc1 = UIViewController().then {
-        $0.view.backgroundColor = .red
-    }
+//    lazy var vc1 = UIViewController().then {
+//        $0.view.backgroundColor = .red
+//    }
+//
+//    lazy var vc2 = UIViewController().then {
+//        $0.view.backgroundColor = .orange
+//    }
+//
+//    lazy var vc3 = UIViewController().then {
+//        $0.view.backgroundColor = .yellow
+//    }
+//
+//    lazy var vc4 = UIViewController().then {
+//        $0.view.backgroundColor = .green
+//    }
     
-    lazy var vc2 = UIViewController().then {
-        $0.view.backgroundColor = .orange
-    }
-    
-    lazy var vc3 = UIViewController().then {
-        $0.view.backgroundColor = .yellow
-    }
-    
-    lazy var vc4 = UIViewController().then {
-        $0.view.backgroundColor = .green
-    }
+    lazy var myExerciseVC = MyExerciseViewController()
+    lazy var levelExerciseVC = LevelExerciseViewController()
+    lazy var timeExerciseVC = TimeExerciseViewController()
+    lazy var personalExerciseVC = PersonalExerciseViewController()
 
     lazy var dataViewControllers: [UIViewController] = {
-        return [vc1, vc2, vc3, vc4]
+        return [myExerciseVC, levelExerciseVC, timeExerciseVC, personalExerciseVC]
     }()
     
     lazy var pageViewController: UIPageViewController = {
@@ -156,6 +161,8 @@ class HomeViewController : UIViewController {
         
         let direction: UIPageViewController.NavigationDirection = oldValue < newValue ? .forward: .reverse
         pageViewController.setViewControllers([dataViewControllers[currentPage]], direction: direction, animated: true)
+        
+        tabCollectionView.selectItem(at: IndexPath(item: currentPage, section: 0), animated: true, scrollPosition: [])
     }
     
     //MARK: - Action Method
@@ -238,6 +245,8 @@ extension HomeViewController: UIPageViewControllerDataSource, UIPageViewControll
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         guard let currentVC = pageViewController.viewControllers?.first,
               let currentIndex = dataViewControllers.firstIndex(of: currentVC) else {return}
+        
+        print("hi")
         
         currentPage = currentIndex
     }

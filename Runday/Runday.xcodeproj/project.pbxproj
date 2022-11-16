@@ -38,6 +38,10 @@
 		87E221D5292424C7003EE72A /* RunStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221D4292424C7003EE72A /* RunStepView.swift */; };
 		87E221D729242589003EE72A /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221D629242589003EE72A /* Speed.swift */; };
 		87E221D929243440003EE72A /* RunGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221D829243440003EE72A /* RunGaugeView.swift */; };
+		AB0FCDE529250304009314FF /* MyExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FCDE429250304009314FF /* MyExerciseViewController.swift */; };
+		AB0FCDE729250352009314FF /* LevelExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FCDE629250352009314FF /* LevelExerciseViewController.swift */; };
+		AB0FCDE92925036B009314FF /* TimeExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FCDE82925036B009314FF /* TimeExerciseViewController.swift */; };
+		AB0FCDEB2925038F009314FF /* PersonalExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FCDEA2925038F009314FF /* PersonalExerciseViewController.swift */; };
 		AB1CAE0F2924D458000AB433 /* TabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1CAE0E2924D458000AB433 /* TabCollectionViewCell.swift */; };
 		AB1CAE112924E2A8000AB433 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1CAE102924E2A8000AB433 /* HomeModel.swift */; };
 /* End PBXBuildFile section */
@@ -74,6 +78,10 @@
 		87E221D4292424C7003EE72A /* RunStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunStepView.swift; sourceTree = "<group>"; };
 		87E221D629242589003EE72A /* Speed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
 		87E221D829243440003EE72A /* RunGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunGaugeView.swift; sourceTree = "<group>"; };
+		AB0FCDE429250304009314FF /* MyExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExerciseViewController.swift; sourceTree = "<group>"; };
+		AB0FCDE629250352009314FF /* LevelExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelExerciseViewController.swift; sourceTree = "<group>"; };
+		AB0FCDE82925036B009314FF /* TimeExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeExerciseViewController.swift; sourceTree = "<group>"; };
+		AB0FCDEA2925038F009314FF /* PersonalExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalExerciseViewController.swift; sourceTree = "<group>"; };
 		AB1CAE0E2924D458000AB433 /* TabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB1CAE102924E2A8000AB433 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -334,6 +342,10 @@
 			isa = PBXGroup;
 			children = (
 				87DFF01E29215900008D0FEF /* HomeViewController.swift */,
+				AB0FCDE429250304009314FF /* MyExerciseViewController.swift */,
+				AB0FCDE629250352009314FF /* LevelExerciseViewController.swift */,
+				AB0FCDE82925036B009314FF /* TimeExerciseViewController.swift */,
+				AB0FCDEA2925038F009314FF /* PersonalExerciseViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -440,6 +452,7 @@
 				87DFF00F29215379008D0FEF /* UITableViewCell+.swift in Sources */,
 				87DFF02129215924008D0FEF /* MenuViewController.swift in Sources */,
 				87DFF00D2921535F008D0FEF /* UIColor+.swift in Sources */,
+				AB0FCDE92925036B009314FF /* TimeExerciseViewController.swift in Sources */,
 				87DFF03029216B6C008D0FEF /* URLConstant.swift in Sources */,
 				87DFF02529215952008D0FEF /* RunningViewController.swift in Sources */,
 				87DFF00B29215346008D0FEF /* UIStackView+.swift in Sources */,
@@ -448,11 +461,14 @@
 				87DFEFE5291F69B3008D0FEF /* AppDelegate.swift in Sources */,
 				87DFEFE7291F69B3008D0FEF /* SceneDelegate.swift in Sources */,
 				87E221D929243440003EE72A /* RunGaugeView.swift in Sources */,
+				AB0FCDE729250352009314FF /* LevelExerciseViewController.swift in Sources */,
 				87DFF01F29215900008D0FEF /* HomeViewController.swift in Sources */,
 				87DFF00929215339008D0FEF /* UIView+.swift in Sources */,
 				871B12792924114C000C6D6D /* Adjusted+.swift in Sources */,
 				87E221D5292424C7003EE72A /* RunStepView.swift in Sources */,
+				AB0FCDE529250304009314FF /* MyExerciseViewController.swift in Sources */,
 				AB1CAE112924E2A8000AB433 /* HomeModel.swift in Sources */,
+				AB0FCDEB2925038F009314FF /* PersonalExerciseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
