@@ -38,16 +38,16 @@ class TabCollectionViewCell: UICollectionViewCell {
         setLayout()
     }
     
-    // MARK: - Properties
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
+    // MARK: - Properties
+
     override var isSelected: Bool {
         didSet {
             indicatorView.isHidden = isSelected ? false : true
         }
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - Custom Method
