@@ -7,19 +7,19 @@
 
 import UIKit
 import SnapKit
+import Lottie
 
 //MARK: -  석우도 화이팅!
 
 class RunningViewController : UIViewController{
     
-    //MARK: - Properties
+    //MARK: - UI Components
     
     private let timeSuperView : UIView = {
         let view = UIView()
         view.backgroundColor = .clear
         view.layer.cornerRadius = 60
         view.layer.maskedCorners = [ .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        
         return view
     }()
     
@@ -29,7 +29,6 @@ class RunningViewController : UIViewController{
         view.alpha = 0.8                //커스텀: 생각보다 투명해서 0.6 -> 0.8
         view.layer.cornerRadius = 60
         view.layer.maskedCorners = [ .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        
         view.layer.shadowColor = UIColor.rundayGray5.cgColor
         view.layer.shadowRadius = 5
         view.layer.shadowOffset = CGSize(width: 0, height: 11)
@@ -45,11 +44,10 @@ class RunningViewController : UIViewController{
         return label
     }()
     
-    private let voiceImageView : UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "voice")
-        imageView.contentMode = .scaleAspectFit
-        return imageView
+    private let voiceAnimationView : LottieAnimationView = {
+        let animationView = LottieAnimationView(name: "voice")
+        animationView.loopMode = .loop
+        return animationView
     }()
     
     private let timerLabel : UILabel = {
@@ -114,7 +112,6 @@ class RunningViewController : UIViewController{
         return pageControl
         
     }()
-    //MARK: - UI Components
     
     //MARK: - Life Cycle
     
@@ -123,12 +120,18 @@ class RunningViewController : UIViewController{
         
         setUI()
         setLayout()
+        playAnimation()
     }
     
     //MARK: - Custom Method
     
     private func setUI(){
         view.backgroundColor = .rundayGray1
+        
+    }
+    
+    private func playAnimation(){
+        voiceAnimationView.play()
     }
     
     private func setLayout(){
@@ -136,7 +139,7 @@ class RunningViewController : UIViewController{
         timeSuperView.addSubview(timeAlphaView)
         timeSuperView.addSubviews(
                                     weekDescriptionLabel,
-                                    voiceImageView,
+                                    voiceAnimationView,
                                     timerLabel,
                                     speedLabel,
                                     progressView,
@@ -204,13 +207,14 @@ class RunningViewController : UIViewController{
             $0.centerX.equalToSuperview()
         }
         
-        voiceImageView.snp.makeConstraints {
-            $0.top.equalTo(weekDescriptionLabel.snp.bottom).offset(50.adjusted)
+        voiceAnimationView.snp.makeConstraints {
+            $0.top.equalTo(weekDescriptionLabel.snp.bottom).offset(35.adjusted)
             $0.centerX.equalToSuperview()
+            $0.height.width.equalTo(70)
         }
         
         timerLabel.snp.makeConstraints {
-            $0.top.equalTo(voiceImageView.snp.bottom).offset(-10.adjusted) //글자가 커서 커스텀
+            $0.top.equalTo(voiceAnimationView.snp.bottom).offset(-20.adjusted) //글자가 커서 커스텀
             $0.centerX.equalToSuperview()
         }
         
