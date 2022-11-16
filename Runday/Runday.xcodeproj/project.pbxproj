@@ -187,7 +187,9 @@
 		87DFF004291F88C0008D0FEF /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				87DFF01E29215900008D0FEF /* HomeViewController.swift */,
+				AB1CAE0A2924ACDD000AB433 /* Model */,
+				AB1CAE0B2924ACE3000AB433 /* View */,
+				AB1CAE0C2924ACE9000AB433 /* Controllers */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -306,6 +308,28 @@
 				87E221D629242589003EE72A /* Speed.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		AB1CAE0A2924ACDD000AB433 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AB1CAE0B2924ACE3000AB433 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AB1CAE0C2924ACE9000AB433 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				87DFF01E29215900008D0FEF /* HomeViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
