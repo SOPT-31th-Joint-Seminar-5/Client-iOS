@@ -39,6 +39,7 @@
 		87E221D729242589003EE72A /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221D629242589003EE72A /* Speed.swift */; };
 		87E221D929243440003EE72A /* RunGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221D829243440003EE72A /* RunGaugeView.swift */; };
 		87E221DE29254D7A003EE72A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 87E221DD29254D7A003EE72A /* Lottie */; };
+		87E221E0292556C5003EE72A /* RunningTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221DF292556C5003EE72A /* RunningTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		87E221D4292424C7003EE72A /* RunStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunStepView.swift; sourceTree = "<group>"; };
 		87E221D629242589003EE72A /* Speed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
 		87E221D829243440003EE72A /* RunGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunGaugeView.swift; sourceTree = "<group>"; };
+		87E221DF292556C5003EE72A /* RunningTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				87E221D629242589003EE72A /* Speed.swift */,
+				87E221DF292556C5003EE72A /* RunningTimer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				87DFF0112921538E008D0FEF /* UICollectionViewCell+.swift in Sources */,
 				87DFF01D292158DA008D0FEF /* BaseNavigationController.swift in Sources */,
 				87DFEFE5291F69B3008D0FEF /* AppDelegate.swift in Sources */,
+				87E221E0292556C5003EE72A /* RunningTimer.swift in Sources */,
 				87DFEFE7291F69B3008D0FEF /* SceneDelegate.swift in Sources */,
 				87E221D929243440003EE72A /* RunGaugeView.swift in Sources */,
 				87DFF01F29215900008D0FEF /* HomeViewController.swift in Sources */,

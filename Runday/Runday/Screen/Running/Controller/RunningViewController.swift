@@ -13,6 +13,11 @@ import Lottie
 
 class RunningViewController : UIViewController{
     
+    //MARK: - Properties
+    
+    var timer : Timer?
+    var runningTimer : RunningTimer = RunningTimer(second: 10)
+    
     //MARK: - UI Components
     
     private let timeSuperView : UIView = {
@@ -117,10 +122,10 @@ class RunningViewController : UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setUI()
         setLayout()
         playAnimation()
+        playTimer()
     }
     
     //MARK: - Custom Method
@@ -134,8 +139,25 @@ class RunningViewController : UIViewController{
         voiceAnimationView.play()
     }
     
+    private func playTimer(){
+        timer = Timer.scheduledTimer(timeInterval: 0.05,
+                                     target: self,
+                                     selector: #selector(decreaseRunningTimer),
+                                     userInfo: nil,
+                                     repeats: true)
+    }
+    
     private func setLayout(){
-        view.addSubviews(previousStepView,nextStepView,timeSuperView,gaugeStackView,leftTimerLabel,musicButton,lockButton,pageControl)
+        view.addSubviews(
+                            previousStepView,
+                            nextStepView,
+                            timeSuperView,
+                            gaugeStackView,
+                            leftTimerLabel,
+                            musicButton,
+                            lockButton,
+                            pageControl
+                        )
         timeSuperView.addSubview(timeAlphaView)
         timeSuperView.addSubviews(
                                     weekDescriptionLabel,
@@ -272,5 +294,14 @@ class RunningViewController : UIViewController{
     }
     
     //MARK: - Action Method
+    
+    @objc func decreaseRunningTimer(){
+        do {
+            try runningTimer.decreaseTime(0.05)
+        } catch {
+            timer?.invalidate()
+        }
+        progressView.progress = runningTimer.ratio
+    }
     
 }
