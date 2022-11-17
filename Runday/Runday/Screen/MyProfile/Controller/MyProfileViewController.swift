@@ -12,6 +12,8 @@ import SnapKit
 
 class MyProfileViewController : UIViewController{
     
+    var myProfileView: MyProfileView = MyProfileView()
+    
     //MARK: - Properties
     
     //MARK: - UI Components
@@ -25,17 +27,25 @@ class MyProfileViewController : UIViewController{
         setLayout()
     }
     
-    //MARK: - Custom Method
-    
-    private func setUI(){
+    override func loadView() {
+        super.loadView()
         
-    }
-    
-    private func setLayout(){
-        
+        myProfileView = MyProfileView(frame: self.view.frame)
+        self.view = myProfileView
     }
     
     //MARK: - Action Method
     
 
+}
+
+extension MyProfileViewController {
+    //MARK: - Custom Method
+    private func setUI() {
+        view.backgroundColor = .white
+    }
+    
+    private func setLayout() {
+
+    }
 }

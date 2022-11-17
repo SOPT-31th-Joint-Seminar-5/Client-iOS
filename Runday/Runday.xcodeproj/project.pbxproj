@@ -38,6 +38,15 @@
 		87E221D5292424C7003EE72A /* RunStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221D4292424C7003EE72A /* RunStepView.swift */; };
 		87E221D729242589003EE72A /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221D629242589003EE72A /* Speed.swift */; };
 		87E221D929243440003EE72A /* RunGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221D829243440003EE72A /* RunGaugeView.swift */; };
+		D64434902924C5F500B2658B /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D644348F2924C5F500B2658B /* MyProfileView.swift */; };
+		D6C979692925D9DC001F78BE /* ProfileTableViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C979682925D9DC001F78BE /* ProfileTableViewCellType.swift */; };
+		D6F8053A2925199B003ED937 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F805392925199B003ED937 /* ProfileModel.swift */; };
+		D6F8053C292519F2003ED937 /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8053B292519F2003ED937 /* ExerciseModel.swift */; };
+		D6F8053E29251A17003ED937 /* BadgeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8053D29251A17003ED937 /* BadgeModel.swift */; };
+		D6F8054029251A95003ED937 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8053F29251A95003ED937 /* MenuModel.swift */; };
+		D6F8054429251FE6003ED937 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8054329251FE6003ED937 /* ExerciseCell.swift */; };
+		D6F8054629252439003ED937 /* BadgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8054529252439003ED937 /* BadgeCell.swift */; };
+		D6F8054829252473003ED937 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8054729252473003ED937 /* MenuCell.swift */; };
 
 		AB0FCDE529250304009314FF /* MyExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FCDE429250304009314FF /* MyExerciseViewController.swift */; };
 		AB0FCDE729250352009314FF /* LevelExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FCDE629250352009314FF /* LevelExerciseViewController.swift */; };
@@ -85,6 +94,15 @@
 		87E221D4292424C7003EE72A /* RunStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunStepView.swift; sourceTree = "<group>"; };
 		87E221D629242589003EE72A /* Speed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
 		87E221D829243440003EE72A /* RunGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunGaugeView.swift; sourceTree = "<group>"; };
+		D644348F2924C5F500B2658B /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
+		D6C979682925D9DC001F78BE /* ProfileTableViewCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCellType.swift; sourceTree = "<group>"; };
+		D6F805392925199B003ED937 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		D6F8053B292519F2003ED937 /* ExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
+		D6F8053D29251A17003ED937 /* BadgeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModel.swift; sourceTree = "<group>"; };
+		D6F8053F29251A95003ED937 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
+		D6F8054329251FE6003ED937 /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
+		D6F8054529252439003ED937 /* BadgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCell.swift; sourceTree = "<group>"; };
+		D6F8054729252473003ED937 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 
 		AB0FCDE429250304009314FF /* MyExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExerciseViewController.swift; sourceTree = "<group>"; };
 		AB0FCDE629250352009314FF /* LevelExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelExerciseViewController.swift; sourceTree = "<group>"; };
@@ -224,7 +242,10 @@
 		87DFF005291F88C9008D0FEF /* MyProfile */ = {
 			isa = PBXGroup;
 			children = (
-				87DFF0222921593F008D0FEF /* MyProfileViewController.swift */,
+				D6F8054229251F6F003ED937 /* Cell */,
+				D6F8053829251982003ED937 /* Model */,
+				D644348E2924C5D600B2658B /* Controller */,
+				D644348D2924C5CC00B2658B /* View */,
 			);
 			path = MyProfile;
 			sourceTree = "<group>";
@@ -346,6 +367,10 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		D644348D2924C5CC00B2658B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D644348F2924C5F500B2658B /* MyProfileView.swift */,
 		AB1CAE0B2924ACE3000AB433 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,6 +379,34 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		D644348E2924C5D600B2658B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				87DFF0222921593F008D0FEF /* MyProfileViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D6F8053829251982003ED937 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D6F805392925199B003ED937 /* ProfileModel.swift */,
+				D6F8053B292519F2003ED937 /* ExerciseModel.swift */,
+				D6F8053D29251A17003ED937 /* BadgeModel.swift */,
+				D6F8053F29251A95003ED937 /* MenuModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D6F8054229251F6F003ED937 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D6F8054329251FE6003ED937 /* ExerciseCell.swift */,
+				D6F8054529252439003ED937 /* BadgeCell.swift */,
+				D6F8054729252473003ED937 /* MenuCell.swift */,
+				D6C979682925D9DC001F78BE /* ProfileTableViewCellType.swift */,
+			);
+			path = Cell;
 		AB1CAE0C2924ACE9000AB433 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -462,21 +515,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				87DFF0232921593F008D0FEF /* MyProfileViewController.swift in Sources */,
+				D6F8054829252473003ED937 /* MenuCell.swift in Sources */,
 				876D2A7729218DE300EA19F2 /* UIFont+.swift in Sources */,
+				D64434902924C5F500B2658B /* MyProfileView.swift in Sources */,
+				D6F8054429251FE6003ED937 /* ExerciseCell.swift in Sources */,
 				87DFEFE9291F69B3008D0FEF /* BaseTabBarController.swift in Sources */,
 				87E221D729242589003EE72A /* Speed.swift in Sources */,
 				AB1CAE0F2924D458000AB433 /* TabCollectionViewCell.swift in Sources */,
 				87DFF015292157CD008D0FEF /* BaseNavigationView.swift in Sources */,
 				87DFF04429217E17008D0FEF /* Constant.swift in Sources */,
+				D6F8053C292519F2003ED937 /* ExerciseModel.swift in Sources */,
 				87DFF00F29215379008D0FEF /* UITableViewCell+.swift in Sources */,
 				87DFF02129215924008D0FEF /* MenuViewController.swift in Sources */,
+				D6F8053E29251A17003ED937 /* BadgeModel.swift in Sources */,
 				87DFF00D2921535F008D0FEF /* UIColor+.swift in Sources */,
+				D6F8054629252439003ED937 /* BadgeCell.swift in Sources */,
 				ABEC7594292622DE0054B4B7 /* Exercise.swift in Sources */,
 				AB0FCDE92925036B009314FF /* TimeExerciseViewController.swift in Sources */,
 				87DFF03029216B6C008D0FEF /* URLConstant.swift in Sources */,
 				87DFF02529215952008D0FEF /* RunningViewController.swift in Sources */,
 				87DFF00B29215346008D0FEF /* UIStackView+.swift in Sources */,
 				87DFF0112921538E008D0FEF /* UICollectionViewCell+.swift in Sources */,
+				D6C979692925D9DC001F78BE /* ProfileTableViewCellType.swift in Sources */,
 				87DFF01D292158DA008D0FEF /* BaseNavigationController.swift in Sources */,
 				87DFEFE5291F69B3008D0FEF /* AppDelegate.swift in Sources */,
 				87E221E0292556C5003EE72A /* RunningTimer.swift in Sources */,
@@ -484,6 +544,8 @@
 				87E221D929243440003EE72A /* RunGaugeView.swift in Sources */,
 				AB0FCDE729250352009314FF /* LevelExerciseViewController.swift in Sources */,
 				87DFF01F29215900008D0FEF /* HomeViewController.swift in Sources */,
+				D6F8053A2925199B003ED937 /* ProfileModel.swift in Sources */,
+				D6F8054029251A95003ED937 /* MenuModel.swift in Sources */,
 				87DFF00929215339008D0FEF /* UIView+.swift in Sources */,
 				871B12792924114C000C6D6D /* Adjusted+.swift in Sources */,
 				87E221D5292424C7003EE72A /* RunStepView.swift in Sources */,
