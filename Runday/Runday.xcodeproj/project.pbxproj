@@ -45,6 +45,7 @@
 		AB1CAE0F2924D458000AB433 /* TabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1CAE0E2924D458000AB433 /* TabCollectionViewCell.swift */; };
 		AB1CAE112924E2A8000AB433 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1CAE102924E2A8000AB433 /* HomeModel.swift */; };
 		ABEC7592292617990054B4B7 /* ExerciseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC7591292617990054B4B7 /* ExerciseCollectionViewCell.swift */; };
+		ABEC7594292622DE0054B4B7 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC7593292622DE0054B4B7 /* Exercise.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		AB1CAE0E2924D458000AB433 /* TabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB1CAE102924E2A8000AB433 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		ABEC7591292617990054B4B7 /* ExerciseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCollectionViewCell.swift; sourceTree = "<group>"; };
+		ABEC7593292622DE0054B4B7 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 		87DFF004291F88C0008D0FEF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				ABEC7593292622DE0054B4B7 /* Exercise.swift */,
 				AB1CAE0A2924ACDD000AB433 /* Model */,
 				AB1CAE0B2924ACE3000AB433 /* View */,
 				AB1CAE0C2924ACE9000AB433 /* Controllers */,
@@ -455,6 +458,7 @@
 				87DFF00F29215379008D0FEF /* UITableViewCell+.swift in Sources */,
 				87DFF02129215924008D0FEF /* MenuViewController.swift in Sources */,
 				87DFF00D2921535F008D0FEF /* UIColor+.swift in Sources */,
+				ABEC7594292622DE0054B4B7 /* Exercise.swift in Sources */,
 				AB0FCDE92925036B009314FF /* TimeExerciseViewController.swift in Sources */,
 				87DFF03029216B6C008D0FEF /* URLConstant.swift in Sources */,
 				87DFF02529215952008D0FEF /* RunningViewController.swift in Sources */,
