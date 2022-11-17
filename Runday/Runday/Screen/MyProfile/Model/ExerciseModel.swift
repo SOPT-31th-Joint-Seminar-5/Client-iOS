@@ -13,3 +13,5 @@ struct ExerciseModel {
     let pace: String
     let calorie: String
 }
+
+let exerciseDummyData: ExerciseModel = ExerciseModel(time: "16:03", distance: "10.45km", pace: "3km/h", calorie: "471kcal")

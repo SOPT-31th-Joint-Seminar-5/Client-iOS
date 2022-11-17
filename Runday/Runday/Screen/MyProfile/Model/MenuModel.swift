@@ -8,6 +8,10 @@
 import Foundation
 
 struct MenuModel {
-    let image: String
-    let content: String
+    var image: String
+    var content: String
+    var swiftImage: String = "right-shift"
 }
+
+let friendMenu: MenuModel = MenuModel(image: "friend", content: "친구 관리")
+let friendInviteMenu: MenuModel = MenuModel(image: "friend", content: "친구 초대 링크")

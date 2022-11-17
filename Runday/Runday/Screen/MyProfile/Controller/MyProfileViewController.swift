@@ -11,7 +11,8 @@ import SnapKit
 //MARK: -  승헌이형 가보즈아~
 
 class MyProfileViewController : UIViewController{
-    var myProfileView: MyProfileView?
+    
+    var myProfileView: MyProfileView = MyProfileView()
     
     //MARK: - Properties
     
@@ -33,17 +34,18 @@ class MyProfileViewController : UIViewController{
         self.view = myProfileView
     }
     
-    //MARK: - Custom Method
-    
-    private func setUI(){
-        
-    }
-    
-    private func setLayout(){
-        
-    }
-    
     //MARK: - Action Method
     
 
+}
+
+extension MyProfileViewController {
+    //MARK: - Custom Method
+    private func setUI() {
+        view.backgroundColor = .white
+    }
+    
+    private func setLayout() {
+
+    }
 }

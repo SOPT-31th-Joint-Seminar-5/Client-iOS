@@ -49,11 +49,21 @@ extension UIColor{
         return UIColor(r: 86, g: 93, b: 111)
     }
     
+    class var rundayGray6: UIColor {
+        return UIColor(r: 129, g: 133, b: 148)
+    }
+    
+    class var rundayGray7: UIColor {
+        return UIColor(r: 247, g: 248, b: 250)
+    }
+    
     class var rundayBlack: UIColor {
         return UIColor(r: 28, g: 31, b: 39)
     }
     
-    
+    class var rundayBlack1: UIColor {
+        return UIColor(r: 30, g: 32, b: 38)
+    }
     
     
     
