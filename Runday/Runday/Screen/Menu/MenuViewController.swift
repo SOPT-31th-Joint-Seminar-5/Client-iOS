@@ -32,7 +32,10 @@ final class MenuViewController : UIViewController{
         $0.backgroundColor = UIColor(r: 247, g: 248, b: 250)
     }
     
-    private lazy var previousButton = makeButton("menu-left-shift")
+    private lazy var previousButton = makeButton("menu-left-shift").then {
+        $0.addTarget(self, action: #selector(previousButtonDidTapped), for: .touchUpInside)
+    }
+    
     private lazy var flagIcon = makeImageView("flag")
     private let marathonLabel = UILabel().then {
         $0.text = "마라톤"
@@ -97,6 +100,14 @@ final class MenuViewController : UIViewController{
         super.viewDidLoad()
         setUI()
         setLayout()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
     }
     
     //MARK: - Custom Method
@@ -301,5 +312,9 @@ final class MenuViewController : UIViewController{
     }
     
     //MARK: - Action Method
+    
+    @objc func previousButtonDidTapped(){
+        navigationController?.popViewController(animated: true)
+    }
     
 }

@@ -35,6 +35,7 @@ class HomeViewController : UIViewController {
     
     private let menuButton = UIButton().then {
         $0.setImage(UIImage(named: "hamburger"), for: .normal)
+        $0.addTarget(self, action: #selector(menuButtonDidTapped), for: .touchUpInside)
     }
     
     private let noticeButton = UIButton().then {
@@ -85,7 +86,7 @@ class HomeViewController : UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        currentPage = 0
+        // currentPage = 0
     }
     
     //MARK: - Custom Method
@@ -150,6 +151,11 @@ class HomeViewController : UIViewController {
     }
     
     //MARK: - Action Method
+    
+    @objc func menuButtonDidTapped(){
+        let menuViewController = MenuViewController()
+        navigationController?.pushViewController(menuViewController, animated: true)
+    }
     
 }
 
