@@ -47,6 +47,7 @@ class TabCollectionViewCell: UICollectionViewCell {
     override var isSelected: Bool {
         didSet {
             indicatorView.isHidden = isSelected ? false : true
+            tabLabel.textColor = isSelected ? .rundayBlack : .rundayGray3
         }
     }
     
@@ -80,8 +81,10 @@ class TabCollectionViewCell: UICollectionViewCell {
     func toggleSelected() {
         if isSelected {
             indicatorView.isHidden = false
+            tabLabel.textColor = .rundayBlack
         } else {
             indicatorView.isHidden = true
+            tabLabel.textColor = .rundayGray3
         }
     }
 }
