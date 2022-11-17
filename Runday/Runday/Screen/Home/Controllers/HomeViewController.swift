@@ -55,22 +55,6 @@ class HomeViewController : UIViewController {
         return collectionView
     }()
     
-//    lazy var vc1 = UIViewController().then {
-//        $0.view.backgroundColor = .red
-//    }
-//
-//    lazy var vc2 = UIViewController().then {
-//        $0.view.backgroundColor = .orange
-//    }
-//
-//    lazy var vc3 = UIViewController().then {
-//        $0.view.backgroundColor = .yellow
-//    }
-//
-//    lazy var vc4 = UIViewController().then {
-//        $0.view.backgroundColor = .green
-//    }
-    
     lazy var myExerciseVC = MyExerciseViewController()
     lazy var levelExerciseVC = LevelExerciseViewController()
     lazy var timeExerciseVC = TimeExerciseViewController()
@@ -242,11 +226,9 @@ extension HomeViewController: UIPageViewControllerDataSource, UIPageViewControll
         return dataViewControllers[nextIndex]
     }
     
-    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        guard let currentVC = pageViewController.viewControllers?.first,
+    func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+        guard let currentVC = pendingViewControllers.first,
               let currentIndex = dataViewControllers.firstIndex(of: currentVC) else {return}
-        
-        print("hi")
         
         currentPage = currentIndex
     }
