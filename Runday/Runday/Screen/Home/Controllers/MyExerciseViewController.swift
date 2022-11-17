@@ -75,6 +75,11 @@ extension MyExerciseViewController: UICollectionViewDataSource {
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let runningViewController = RunningViewController()
+        navigationController?.pushViewController(runningViewController, animated: true)
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout

@@ -135,6 +135,14 @@ class RunningViewController : UIViewController{
         playTimer()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
+    }
+    
     //MARK: - Custom Method
     
     private func setDelegate(){
@@ -313,6 +321,9 @@ class RunningViewController : UIViewController{
             // 시간초과 발생시 타이머 중지 및 label 0초로 초기화.
             timer?.invalidate()
             timerLabel.text = "00:00"
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.navigationController?.popViewController(animated: true)
+            }
         }
         
         progressView.progress = runningTimer.ratio
