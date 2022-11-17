@@ -14,13 +14,6 @@ import Then
 
 class MyExerciseViewController: UIViewController {
     
-    // MARK: - Properties
-    
-    final let exerciseInset: UIEdgeInsets = UIEdgeInsets(top: 20, left: 16, bottom: 0, right: 16)
-    final let exerciseLineSpacing: CGFloat = 12
-    final let exerciseInterItemSpacing: CGFloat = 6
-    final let exerciseCellHeight: CGFloat = 240
-    
     // MARK: - UI Components
     
     private lazy var myExerciseCollectionView: UICollectionView = {
@@ -61,7 +54,7 @@ class MyExerciseViewController: UIViewController {
         let count = CGFloat(3)
         let heightCount = count / 2 + count.truncatingRemainder(dividingBy: 2)
         
-        return heightCount * exerciseCellHeight + (heightCount - 1) * exerciseLineSpacing + exerciseInset.top + exerciseInset.bottom
+        return heightCount * Exercise.exerciseCellHeight + (heightCount - 1) * Exercise.exerciseLineSpacing + Exercise.exerciseInset.top + Exercise.exerciseInset.bottom
     }
     
     private func register() {
@@ -89,20 +82,20 @@ extension MyExerciseViewController: UICollectionViewDataSource {
 extension MyExerciseViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenWidth = UIScreen.main.bounds.width
-        let doubleCellWidth = screenWidth - exerciseInset.left - exerciseInset.right - exerciseInterItemSpacing
+        let doubleCellWidth = screenWidth - Exercise.exerciseInset.left - Exercise.exerciseInset.right - Exercise.exerciseInterItemSpacing
         
-        return CGSize(width: doubleCellWidth/2, height: exerciseCellHeight)
+        return CGSize(width: doubleCellWidth/2, height: Exercise.exerciseCellHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return exerciseLineSpacing
+        return Exercise.exerciseLineSpacing
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return exerciseInterItemSpacing
+        return Exercise.exerciseInterItemSpacing
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return exerciseInset
+        return Exercise.exerciseInset
     }
 }
