@@ -38,6 +38,7 @@
 		87E221D5292424C7003EE72A /* RunStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221D4292424C7003EE72A /* RunStepView.swift */; };
 		87E221D729242589003EE72A /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221D629242589003EE72A /* Speed.swift */; };
 		87E221D929243440003EE72A /* RunGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221D829243440003EE72A /* RunGaugeView.swift */; };
+
 		AB0FCDE529250304009314FF /* MyExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FCDE429250304009314FF /* MyExerciseViewController.swift */; };
 		AB0FCDE729250352009314FF /* LevelExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FCDE629250352009314FF /* LevelExerciseViewController.swift */; };
 		AB0FCDE92925036B009314FF /* TimeExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FCDE82925036B009314FF /* TimeExerciseViewController.swift */; };
@@ -46,6 +47,10 @@
 		AB1CAE112924E2A8000AB433 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1CAE102924E2A8000AB433 /* HomeModel.swift */; };
 		ABEC7592292617990054B4B7 /* ExerciseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC7591292617990054B4B7 /* ExerciseCollectionViewCell.swift */; };
 		ABEC7594292622DE0054B4B7 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC7593292622DE0054B4B7 /* Exercise.swift */; };
+
+		87E221DE29254D7A003EE72A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 87E221DD29254D7A003EE72A /* Lottie */; };
+		87E221E0292556C5003EE72A /* RunningTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221DF292556C5003EE72A /* RunningTimer.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +85,7 @@
 		87E221D4292424C7003EE72A /* RunStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunStepView.swift; sourceTree = "<group>"; };
 		87E221D629242589003EE72A /* Speed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
 		87E221D829243440003EE72A /* RunGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunGaugeView.swift; sourceTree = "<group>"; };
+
 		AB0FCDE429250304009314FF /* MyExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExerciseViewController.swift; sourceTree = "<group>"; };
 		AB0FCDE629250352009314FF /* LevelExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelExerciseViewController.swift; sourceTree = "<group>"; };
 		AB0FCDE82925036B009314FF /* TimeExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeExerciseViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +94,9 @@
 		AB1CAE102924E2A8000AB433 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		ABEC7591292617990054B4B7 /* ExerciseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCollectionViewCell.swift; sourceTree = "<group>"; };
 		ABEC7593292622DE0054B4B7 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+
+		87E221DF292556C5003EE72A /* RunningTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningTimer.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +106,7 @@
 			files = (
 				87DFF0182921587E008D0FEF /* SnapKit in Frameworks */,
 				87DFF01B2921588D008D0FEF /* Then in Frameworks */,
+				87E221DE29254D7A003EE72A /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				87E221D629242589003EE72A /* Speed.swift */,
+				87E221DF292556C5003EE72A /* RunningTimer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -383,6 +394,7 @@
 			packageProductDependencies = (
 				87DFF0172921587E008D0FEF /* SnapKit */,
 				87DFF01A2921588D008D0FEF /* Then */,
+				87E221DD29254D7A003EE72A /* Lottie */,
 			);
 			productName = Runday;
 			productReference = 87DFEFE1291F69B3008D0FEF /* Runday.app */;
@@ -415,6 +427,7 @@
 			packageReferences = (
 				87DFF0162921587E008D0FEF /* XCRemoteSwiftPackageReference "SnapKit" */,
 				87DFF0192921588D008D0FEF /* XCRemoteSwiftPackageReference "Then" */,
+				87E221DC29254D7A003EE72A /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 87DFEFE2291F69B3008D0FEF /* Products */;
 			projectDirPath = "";
@@ -466,6 +479,7 @@
 				87DFF0112921538E008D0FEF /* UICollectionViewCell+.swift in Sources */,
 				87DFF01D292158DA008D0FEF /* BaseNavigationController.swift in Sources */,
 				87DFEFE5291F69B3008D0FEF /* AppDelegate.swift in Sources */,
+				87E221E0292556C5003EE72A /* RunningTimer.swift in Sources */,
 				87DFEFE7291F69B3008D0FEF /* SceneDelegate.swift in Sources */,
 				87E221D929243440003EE72A /* RunGaugeView.swift in Sources */,
 				AB0FCDE729250352009314FF /* LevelExerciseViewController.swift in Sources */,
@@ -712,6 +726,14 @@
 				kind = branch;
 			};
 		};
+		87E221DC29254D7A003EE72A /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -724,6 +746,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 87DFF0192921588D008D0FEF /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		87E221DD29254D7A003EE72A /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 87E221DC29254D7A003EE72A /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
