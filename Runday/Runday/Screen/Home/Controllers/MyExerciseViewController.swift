@@ -23,7 +23,7 @@ class MyExerciseViewController: UIViewController {
     
     // MARK: - UI Components
     
-    private lazy var exerciseCollectionView: UICollectionView = {
+    private lazy var myExerciseCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         
@@ -49,9 +49,9 @@ class MyExerciseViewController: UIViewController {
     // MARK: - Custom Methods
     
     private func setLayout() {
-        view.addSubviews(exerciseCollectionView)
+        view.addSubviews(myExerciseCollectionView)
         
-        exerciseCollectionView.snp.makeConstraints {
+        myExerciseCollectionView.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.height.equalTo(calculateHeight())
         }
@@ -65,7 +65,7 @@ class MyExerciseViewController: UIViewController {
     }
     
     private func register() {
-        exerciseCollectionView.register(ExerciseCollectionViewCell.self, forCellWithReuseIdentifier: ExerciseCollectionViewCell.identifier)
+        myExerciseCollectionView.register(ExerciseCollectionViewCell.self, forCellWithReuseIdentifier: ExerciseCollectionViewCell.identifier)
     }
 
 }
