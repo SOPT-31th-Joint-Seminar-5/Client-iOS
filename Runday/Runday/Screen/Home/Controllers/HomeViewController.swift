@@ -14,7 +14,7 @@ import Then
 
 class HomeViewController : UIViewController {
     
-    //MARK: - Properties
+    //MARK: - Properties 
     
     final let tabInset: UIEdgeInsets = UIEdgeInsets(top: 0, left: 19, bottom: 0, right: 19)
     final let tabInterItemSpacing: CGFloat = 16
@@ -184,6 +184,7 @@ extension HomeViewController: UICollectionViewDataSource {
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
+
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenWidth = UIScreen.main.bounds.width
