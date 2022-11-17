@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Lottie
 
 //MARK: -  석우도 화이팅!
 
@@ -14,12 +15,21 @@ class RunningViewController : UIViewController{
     
     //MARK: - Properties
     
+    var totalTime : Float = 10{
+        didSet{
+            runningTimer = RunningTimer(second: totalTime)
+        }
+    }
+    var timer : Timer?
+    lazy var runningTimer = RunningTimer(second: totalTime)
+    
+    //MARK: - UI Components
+    
     private let timeSuperView : UIView = {
         let view = UIView()
         view.backgroundColor = .clear
         view.layer.cornerRadius = 60
         view.layer.maskedCorners = [ .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        
         return view
     }()
     
@@ -29,7 +39,6 @@ class RunningViewController : UIViewController{
         view.alpha = 0.8                //커스텀: 생각보다 투명해서 0.6 -> 0.8
         view.layer.cornerRadius = 60
         view.layer.maskedCorners = [ .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        
         view.layer.shadowColor = UIColor.rundayGray5.cgColor
         view.layer.shadowRadius = 5
         view.layer.shadowOffset = CGSize(width: 0, height: 11)
@@ -45,16 +54,15 @@ class RunningViewController : UIViewController{
         return label
     }()
     
-    private let voiceImageView : UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "voice")
-        imageView.contentMode = .scaleAspectFit
-        return imageView
+    private let voiceAnimationView : LottieAnimationView = {
+        let animationView = LottieAnimationView(name: "voice")
+        animationView.loopMode = .loop
+        return animationView
     }()
     
     private let timerLabel : UILabel = {
         let label = UILabel()
-        label.text = "04:58"
+        label.text = "00:00"
         label.font = .rundayRopaMixProExtraBoldItalic(ofSize: 96)
         label.textColor = .rundayBlack
         return label
@@ -114,29 +122,57 @@ class RunningViewController : UIViewController{
         return pageControl
         
     }()
-    //MARK: - UI Components
     
     //MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setDelegate()
         setUI()
         setLayout()
+        playAnimation()
+        playTimer()
     }
     
     //MARK: - Custom Method
     
+    private func setDelegate(){
+        runningTimer.delegate = self
+    }
+    
     private func setUI(){
         view.backgroundColor = .rundayGray1
+        
+    }
+    
+    private func playAnimation(){
+        voiceAnimationView.play()
+    }
+    
+    private func playTimer(){
+        timer = Timer.scheduledTimer(timeInterval: 0.05,
+                                     target: self,
+                                     selector: #selector(decreaseRunningTimer),
+                                     userInfo: nil,
+                                     repeats: true)
     }
     
     private func setLayout(){
-        view.addSubviews(previousStepView,nextStepView,timeSuperView,gaugeStackView,leftTimerLabel,musicButton,lockButton,pageControl)
+        view.addSubviews(
+                            previousStepView,
+                            nextStepView,
+                            timeSuperView,
+                            gaugeStackView,
+                            leftTimerLabel,
+                            musicButton,
+                            lockButton,
+                            pageControl
+                        )
         timeSuperView.addSubview(timeAlphaView)
         timeSuperView.addSubviews(
                                     weekDescriptionLabel,
-                                    voiceImageView,
+                                    voiceAnimationView,
                                     timerLabel,
                                     speedLabel,
                                     progressView,
@@ -204,13 +240,14 @@ class RunningViewController : UIViewController{
             $0.centerX.equalToSuperview()
         }
         
-        voiceImageView.snp.makeConstraints {
-            $0.top.equalTo(weekDescriptionLabel.snp.bottom).offset(50.adjusted)
+        voiceAnimationView.snp.makeConstraints {
+            $0.top.equalTo(weekDescriptionLabel.snp.bottom).offset(35.adjusted)
             $0.centerX.equalToSuperview()
+            $0.height.width.equalTo(70)
         }
         
         timerLabel.snp.makeConstraints {
-            $0.top.equalTo(voiceImageView.snp.bottom).offset(-10.adjusted) //글자가 커서 커스텀
+            $0.top.equalTo(voiceAnimationView.snp.bottom).offset(-20.adjusted) //글자가 커서 커스텀
             $0.centerX.equalToSuperview()
         }
         
@@ -268,5 +305,28 @@ class RunningViewController : UIViewController{
     }
     
     //MARK: - Action Method
+    
+    @objc func decreaseRunningTimer(){
+        do {
+            try runningTimer.decreaseTime(0.05)
+        } catch {
+            // 시간초과 발생시 타이머 중지 및 label 0초로 초기화.
+            timer?.invalidate()
+            timerLabel.text = "00:00"
+        }
+        
+        progressView.progress = runningTimer.ratio
+        
+    }
+    
+}
+
+//MARK: - RunningTimerDelegate
+extension RunningViewController : RunningTimerDelegate{
+    func secondsChange(_ timeString: String) {
+        print(timeString)
+        timerLabel.text = timeString
+    }
+    
     
 }
