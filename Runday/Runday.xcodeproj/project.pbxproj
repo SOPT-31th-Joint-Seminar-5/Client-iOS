@@ -44,7 +44,7 @@
 		AB0FCDEB2925038F009314FF /* PersonalExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FCDEA2925038F009314FF /* PersonalExerciseViewController.swift */; };
 		AB1CAE0F2924D458000AB433 /* TabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1CAE0E2924D458000AB433 /* TabCollectionViewCell.swift */; };
 		AB1CAE112924E2A8000AB433 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1CAE102924E2A8000AB433 /* HomeModel.swift */; };
-		ABEC7592292617990054B4B7 /* RunCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC7591292617990054B4B7 /* RunCardCollectionViewCell.swift */; };
+		ABEC7592292617990054B4B7 /* ExerciseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC7591292617990054B4B7 /* ExerciseCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,7 +85,7 @@
 		AB0FCDEA2925038F009314FF /* PersonalExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalExerciseViewController.swift; sourceTree = "<group>"; };
 		AB1CAE0E2924D458000AB433 /* TabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB1CAE102924E2A8000AB433 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
-		ABEC7591292617990054B4B7 /* RunCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		ABEC7591292617990054B4B7 /* ExerciseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -356,7 +356,7 @@
 			isa = PBXGroup;
 			children = (
 				AB1CAE0E2924D458000AB433 /* TabCollectionViewCell.swift */,
-				ABEC7591292617990054B4B7 /* RunCardCollectionViewCell.swift */,
+				ABEC7591292617990054B4B7 /* ExerciseCollectionViewCell.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -469,7 +469,7 @@
 				87DFF00929215339008D0FEF /* UIView+.swift in Sources */,
 				871B12792924114C000C6D6D /* Adjusted+.swift in Sources */,
 				87E221D5292424C7003EE72A /* RunStepView.swift in Sources */,
-				ABEC7592292617990054B4B7 /* RunCardCollectionViewCell.swift in Sources */,
+				ABEC7592292617990054B4B7 /* ExerciseCollectionViewCell.swift in Sources */,
 				AB0FCDE529250304009314FF /* MyExerciseViewController.swift in Sources */,
 				AB1CAE112924E2A8000AB433 /* HomeModel.swift in Sources */,
 				AB0FCDEB2925038F009314FF /* PersonalExerciseViewController.swift in Sources */,

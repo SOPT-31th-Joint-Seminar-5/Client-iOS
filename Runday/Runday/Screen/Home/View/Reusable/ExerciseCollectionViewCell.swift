@@ -12,11 +12,11 @@ import Then
 
 // MARK: - RunCardCollectionViewCell
 
-class RunCardCollectionViewCell: UICollectionViewCell {
+class ExerciseCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Identifier
     
-    static let identifier = "RunCardCollectionViewCell"
+    static let identifier = "ExerciseCollectionViewCell"
     
     // MARK: - UI Components
     
