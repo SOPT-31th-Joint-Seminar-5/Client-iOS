@@ -73,7 +73,7 @@ extension MyProfileView {
         )
         
         tableView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.edges.equalTo(self.safeAreaLayoutGuide)
         }
         
         profileImageView.snp.makeConstraints {
