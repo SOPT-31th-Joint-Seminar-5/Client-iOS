@@ -38,7 +38,15 @@
 		87E221D5292424C7003EE72A /* RunStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221D4292424C7003EE72A /* RunStepView.swift */; };
 		87E221D729242589003EE72A /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221D629242589003EE72A /* Speed.swift */; };
 		87E221D929243440003EE72A /* RunGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221D829243440003EE72A /* RunGaugeView.swift */; };
-
+		D64434902924C5F500B2658B /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D644348F2924C5F500B2658B /* MyProfileView.swift */; };
+		D6C979692925D9DC001F78BE /* ProfileTableViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C979682925D9DC001F78BE /* ProfileTableViewCellType.swift */; };
+		D6F8053A2925199B003ED937 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F805392925199B003ED937 /* ProfileModel.swift */; };
+		D6F8053C292519F2003ED937 /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8053B292519F2003ED937 /* ExerciseModel.swift */; };
+		D6F8053E29251A17003ED937 /* BadgeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8053D29251A17003ED937 /* BadgeModel.swift */; };
+		D6F8054029251A95003ED937 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8053F29251A95003ED937 /* MenuModel.swift */; };
+		D6F8054429251FE6003ED937 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8054329251FE6003ED937 /* ExerciseCell.swift */; };
+		D6F8054629252439003ED937 /* BadgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8054529252439003ED937 /* BadgeCell.swift */; };
+		D6F8054829252473003ED937 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8054729252473003ED937 /* MenuCell.swift */; };
 		AB0FCDE529250304009314FF /* MyExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FCDE429250304009314FF /* MyExerciseViewController.swift */; };
 		AB0FCDE729250352009314FF /* LevelExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FCDE629250352009314FF /* LevelExerciseViewController.swift */; };
 		AB0FCDE92925036B009314FF /* TimeExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FCDE82925036B009314FF /* TimeExerciseViewController.swift */; };
@@ -47,7 +55,6 @@
 		AB1CAE112924E2A8000AB433 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1CAE102924E2A8000AB433 /* HomeModel.swift */; };
 		ABEC7592292617990054B4B7 /* ExerciseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC7591292617990054B4B7 /* ExerciseCollectionViewCell.swift */; };
 		ABEC7594292622DE0054B4B7 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC7593292622DE0054B4B7 /* Exercise.swift */; };
-
 		87E221DE29254D7A003EE72A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 87E221DD29254D7A003EE72A /* Lottie */; };
 		87E221E0292556C5003EE72A /* RunningTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221DF292556C5003EE72A /* RunningTimer.swift */; };
 
@@ -85,7 +92,15 @@
 		87E221D4292424C7003EE72A /* RunStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunStepView.swift; sourceTree = "<group>"; };
 		87E221D629242589003EE72A /* Speed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
 		87E221D829243440003EE72A /* RunGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunGaugeView.swift; sourceTree = "<group>"; };
-
+		D644348F2924C5F500B2658B /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
+		D6C979682925D9DC001F78BE /* ProfileTableViewCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCellType.swift; sourceTree = "<group>"; };
+		D6F805392925199B003ED937 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		D6F8053B292519F2003ED937 /* ExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
+		D6F8053D29251A17003ED937 /* BadgeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModel.swift; sourceTree = "<group>"; };
+		D6F8053F29251A95003ED937 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
+		D6F8054329251FE6003ED937 /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
+		D6F8054529252439003ED937 /* BadgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCell.swift; sourceTree = "<group>"; };
+		D6F8054729252473003ED937 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		AB0FCDE429250304009314FF /* MyExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExerciseViewController.swift; sourceTree = "<group>"; };
 		AB0FCDE629250352009314FF /* LevelExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelExerciseViewController.swift; sourceTree = "<group>"; };
 		AB0FCDE82925036B009314FF /* TimeExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeExerciseViewController.swift; sourceTree = "<group>"; };
@@ -94,7 +109,6 @@
 		AB1CAE102924E2A8000AB433 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		ABEC7591292617990054B4B7 /* ExerciseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCollectionViewCell.swift; sourceTree = "<group>"; };
 		ABEC7593292622DE0054B4B7 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
-
 		87E221DF292556C5003EE72A /* RunningTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningTimer.swift; sourceTree = "<group>"; };
 
 /* End PBXFileReference section */
@@ -106,7 +120,6 @@
 			files = (
 				87DFF0182921587E008D0FEF /* SnapKit in Frameworks */,
 				87DFF01B2921588D008D0FEF /* Then in Frameworks */,
-				87E221DE29254D7A003EE72A /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,20 +226,9 @@
 		87DFF004291F88C0008D0FEF /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				ABEC7593292622DE0054B4B7 /* Exercise.swift */,
-				AB1CAE0A2924ACDD000AB433 /* Model */,
-				AB1CAE0B2924ACE3000AB433 /* View */,
-				AB1CAE0C2924ACE9000AB433 /* Controllers */,
+				87DFF01E29215900008D0FEF /* HomeViewController.swift */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		87DFF005291F88C9008D0FEF /* MyProfile */ = {
-			isa = PBXGroup;
-			children = (
-				87DFF0222921593F008D0FEF /* MyProfileViewController.swift */,
-			);
-			path = MyProfile;
 			sourceTree = "<group>";
 		};
 		87DFF006291F92C3008D0FEF /* Menu */ = {
@@ -333,19 +335,14 @@
 			isa = PBXGroup;
 			children = (
 				87E221D629242589003EE72A /* Speed.swift */,
-				87E221DF292556C5003EE72A /* RunningTimer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		AB1CAE0A2924ACDD000AB433 /* Model */ = {
+		D644348D2924C5CC00B2658B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AB1CAE102924E2A8000AB433 /* HomeModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
+				D644348F2924C5F500B2658B /* MyProfileView.swift */,
 		AB1CAE0B2924ACE3000AB433 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,6 +351,34 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		D644348E2924C5D600B2658B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				87DFF0222921593F008D0FEF /* MyProfileViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D6F8053829251982003ED937 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D6F805392925199B003ED937 /* ProfileModel.swift */,
+				D6F8053B292519F2003ED937 /* ExerciseModel.swift */,
+				D6F8053D29251A17003ED937 /* BadgeModel.swift */,
+				D6F8053F29251A95003ED937 /* MenuModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D6F8054229251F6F003ED937 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D6F8054329251FE6003ED937 /* ExerciseCell.swift */,
+				D6F8054529252439003ED937 /* BadgeCell.swift */,
+				D6F8054729252473003ED937 /* MenuCell.swift */,
+				D6C979682925D9DC001F78BE /* ProfileTableViewCellType.swift */,
+			);
+			path = Cell;
 		AB1CAE0C2924ACE9000AB433 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,7 +419,6 @@
 			packageProductDependencies = (
 				87DFF0172921587E008D0FEF /* SnapKit */,
 				87DFF01A2921588D008D0FEF /* Then */,
-				87E221DD29254D7A003EE72A /* Lottie */,
 			);
 			productName = Runday;
 			productReference = 87DFEFE1291F69B3008D0FEF /* Runday.app */;
@@ -427,7 +451,6 @@
 			packageReferences = (
 				87DFF0162921587E008D0FEF /* XCRemoteSwiftPackageReference "SnapKit" */,
 				87DFF0192921588D008D0FEF /* XCRemoteSwiftPackageReference "Then" */,
-				87E221DC29254D7A003EE72A /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 87DFEFE2291F69B3008D0FEF /* Products */;
 			projectDirPath = "";
@@ -465,12 +488,12 @@
 				876D2A7729218DE300EA19F2 /* UIFont+.swift in Sources */,
 				87DFEFE9291F69B3008D0FEF /* BaseTabBarController.swift in Sources */,
 				87E221D729242589003EE72A /* Speed.swift in Sources */,
-				AB1CAE0F2924D458000AB433 /* TabCollectionViewCell.swift in Sources */,
 				87DFF015292157CD008D0FEF /* BaseNavigationView.swift in Sources */,
 				87DFF04429217E17008D0FEF /* Constant.swift in Sources */,
 				87DFF00F29215379008D0FEF /* UITableViewCell+.swift in Sources */,
 				87DFF02129215924008D0FEF /* MenuViewController.swift in Sources */,
 				87DFF00D2921535F008D0FEF /* UIColor+.swift in Sources */,
+				D6F8054629252439003ED937 /* BadgeCell.swift in Sources */,
 				ABEC7594292622DE0054B4B7 /* Exercise.swift in Sources */,
 				AB0FCDE92925036B009314FF /* TimeExerciseViewController.swift in Sources */,
 				87DFF03029216B6C008D0FEF /* URLConstant.swift in Sources */,
@@ -479,18 +502,12 @@
 				87DFF0112921538E008D0FEF /* UICollectionViewCell+.swift in Sources */,
 				87DFF01D292158DA008D0FEF /* BaseNavigationController.swift in Sources */,
 				87DFEFE5291F69B3008D0FEF /* AppDelegate.swift in Sources */,
-				87E221E0292556C5003EE72A /* RunningTimer.swift in Sources */,
 				87DFEFE7291F69B3008D0FEF /* SceneDelegate.swift in Sources */,
 				87E221D929243440003EE72A /* RunGaugeView.swift in Sources */,
-				AB0FCDE729250352009314FF /* LevelExerciseViewController.swift in Sources */,
 				87DFF01F29215900008D0FEF /* HomeViewController.swift in Sources */,
 				87DFF00929215339008D0FEF /* UIView+.swift in Sources */,
 				871B12792924114C000C6D6D /* Adjusted+.swift in Sources */,
 				87E221D5292424C7003EE72A /* RunStepView.swift in Sources */,
-				ABEC7592292617990054B4B7 /* ExerciseCollectionViewCell.swift in Sources */,
-				AB0FCDE529250304009314FF /* MyExerciseViewController.swift in Sources */,
-				AB1CAE112924E2A8000AB433 /* HomeModel.swift in Sources */,
-				AB0FCDEB2925038F009314FF /* PersonalExerciseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -726,14 +743,6 @@
 				kind = branch;
 			};
 		};
-		87E221DC29254D7A003EE72A /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -746,11 +755,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 87DFF0192921588D008D0FEF /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
-		};
-		87E221DD29254D7A003EE72A /* Lottie */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 87E221DC29254D7A003EE72A /* XCRemoteSwiftPackageReference "lottie-ios" */;
-			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
