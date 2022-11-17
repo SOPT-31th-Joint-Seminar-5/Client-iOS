@@ -246,6 +246,7 @@
 				D6F8053829251982003ED937 /* Model */,
 				D644348E2924C5D600B2658B /* Controller */,
 				D644348D2924C5CC00B2658B /* View */,
+				87DFF0222921593F008D0FEF /* MyProfileViewController.swift */,
 			);
 			path = MyProfile;
 			sourceTree = "<group>";
