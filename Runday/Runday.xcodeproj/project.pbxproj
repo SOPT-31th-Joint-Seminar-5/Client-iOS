@@ -51,7 +51,7 @@
 		B849DC4E29279A0C00841F97 /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC4D29279A0C00841F97 /* NetworkLoggerPlugin.swift */; };
 		B849DC5029279A4C00841F97 /* Encodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC4F29279A4C00841F97 /* Encodable+.swift */; };
 		B849DC542927A68D00841F97 /* MyPageResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC532927A68D00841F97 /* MyPageResponseDto.swift */; };
-		B849DC562927A77B00841F97 /* TimeExerciseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC552927A77B00841F97 /* TimeExerciseDto.swift */; };
+		B849DC562927A77B00841F97 /* TimeExerciseResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC552927A77B00841F97 /* TimeExerciseResponseDto.swift */; };
 		D61A53C42926B1FE00F2386A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D61A53C32926B1FE00F2386A /* Lottie */; };
 		D64434902924C5F500B2658B /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D644348F2924C5F500B2658B /* MyProfileView.swift */; };
 		D6C979692925D9DC001F78BE /* ProfileTableViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C979682925D9DC001F78BE /* ProfileTableViewCellType.swift */; };
@@ -108,7 +108,7 @@
 		B849DC4D29279A0C00841F97 /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
 		B849DC4F29279A4C00841F97 /* Encodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+.swift"; sourceTree = "<group>"; };
 		B849DC532927A68D00841F97 /* MyPageResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageResponseDto.swift; sourceTree = "<group>"; };
-		B849DC552927A77B00841F97 /* TimeExerciseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeExerciseDto.swift; sourceTree = "<group>"; };
+		B849DC552927A77B00841F97 /* TimeExerciseResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeExerciseResponseDto.swift; sourceTree = "<group>"; };
 		D644348F2924C5F500B2658B /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		D6C979682925D9DC001F78BE /* ProfileTableViewCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCellType.swift; sourceTree = "<group>"; };
 		D6F805392925199B003ED937 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
@@ -439,7 +439,7 @@
 		B849DC5129279BD600841F97 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				B849DC552927A77B00841F97 /* TimeExerciseDto.swift */,
+				B849DC552927A77B00841F97 /* TimeExerciseResponseDto.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -615,7 +615,7 @@
 				87DFF01F29215900008D0FEF /* HomeViewController.swift in Sources */,
 				B849DC542927A68D00841F97 /* MyPageResponseDto.swift in Sources */,
 				87DFF00929215339008D0FEF /* UIView+.swift in Sources */,
-				B849DC562927A77B00841F97 /* TimeExerciseDto.swift in Sources */,
+				B849DC562927A77B00841F97 /* TimeExerciseResponseDto.swift in Sources */,
 				871B12792924114C000C6D6D /* Adjusted+.swift in Sources */,
 				B849DC4E29279A0C00841F97 /* NetworkLoggerPlugin.swift in Sources */,
 				87E221D5292424C7003EE72A /* RunStepView.swift in Sources */,

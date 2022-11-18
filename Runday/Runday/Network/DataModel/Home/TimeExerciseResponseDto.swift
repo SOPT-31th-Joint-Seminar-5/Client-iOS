@@ -7,8 +7,8 @@
 
 import Foundation
 
-// MARK: - TimeExerciseDto
-struct TimeExerciseDto: Codable {
+// MARK: - TimeExerciseResponseDto
+struct TimeExerciseResponseDto: Codable {
     let status: Int
     let message: String
     let data: DataClass
