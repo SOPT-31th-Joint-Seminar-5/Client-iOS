@@ -12,11 +12,11 @@ struct LikeRequestDto: Codable {
     let status: Int
     let success: Bool
     let message: String
-    let data: DataClass
+    let data: LikeRequestDataClass
 }
 
 // MARK: - DataClass
-struct DataClass: Codable {
+struct LikeRequestDataClass: Codable {
     let id: Int
     let isLiked: Bool
     let runID, userID: Int
