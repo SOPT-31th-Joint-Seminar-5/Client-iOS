@@ -52,6 +52,7 @@
 		B849DC5029279A4C00841F97 /* Encodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC4F29279A4C00841F97 /* Encodable+.swift */; };
 		B849DC542927A68D00841F97 /* MyPageResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC532927A68D00841F97 /* MyPageResponseDto.swift */; };
 		B849DC562927A77B00841F97 /* TimeExerciseResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC552927A77B00841F97 /* TimeExerciseResponseDto.swift */; };
+		B849DC582927ABD900841F97 /* LikeRequestDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC572927ABD900841F97 /* LikeRequestDto.swift */; };
 		D61A53C42926B1FE00F2386A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D61A53C32926B1FE00F2386A /* Lottie */; };
 		D64434902924C5F500B2658B /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D644348F2924C5F500B2658B /* MyProfileView.swift */; };
 		D6C979692925D9DC001F78BE /* ProfileTableViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C979682925D9DC001F78BE /* ProfileTableViewCellType.swift */; };
@@ -109,6 +110,7 @@
 		B849DC4F29279A4C00841F97 /* Encodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+.swift"; sourceTree = "<group>"; };
 		B849DC532927A68D00841F97 /* MyPageResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageResponseDto.swift; sourceTree = "<group>"; };
 		B849DC552927A77B00841F97 /* TimeExerciseResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeExerciseResponseDto.swift; sourceTree = "<group>"; };
+		B849DC572927ABD900841F97 /* LikeRequestDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeRequestDto.swift; sourceTree = "<group>"; };
 		D644348F2924C5F500B2658B /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		D6C979682925D9DC001F78BE /* ProfileTableViewCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCellType.swift; sourceTree = "<group>"; };
 		D6F805392925199B003ED937 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
@@ -440,6 +442,7 @@
 			isa = PBXGroup;
 			children = (
 				B849DC552927A77B00841F97 /* TimeExerciseResponseDto.swift */,
+				B849DC572927ABD900841F97 /* LikeRequestDto.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				AB0FCDE729250352009314FF /* LevelExerciseViewController.swift in Sources */,
 				AB0FCDE529250304009314FF /* MyExerciseViewController.swift in Sources */,
 				D64434902924C5F500B2658B /* MyProfileView.swift in Sources */,
+				B849DC582927ABD900841F97 /* LikeRequestDto.swift in Sources */,
 				D6F8053C292519F2003ED937 /* ExerciseModel.swift in Sources */,
 				D6F8054429251FE6003ED937 /* ExerciseCell.swift in Sources */,
 				87DFF0232921593F008D0FEF /* MyProfileViewController.swift in Sources */,
