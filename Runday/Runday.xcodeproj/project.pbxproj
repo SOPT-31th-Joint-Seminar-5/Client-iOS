@@ -54,6 +54,7 @@
 		B849DC562927A77B00841F97 /* TimeExerciseResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC552927A77B00841F97 /* TimeExerciseResponseDto.swift */; };
 		B849DC582927ABD900841F97 /* LikeRequestDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC572927ABD900841F97 /* LikeRequestDto.swift */; };
 		B849DC5A2927AC8900841F97 /* LikeResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC592927AC8900841F97 /* LikeResponseDto.swift */; };
+		B849DC5E2927B00B00841F97 /* MyProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC5D2927B00B00841F97 /* MyProfileService.swift */; };
 		D61A53C42926B1FE00F2386A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D61A53C32926B1FE00F2386A /* Lottie */; };
 		D64434902924C5F500B2658B /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D644348F2924C5F500B2658B /* MyProfileView.swift */; };
 		D6C979692925D9DC001F78BE /* ProfileTableViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C979682925D9DC001F78BE /* ProfileTableViewCellType.swift */; };
@@ -113,6 +114,7 @@
 		B849DC552927A77B00841F97 /* TimeExerciseResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeExerciseResponseDto.swift; sourceTree = "<group>"; };
 		B849DC572927ABD900841F97 /* LikeRequestDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeRequestDto.swift; sourceTree = "<group>"; };
 		B849DC592927AC8900841F97 /* LikeResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeResponseDto.swift; sourceTree = "<group>"; };
+		B849DC5D2927B00B00841F97 /* MyProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileService.swift; sourceTree = "<group>"; };
 		D644348F2924C5F500B2658B /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		D6C979682925D9DC001F78BE /* ProfileTableViewCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCellType.swift; sourceTree = "<group>"; };
 		D6F805392925199B003ED937 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
@@ -463,6 +465,7 @@
 		B849DC5B2927AF0100841F97 /* MyProfile */ = {
 			isa = PBXGroup;
 			children = (
+				B849DC5D2927B00B00841F97 /* MyProfileService.swift */,
 			);
 			path = MyProfile;
 			sourceTree = "<group>";
@@ -629,6 +632,7 @@
 				ABEC7594292622DE0054B4B7 /* Exercise.swift in Sources */,
 				AB0FCDE92925036B009314FF /* TimeExerciseViewController.swift in Sources */,
 				87DFF03029216B6C008D0FEF /* URLConstant.swift in Sources */,
+				B849DC5E2927B00B00841F97 /* MyProfileService.swift in Sources */,
 				87DFF02529215952008D0FEF /* RunningViewController.swift in Sources */,
 				87DFF00B29215346008D0FEF /* UIStackView+.swift in Sources */,
 				87DFF0112921538E008D0FEF /* UICollectionViewCell+.swift in Sources */,
