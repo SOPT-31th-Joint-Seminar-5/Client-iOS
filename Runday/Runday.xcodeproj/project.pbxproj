@@ -50,6 +50,7 @@
 		B849DC482927849A00841F97 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = B849DC472927849A00841F97 /* Moya */; };
 		B849DC4E29279A0C00841F97 /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC4D29279A0C00841F97 /* NetworkLoggerPlugin.swift */; };
 		B849DC5029279A4C00841F97 /* Encodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC4F29279A4C00841F97 /* Encodable+.swift */; };
+		B849DC542927A68D00841F97 /* MyPageResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC532927A68D00841F97 /* MyPageResponseDto.swift */; };
 		D61A53C42926B1FE00F2386A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D61A53C32926B1FE00F2386A /* Lottie */; };
 		D64434902924C5F500B2658B /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D644348F2924C5F500B2658B /* MyProfileView.swift */; };
 		D6C979692925D9DC001F78BE /* ProfileTableViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C979682925D9DC001F78BE /* ProfileTableViewCellType.swift */; };
@@ -105,6 +106,7 @@
 		ABEC7593292622DE0054B4B7 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		B849DC4D29279A0C00841F97 /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
 		B849DC4F29279A4C00841F97 /* Encodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+.swift"; sourceTree = "<group>"; };
+		B849DC532927A68D00841F97 /* MyPageResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageResponseDto.swift; sourceTree = "<group>"; };
 		D644348F2924C5F500B2658B /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		D6C979682925D9DC001F78BE /* ProfileTableViewCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCellType.swift; sourceTree = "<group>"; };
 		D6F805392925199B003ED937 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
@@ -426,8 +428,25 @@
 		B849DC4C2927900900841F97 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				B849DC5129279BD600841F97 /* Home */,
+				B849DC5229279BDF00841F97 /* MyProfile */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		B849DC5129279BD600841F97 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B849DC5229279BDF00841F97 /* MyProfile */ = {
+			isa = PBXGroup;
+			children = (
+				B849DC532927A68D00841F97 /* MyPageResponseDto.swift */,
+			);
+			path = MyProfile;
 			sourceTree = "<group>";
 		};
 		D644348D2924C5CC00B2658B /* View */ = {
@@ -591,6 +610,7 @@
 				87DFEFE7291F69B3008D0FEF /* SceneDelegate.swift in Sources */,
 				87E221D929243440003EE72A /* RunGaugeView.swift in Sources */,
 				87DFF01F29215900008D0FEF /* HomeViewController.swift in Sources */,
+				B849DC542927A68D00841F97 /* MyPageResponseDto.swift in Sources */,
 				87DFF00929215339008D0FEF /* UIView+.swift in Sources */,
 				871B12792924114C000C6D6D /* Adjusted+.swift in Sources */,
 				B849DC4E29279A0C00841F97 /* NetworkLoggerPlugin.swift in Sources */,
