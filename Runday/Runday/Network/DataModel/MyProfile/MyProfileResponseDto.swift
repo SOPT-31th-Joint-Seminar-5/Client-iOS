@@ -7,8 +7,8 @@
 
 import Foundation
 
-// MARK: - MyPageResponseDto
-struct MyPageResponseDto: Codable {
+// MARK: - MyProfileResponseDto
+struct MyProfileResponseDto: Codable {
     let status: Int
     let message: String
     let data: [Datum]
