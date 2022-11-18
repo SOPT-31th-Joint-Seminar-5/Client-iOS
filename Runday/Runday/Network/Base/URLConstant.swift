@@ -9,4 +9,5 @@ import Foundation
 
 struct URLConstant{
     // 이 파일 삭제하구 원하는 대로 API 템플릿 만들어도 됨!!
+    static let baseURL = (Bundle.main.infoDictionary?["BASE_URL"] as! String).replacingOccurrences(of: " ", with: "")
 }

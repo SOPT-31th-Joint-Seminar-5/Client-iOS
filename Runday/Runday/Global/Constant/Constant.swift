@@ -9,5 +9,4 @@ import Foundation
 
 struct Constant{
     //콘스탄트!
-    static let baseURL = (Bundle.main.infoDictionary?["BASE_URL"] as! String).replacingOccurrences(of: " ", with: "")
 }
