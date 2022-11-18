@@ -8,27 +8,32 @@
 import Moya
 
 enum MyProfileService {
-    case myProfile
+    case myProfile(param: MyProfileResponseDto)
 }
 
 extension MyProfileService: BaseTargetType {
     var path: String {
         switch self {
-        case .myProfile:
-            return URLConstant.
+        case .myProfile(param: _):
+            return URLConstant.myPage
         }
     }
     
     var method: Moya.Method {
-        <#code#>
+        switch self {
+        default: return .put
+        }
     }
     
     var task: Moya.Task {
-        <#code#>
+        switch self {
+        case .myProfile(param: let param):
+            return .requestParameters(parameters: try! param.asParameter(), encoding: JSONEncoding.default)
+        }
     }
     
     var headers: [String : String]? {
-        <#code#>
+        return ["Content-Type": "application/json"]
     }
     
     
