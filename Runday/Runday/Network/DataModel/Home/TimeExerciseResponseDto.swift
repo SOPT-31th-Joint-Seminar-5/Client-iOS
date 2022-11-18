@@ -11,11 +11,11 @@ import Foundation
 struct TimeExerciseResponseDto: Codable {
     let status: Int
     let message: String
-    let data: DataClass
+    let data: TimeExerciseDataClass
 }
 
 // MARK: - DataClass
-struct DataClass: Codable {
+struct TimeExerciseDataClass: Codable {
     let user: [User]
 }
 
