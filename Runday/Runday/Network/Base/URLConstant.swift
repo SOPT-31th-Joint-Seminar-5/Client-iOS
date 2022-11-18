@@ -8,6 +8,17 @@
 import Foundation
 
 struct URLConstant{
-    // 이 파일 삭제하구 원하는 대로 API 템플릿 만들어도 됨!!
+    // MARK: - baseURL
+    
     static let baseURL = (Bundle.main.infoDictionary?["BASE_URL"] as! String).replacingOccurrences(of: " ", with: "")
+    
+    // MARK: - Home
+    
+    static let run = "/run/:userId"
+    static let like = "/run/like/:isLikedId"
+    static let dislike = "run/like/delete/:isLikedId"
+    
+    // MARK: - MyProfile
+    
+    static let myPage = "/myPage/:userId"
 }
