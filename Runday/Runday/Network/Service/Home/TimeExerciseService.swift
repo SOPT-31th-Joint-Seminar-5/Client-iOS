@@ -1,21 +1,21 @@
 //
-//  MyProfileService.swift
+//  TimeExerciseService.swift
 //  Runday
 //
-//  Created by 박의서 on 2022/11/18.
+//  Created by 박의서 on 2022/11/19.
 //
 
 import Moya
 
-enum MyProfileService {
-    case myProfile(param: MyProfileResponseDto)
+enum TimeExerciseService {
+    case timeExercise(param: TimeExerciseResponseDto)
 }
 
-extension MyProfileService: BaseTargetType {
+extension TimeExerciseService: BaseTargetType {
     var path: String {
         switch self {
-        case .myProfile(param: _):
-            return URLConstant.myPage
+        case .timeExercise(param: _):
+            return URLConstant.run
         }
     }
     
@@ -27,7 +27,7 @@ extension MyProfileService: BaseTargetType {
     
     var task: Moya.Task {
         switch self {
-        case .myProfile(param: let param):
+        case .timeExercise(param: let param):
             return .requestParameters(parameters: try! param.asParameter(), encoding: JSONEncoding.default)
         }
     }

@@ -56,6 +56,7 @@
 		B849DC5A2927AC8900841F97 /* LikeResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC592927AC8900841F97 /* LikeResponseDto.swift */; };
 		B849DC5E2927B00B00841F97 /* MyProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC5D2927B00B00841F97 /* MyProfileService.swift */; };
 		B849DC602927B44100841F97 /* BaseTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC5F2927B44100841F97 /* BaseTargetType.swift */; };
+		B849DC652928A53100841F97 /* TimeExerciseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC642928A53100841F97 /* TimeExerciseService.swift */; };
 		D61A53C42926B1FE00F2386A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D61A53C32926B1FE00F2386A /* Lottie */; };
 		D64434902924C5F500B2658B /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D644348F2924C5F500B2658B /* MyProfileView.swift */; };
 		D6C979692925D9DC001F78BE /* ProfileTableViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C979682925D9DC001F78BE /* ProfileTableViewCellType.swift */; };
@@ -117,6 +118,7 @@
 		B849DC592927AC8900841F97 /* LikeResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeResponseDto.swift; sourceTree = "<group>"; };
 		B849DC5D2927B00B00841F97 /* MyProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileService.swift; sourceTree = "<group>"; };
 		B849DC5F2927B44100841F97 /* BaseTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTargetType.swift; sourceTree = "<group>"; };
+		B849DC642928A53100841F97 /* TimeExerciseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeExerciseService.swift; sourceTree = "<group>"; };
 		D644348F2924C5F500B2658B /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		D6C979682925D9DC001F78BE /* ProfileTableViewCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCellType.swift; sourceTree = "<group>"; };
 		D6F805392925199B003ED937 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
@@ -476,6 +478,7 @@
 		B849DC5C2927AF0800841F97 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B849DC642928A53100841F97 /* TimeExerciseService.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -618,6 +621,7 @@
 				AB0FCDEB2925038F009314FF /* PersonalExerciseViewController.swift in Sources */,
 				AB0FCDE729250352009314FF /* LevelExerciseViewController.swift in Sources */,
 				AB0FCDE529250304009314FF /* MyExerciseViewController.swift in Sources */,
+				B849DC652928A53100841F97 /* TimeExerciseService.swift in Sources */,
 				D64434902924C5F500B2658B /* MyProfileView.swift in Sources */,
 				B849DC582927ABD900841F97 /* LikeRequestDto.swift in Sources */,
 				D6F8053C292519F2003ED937 /* ExerciseModel.swift in Sources */,
