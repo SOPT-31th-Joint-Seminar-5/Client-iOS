@@ -20,3 +20,6 @@ struct UserData: Codable {
     let name, time, distance, pace: String
     let calorie, date: String
 }
+
+// MARK: - Error
+struct 

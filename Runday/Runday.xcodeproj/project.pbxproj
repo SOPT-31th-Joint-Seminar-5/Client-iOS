@@ -58,6 +58,7 @@
 		B849DC602927B44100841F97 /* BaseTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC5F2927B44100841F97 /* BaseTargetType.swift */; };
 		B849DC652928A53100841F97 /* TimeExerciseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC642928A53100841F97 /* TimeExerciseService.swift */; };
 		B849DC672928A69600841F97 /* LikeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC662928A69600841F97 /* LikeService.swift */; };
+		B87E4D56292BC55C004208D1 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87E4D55292BC55C004208D1 /* NetworkError.swift */; };
 		D61A53C42926B1FE00F2386A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D61A53C32926B1FE00F2386A /* Lottie */; };
 		D64434902924C5F500B2658B /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D644348F2924C5F500B2658B /* MyProfileView.swift */; };
 		D6C979692925D9DC001F78BE /* ProfileTableViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C979682925D9DC001F78BE /* ProfileTableViewCellType.swift */; };
@@ -121,6 +122,7 @@
 		B849DC5F2927B44100841F97 /* BaseTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTargetType.swift; sourceTree = "<group>"; };
 		B849DC642928A53100841F97 /* TimeExerciseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeExerciseService.swift; sourceTree = "<group>"; };
 		B849DC662928A69600841F97 /* LikeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeService.swift; sourceTree = "<group>"; };
+		B87E4D55292BC55C004208D1 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		D644348F2924C5F500B2658B /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		D6C979682925D9DC001F78BE /* ProfileTableViewCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCellType.swift; sourceTree = "<group>"; };
 		D6F805392925199B003ED937 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
@@ -437,6 +439,7 @@
 		B849DC4C2927900900841F97 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				B87E4D55292BC55C004208D1 /* NetworkError.swift */,
 				B849DC5129279BD600841F97 /* Home */,
 				B849DC5229279BDF00841F97 /* MyProfile */,
 			);
@@ -623,6 +626,7 @@
 				B849DC672928A69600841F97 /* LikeService.swift in Sources */,
 				B849DC5A2927AC8900841F97 /* LikeResponseDto.swift in Sources */,
 				D6F8054429251FE6003ED937 /* ExerciseCell.swift in Sources */,
+				B87E4D56292BC55C004208D1 /* NetworkError.swift in Sources */,
 				87DFF0232921593F008D0FEF /* MyProfileViewController.swift in Sources */,
 				876D2A7729218DE300EA19F2 /* UIFont+.swift in Sources */,
 				87DFEFE9291F69B3008D0FEF /* BaseTabBarController.swift in Sources */,
