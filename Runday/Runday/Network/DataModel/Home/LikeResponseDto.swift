@@ -11,11 +11,11 @@ import Foundation
 struct LikeResponseDto: Codable {
     let status: Int
     let message: String
-    let data: LikeResponseDataClass
+    let data: LikeResponseUserDto
 }
 
-// MARK: - DataClass
-struct LikeResponseDataClass: Codable {
+// MARK: - LikeResponseUserDto
+struct LikeResponseUserDto: Codable {
     let id, userID, runID: Int
     let isLiked: Bool
 
