@@ -16,6 +16,7 @@
 		8760494A292C015800153459 /* LikeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87604949292C015800153459 /* LikeAPI.swift */; };
 		8760494C292C016000153459 /* MyProfileAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8760494B292C016000153459 /* MyProfileAPI.swift */; };
 		87604950292C0AFA00153459 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8760494F292C0AFA00153459 /* NetworkResult.swift */; };
+		87604954292C124600153459 /* CrewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87604953292C124600153459 /* CrewViewController.swift */; };
 		876D2A7729218DE300EA19F2 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D2A7629218DE300EA19F2 /* UIFont+.swift */; };
 		876D2A7829218FE900EA19F2 /* RopaMixPro-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 87DFF03A29217123008D0FEF /* RopaMixPro-ExtraBoldItalic.otf */; };
 		876D2A7929218FEC00EA19F2 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 87DFF03929216FA1008D0FEF /* NotoSansKR-Bold.otf */; };
@@ -84,6 +85,7 @@
 		87604949292C015800153459 /* LikeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeAPI.swift; sourceTree = "<group>"; };
 		8760494B292C016000153459 /* MyProfileAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileAPI.swift; sourceTree = "<group>"; };
 		8760494F292C0AFA00153459 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		87604953292C124600153459 /* CrewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewViewController.swift; sourceTree = "<group>"; };
 		876D2A7629218DE300EA19F2 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		87DFEFE1291F69B3008D0FEF /* Runday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87DFEFE4291F69B3008D0FEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -185,6 +187,14 @@
 			path = MyProfile;
 			sourceTree = "<group>";
 		};
+		87604952292C123B00153459 /* Crew */ = {
+			isa = PBXGroup;
+			children = (
+				87604953292C124600153459 /* CrewViewController.swift */,
+			);
+			path = Crew;
+			sourceTree = "<group>";
+		};
 		87DFEFD8291F69B3008D0FEF = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +250,7 @@
 				87DFF006291F92C3008D0FEF /* Menu */,
 				87DFF005291F88C9008D0FEF /* MyProfile */,
 				87DFF007291F92D8008D0FEF /* Running */,
+				87604952292C123B00153459 /* Crew */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -689,6 +700,7 @@
 				87DFEFE5291F69B3008D0FEF /* AppDelegate.swift in Sources */,
 				87DFEFE7291F69B3008D0FEF /* SceneDelegate.swift in Sources */,
 				87E221D929243440003EE72A /* RunGaugeView.swift in Sources */,
+				87604954292C124600153459 /* CrewViewController.swift in Sources */,
 				87DFF01F29215900008D0FEF /* HomeViewController.swift in Sources */,
 				B849DC542927A68D00841F97 /* MyProfileResponseDTO.swift in Sources */,
 				87604938292BEFA200153459 /* NetworkConstant.swift in Sources */,
