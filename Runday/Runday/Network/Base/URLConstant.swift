@@ -14,11 +14,11 @@ struct URLConstant{
     
     // MARK: - Home
     
-    static let run = "/run/:userId"
-    static let like = "/run/like/:isLikedId"
-    static let dislike = "/run/like/delete/:isLikedId"
+    static let run = "/run/"
+    static let like = "/run/like/"
+    static let dislike = "/run/like/delete/"
     
     // MARK: - MyProfile
     
-    static let myPage = "/myPage/:userId"
+    static let myPage = "/myPage/"
 }
