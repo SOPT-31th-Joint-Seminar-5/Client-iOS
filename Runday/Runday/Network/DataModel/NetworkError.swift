@@ -8,8 +8,8 @@
 import Foundation
 
 // MARK: - NetworkError
-struct NetworkError: Codable {
-    let status: Int
-    let success: Bool
-    let message: String
+enum APIError: Error {
+    case urlEncodingError
+    case clientError(message: String?)  // 4XX
+    case serverError                    // 5XX
 }
