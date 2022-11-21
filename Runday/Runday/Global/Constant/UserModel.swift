@@ -8,8 +8,8 @@
 import Foundation
 
 struct UserModel{
-    let userID = "1"
-    let userIDInt = 1
+    static let userID = "1"
+    static let userIDInt = 1
     private init() {}
 }
 
