@@ -16,11 +16,11 @@ struct TimeExerciseResponseDto: Codable {
 
 // MARK: - TimeExerciseUserDto
 struct TimeExerciseUserDto: Codable {
-    let user: [User]
+    let user: [UserDto]
 }
 
 // MARK: - User
-struct User: Codable {
+struct UserDto: Codable {
     let id: Int
     let title, routine, stage: String
     let isLiked: Bool

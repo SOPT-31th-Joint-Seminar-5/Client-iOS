@@ -38,6 +38,6 @@ extension LikeService : BaseTargetType {
     }
     
     var headers: [String : String]? {
-        return ["Content-Type": "application/json"]
+        return NetworkConstant.defaultHeader
     }
 }
