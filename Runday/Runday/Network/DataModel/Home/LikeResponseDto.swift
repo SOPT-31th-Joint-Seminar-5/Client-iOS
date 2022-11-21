@@ -8,21 +8,20 @@
 import Foundation
 
 // MARK: - LikeResponseDto
-struct LikeResponseDto: Codable {
+struct LikeResponseDTO: Codable {
     let status: Int
     let message: String
-    let data: LikeResponseUserDto
+    let data: LikeResponseData
 }
 
-// MARK: - LikeResponseUserDto
-struct LikeResponseUserDto: Codable {
+// MARK: - LikeResponseData
+struct LikeResponseData: Codable {
     let id, userID, runID: Int
     let isLiked: Bool
 
     enum CodingKeys: String, CodingKey {
-        case id
+        case id, isLiked
         case userID = "userId"
         case runID = "runId"
-        case isLiked
     }
 }

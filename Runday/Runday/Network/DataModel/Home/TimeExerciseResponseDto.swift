@@ -8,19 +8,19 @@
 import Foundation
 
 // MARK: - TimeExerciseResponseDto
-struct TimeExerciseResponseDto: Codable {
+struct TimeExerciseResponseDTO: Codable {
     let status: Int
     let message: String
-    let data: TimeExerciseUserDto
+    let data: TimeExerciseResponseData
 }
 
-// MARK: - TimeExerciseUserDto
-struct TimeExerciseUserDto: Codable {
-    let user: [User]
+// MARK: - TimeExerciseResponseData
+struct TimeExerciseResponseData: Codable {
+    let user: [UserData]
 }
 
 // MARK: - User
-struct User: Codable {
+struct UserData: Codable {
     let id: Int
     let title, routine, stage: String
     let isLiked: Bool

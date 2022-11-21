@@ -7,6 +7,9 @@
 
 import Foundation
 
-struct Constant{
-    //콘스탄트!
+struct UserModel{
+    static let userID = "1"
+    static let userIDInt = 1
+    private init() {}
 }
+

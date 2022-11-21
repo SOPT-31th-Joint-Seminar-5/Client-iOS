@@ -8,17 +8,17 @@
 import Moya
 
 enum LikeService {
-    case like(param: LikeRequestDto)
-    case dislike(param: LikeResponseDto)
+    case like(body: CommonRequestDTO)
+    case dislike(body: CommonRequestDTO)
 }
 
 extension LikeService : BaseTargetType {
     var path: String {
         switch self {
-        case .like(param: _):
-            return URLConstant.like
-        case .dislike(param: _):
-            return URLConstant.dislike
+        case .like:
+            return URLConstant.like + UserModel.userID
+        case .dislike:
+            return URLConstant.dislike + UserModel.userID
         }
     }
     
@@ -30,14 +30,14 @@ extension LikeService : BaseTargetType {
     
     var task: Moya.Task {
         switch self {
-        case .like(param: let param):
-            return .requestParameters(parameters: try! param.asParameter(), encoding: JSONEncoding.default)
-        case .dislike(param: let param):
-            return .requestParameters(parameters: try! param.asParameter(), encoding: JSONEncoding.default)
+        case .like(body: let body):
+            return .requestParameters(parameters: try! body.asParameter(), encoding: JSONEncoding.default)
+        case .dislike(body: let body):
+            return .requestParameters(parameters: try! body.asParameter(), encoding: JSONEncoding.default)
         }
     }
     
     var headers: [String : String]? {
-        return ["Content-Type": "application/json"]
+        return NetworkConstant.defaultHeader
     }
 }

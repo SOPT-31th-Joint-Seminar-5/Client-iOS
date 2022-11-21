@@ -8,14 +8,14 @@
 import Moya
 
 enum MyProfileService {
-    case myProfile(param: MyProfileResponseDto)
+    case myProfile
 }
 
 extension MyProfileService: BaseTargetType {
     var path: String {
         switch self {
-        case .myProfile(param: _):
-            return URLConstant.myPage
+        case .myProfile:
+            return URLConstant.myPage + UserModel.userID
         }
     }
     
@@ -25,15 +25,12 @@ extension MyProfileService: BaseTargetType {
         }
     }
     
-    var task: Moya.Task {
-        switch self {
-        case .myProfile(param: let param):
-            return .requestParameters(parameters: try! param.asParameter(), encoding: JSONEncoding.default)
-        }
+    var task: Task{
+        return .requestPlain
     }
     
     var headers: [String : String]? {
-        return ["Content-Type": "application/json"]
+        return NetworkConstant.defaultHeader
     }
     
     
