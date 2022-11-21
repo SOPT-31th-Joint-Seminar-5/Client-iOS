@@ -8,15 +8,14 @@
 import Moya
 
 enum TimeExerciseService {
-    case timeExercise(param: TimeExerciseResponseDto)
+    case timeExercise(userID: String)
 }
 
 extension TimeExerciseService: BaseTargetType {
     var path: String {
         switch self {
-        case .timeExercise(param: _):
-            return URLConstant.run
-        }
+        case .timeExercise(userID: User.userID)
+        
     }
     
     var method: Moya.Method {

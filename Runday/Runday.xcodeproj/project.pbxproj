@@ -36,7 +36,7 @@
 		87DFF02529215952008D0FEF /* RunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFF02429215952008D0FEF /* RunningViewController.swift */; };
 		87DFF03029216B6C008D0FEF /* URLConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFF02F29216B6C008D0FEF /* URLConstant.swift */; };
 		87DFF04129217B67008D0FEF /* voice.json in Resources */ = {isa = PBXBuildFile; fileRef = 87DFF04029217B67008D0FEF /* voice.json */; };
-		87DFF04429217E17008D0FEF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFF04329217E17008D0FEF /* User.swift */; };
+		87DFF04429217E17008D0FEF /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFF04329217E17008D0FEF /* UserModel.swift */; };
 		87E221D5292424C7003EE72A /* RunStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221D4292424C7003EE72A /* RunStepView.swift */; };
 		87E221D729242589003EE72A /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221D629242589003EE72A /* Speed.swift */; };
 		87E221D929243440003EE72A /* RunGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E221D829243440003EE72A /* RunGaugeView.swift */; };
@@ -101,7 +101,7 @@
 		87DFF03929216FA1008D0FEF /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		87DFF03A29217123008D0FEF /* RopaMixPro-ExtraBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RopaMixPro-ExtraBoldItalic.otf"; sourceTree = "<group>"; };
 		87DFF04029217B67008D0FEF /* voice.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = voice.json; sourceTree = "<group>"; };
-		87DFF04329217E17008D0FEF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		87DFF04329217E17008D0FEF /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		87E221D4292424C7003EE72A /* RunStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunStepView.swift; sourceTree = "<group>"; };
 		87E221D629242589003EE72A /* Speed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
 		87E221D829243440003EE72A /* RunGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunGaugeView.swift; sourceTree = "<group>"; };
@@ -358,7 +358,7 @@
 		87DFF04229217E0E008D0FEF /* Constant */ = {
 			isa = PBXGroup;
 			children = (
-				87DFF04329217E17008D0FEF /* User.swift */,
+				87DFF04329217E17008D0FEF /* UserModel.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -643,7 +643,7 @@
 				87DFEFE9291F69B3008D0FEF /* BaseTabBarController.swift in Sources */,
 				87E221D729242589003EE72A /* Speed.swift in Sources */,
 				87DFF015292157CD008D0FEF /* BaseNavigationView.swift in Sources */,
-				87DFF04429217E17008D0FEF /* User.swift in Sources */,
+				87DFF04429217E17008D0FEF /* UserModel.swift in Sources */,
 				87DFF00F29215379008D0FEF /* UITableViewCell+.swift in Sources */,
 				87DFF02129215924008D0FEF /* MenuViewController.swift in Sources */,
 				87DFF00D2921535F008D0FEF /* UIColor+.swift in Sources */,
