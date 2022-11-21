@@ -16,7 +16,7 @@ struct URLConstant{
     
     static let run = "/run/:userId"
     static let like = "/run/like/:isLikedId"
-    static let dislike = "run/like/delete/:isLikedId"
+    static let dislike = "/run/like/delete/:isLikedId"
     
     // MARK: - MyProfile
     

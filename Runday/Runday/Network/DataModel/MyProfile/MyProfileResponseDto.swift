@@ -11,11 +11,11 @@ import Foundation
 struct MyProfileResponseDto: Codable {
     let status: Int
     let message: String
-    let data: [Datum]
+    let data: [UserData]
 }
 
 // MARK: - Datum
-struct Datum: Codable {
+struct UserData: Codable {
     let id: Int
     let name, time, distance, pace: String
     let calorie, date: String

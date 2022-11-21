@@ -186,7 +186,6 @@
 		87DFEFF9291F69D9008D0FEF /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				B849DC4929278FF100841F97 /* API */,
 				B849DC4A29278FFB00841F97 /* Base */,
 				B849DC4C2927900900841F97 /* DataModel */,
 				B849DC4B2927900300841F97 /* Service */,
@@ -413,13 +412,6 @@
 				ABEC7591292617990054B4B7 /* ExerciseCollectionViewCell.swift */,
 			);
 			path = Reusable;
-			sourceTree = "<group>";
-		};
-		B849DC4929278FF100841F97 /* API */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = API;
 			sourceTree = "<group>";
 		};
 		B849DC4A29278FFB00841F97 /* Base */ = {
