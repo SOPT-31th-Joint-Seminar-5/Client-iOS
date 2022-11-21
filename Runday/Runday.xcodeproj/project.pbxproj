@@ -11,6 +11,7 @@
 		87604938292BEFA200153459 /* NetworkConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87604937292BEFA200153459 /* NetworkConstant.swift */; };
 		8760493E292BF04E00153459 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 8760493D292BF04E00153459 /* Moya */; };
 		87604941292BF27600153459 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 87604940292BF27600153459 /* SnapKit */; };
+		87604943292BFAB800153459 /* CommonRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87604942292BFAB800153459 /* CommonRequestDTO.swift */; };
 		876D2A7729218DE300EA19F2 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D2A7629218DE300EA19F2 /* UIFont+.swift */; };
 		876D2A7829218FE900EA19F2 /* RopaMixPro-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 87DFF03A29217123008D0FEF /* RopaMixPro-ExtraBoldItalic.otf */; };
 		876D2A7929218FEC00EA19F2 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 87DFF03929216FA1008D0FEF /* NotoSansKR-Bold.otf */; };
@@ -51,10 +52,9 @@
 		ABEC7594292622DE0054B4B7 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC7593292622DE0054B4B7 /* Exercise.swift */; };
 		B849DC4E29279A0C00841F97 /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC4D29279A0C00841F97 /* NetworkLoggerPlugin.swift */; };
 		B849DC5029279A4C00841F97 /* Encodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC4F29279A4C00841F97 /* Encodable+.swift */; };
-		B849DC542927A68D00841F97 /* MyProfileResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC532927A68D00841F97 /* MyProfileResponseDto.swift */; };
-		B849DC562927A77B00841F97 /* TimeExerciseResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC552927A77B00841F97 /* TimeExerciseResponseDto.swift */; };
-		B849DC582927ABD900841F97 /* LikeRequestDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC572927ABD900841F97 /* LikeRequestDto.swift */; };
-		B849DC5A2927AC8900841F97 /* LikeResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC592927AC8900841F97 /* LikeResponseDto.swift */; };
+		B849DC542927A68D00841F97 /* MyProfileResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC532927A68D00841F97 /* MyProfileResponseDTO.swift */; };
+		B849DC562927A77B00841F97 /* TimeExerciseResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC552927A77B00841F97 /* TimeExerciseResponseDTO.swift */; };
+		B849DC5A2927AC8900841F97 /* LikeResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC592927AC8900841F97 /* LikeResponseDTO.swift */; };
 		B849DC5E2927B00B00841F97 /* MyProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC5D2927B00B00841F97 /* MyProfileService.swift */; };
 		B849DC602927B44100841F97 /* BaseTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC5F2927B44100841F97 /* BaseTargetType.swift */; };
 		B849DC652928A53100841F97 /* TimeExerciseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC642928A53100841F97 /* TimeExerciseService.swift */; };
@@ -75,6 +75,7 @@
 /* Begin PBXFileReference section */
 		871B12782924114C000C6D6D /* Adjusted+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Adjusted+.swift"; sourceTree = "<group>"; };
 		87604937292BEFA200153459 /* NetworkConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstant.swift; sourceTree = "<group>"; };
+		87604942292BFAB800153459 /* CommonRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonRequestDTO.swift; sourceTree = "<group>"; };
 		876D2A7629218DE300EA19F2 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		87DFEFE1291F69B3008D0FEF /* Runday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87DFEFE4291F69B3008D0FEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,10 +117,9 @@
 		ABEC7593292622DE0054B4B7 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		B849DC4D29279A0C00841F97 /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
 		B849DC4F29279A4C00841F97 /* Encodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+.swift"; sourceTree = "<group>"; };
-		B849DC532927A68D00841F97 /* MyProfileResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileResponseDto.swift; sourceTree = "<group>"; };
-		B849DC552927A77B00841F97 /* TimeExerciseResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeExerciseResponseDto.swift; sourceTree = "<group>"; };
-		B849DC572927ABD900841F97 /* LikeRequestDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeRequestDto.swift; sourceTree = "<group>"; };
-		B849DC592927AC8900841F97 /* LikeResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeResponseDto.swift; sourceTree = "<group>"; };
+		B849DC532927A68D00841F97 /* MyProfileResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileResponseDTO.swift; sourceTree = "<group>"; };
+		B849DC552927A77B00841F97 /* TimeExerciseResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeExerciseResponseDTO.swift; sourceTree = "<group>"; };
+		B849DC592927AC8900841F97 /* LikeResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeResponseDTO.swift; sourceTree = "<group>"; };
 		B849DC5D2927B00B00841F97 /* MyProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileService.swift; sourceTree = "<group>"; };
 		B849DC5F2927B44100841F97 /* BaseTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTargetType.swift; sourceTree = "<group>"; };
 		B849DC642928A53100841F97 /* TimeExerciseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeExerciseService.swift; sourceTree = "<group>"; };
@@ -451,6 +451,7 @@
 			isa = PBXGroup;
 			children = (
 				B87E4D55292BC55C004208D1 /* NetworkError.swift */,
+				87604942292BFAB800153459 /* CommonRequestDTO.swift */,
 				B849DC5129279BD600841F97 /* Home */,
 				B849DC5229279BDF00841F97 /* MyProfile */,
 			);
@@ -460,9 +461,8 @@
 		B849DC5129279BD600841F97 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				B849DC552927A77B00841F97 /* TimeExerciseResponseDto.swift */,
-				B849DC572927ABD900841F97 /* LikeRequestDto.swift */,
-				B849DC592927AC8900841F97 /* LikeResponseDto.swift */,
+				B849DC552927A77B00841F97 /* TimeExerciseResponseDTO.swift */,
+				B849DC592927AC8900841F97 /* LikeResponseDTO.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -470,7 +470,7 @@
 		B849DC5229279BDF00841F97 /* MyProfile */ = {
 			isa = PBXGroup;
 			children = (
-				B849DC532927A68D00841F97 /* MyProfileResponseDto.swift */,
+				B849DC532927A68D00841F97 /* MyProfileResponseDTO.swift */,
 			);
 			path = MyProfile;
 			sourceTree = "<group>";
@@ -628,14 +628,14 @@
 				ABEC7592292617990054B4B7 /* ExerciseCollectionViewCell.swift in Sources */,
 				AB1CAE0F2924D458000AB433 /* TabCollectionViewCell.swift in Sources */,
 				AB0FCDEB2925038F009314FF /* PersonalExerciseViewController.swift in Sources */,
+				87604943292BFAB800153459 /* CommonRequestDTO.swift in Sources */,
 				AB0FCDE729250352009314FF /* LevelExerciseViewController.swift in Sources */,
 				AB0FCDE529250304009314FF /* MyExerciseViewController.swift in Sources */,
 				B849DC652928A53100841F97 /* TimeExerciseService.swift in Sources */,
 				D64434902924C5F500B2658B /* MyProfileView.swift in Sources */,
-				B849DC582927ABD900841F97 /* LikeRequestDto.swift in Sources */,
 				D6F8053C292519F2003ED937 /* ExerciseModel.swift in Sources */,
 				B849DC672928A69600841F97 /* LikeService.swift in Sources */,
-				B849DC5A2927AC8900841F97 /* LikeResponseDto.swift in Sources */,
+				B849DC5A2927AC8900841F97 /* LikeResponseDTO.swift in Sources */,
 				D6F8054429251FE6003ED937 /* ExerciseCell.swift in Sources */,
 				B87E4D56292BC55C004208D1 /* NetworkError.swift in Sources */,
 				87DFF0232921593F008D0FEF /* MyProfileViewController.swift in Sources */,
@@ -660,10 +660,10 @@
 				87DFEFE7291F69B3008D0FEF /* SceneDelegate.swift in Sources */,
 				87E221D929243440003EE72A /* RunGaugeView.swift in Sources */,
 				87DFF01F29215900008D0FEF /* HomeViewController.swift in Sources */,
-				B849DC542927A68D00841F97 /* MyProfileResponseDto.swift in Sources */,
+				B849DC542927A68D00841F97 /* MyProfileResponseDTO.swift in Sources */,
 				87604938292BEFA200153459 /* NetworkConstant.swift in Sources */,
 				87DFF00929215339008D0FEF /* UIView+.swift in Sources */,
-				B849DC562927A77B00841F97 /* TimeExerciseResponseDto.swift in Sources */,
+				B849DC562927A77B00841F97 /* TimeExerciseResponseDTO.swift in Sources */,
 				871B12792924114C000C6D6D /* Adjusted+.swift in Sources */,
 				B849DC4E29279A0C00841F97 /* NetworkLoggerPlugin.swift in Sources */,
 				87E221D5292424C7003EE72A /* RunStepView.swift in Sources */,

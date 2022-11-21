@@ -8,14 +8,15 @@
 import Moya
 
 enum TimeExerciseService {
-    case timeExercise(userID: String)
+    case timeExercise(body: CommonRequestDTO)
 }
 
 extension TimeExerciseService: BaseTargetType {
     var path: String {
         switch self {
-        case .timeExercise(userID: User.userID)
-        
+        case .timeExercise:
+            return URLConstant.run + UserModel.userID
+        }
     }
     
     var method: Moya.Method {
@@ -26,8 +27,8 @@ extension TimeExerciseService: BaseTargetType {
     
     var task: Moya.Task {
         switch self {
-        case .timeExercise(param: let param):
-            return .requestParameters(parameters: try! param.asParameter(), encoding: JSONEncoding.default)
+        case .timeExercise(body: let body):
+            return .requestParameters(parameters: try! body.asParameter(), encoding: JSONEncoding.default)
         }
     }
     

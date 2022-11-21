@@ -8,14 +8,14 @@
 import Foundation
 
 // MARK: - MyProfileResponseDto
-struct MyProfileResponseDto: Codable {
+struct MyProfileResponseDTO: Codable {
     let status: Int
     let message: String
-    let data: [MyProfileResponseDataClass]
+    let data: [MyProfileResponseData]
 }
 
-// MARK: - DataClass
-struct MyProfileResponseDataClass: Codable {
+// MARK: - MyProfileResponseData
+struct MyProfileResponseData: Codable {
     let id: Int
     let name, time, distance, pace: String
     let calorie, date: String

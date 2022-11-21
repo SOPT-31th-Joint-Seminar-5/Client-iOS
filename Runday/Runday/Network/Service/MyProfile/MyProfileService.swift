@@ -15,7 +15,7 @@ extension MyProfileService: BaseTargetType {
     var path: String {
         switch self {
         case .myProfile:
-            return URLConstant.myPage
+            return URLConstant.myPage + UserModel.userID
         }
     }
     
@@ -26,7 +26,7 @@ extension MyProfileService: BaseTargetType {
     }
     
     var task: Task{
-        return .requestData(sampleData)
+        return .requestPlain
     }
     
     var headers: [String : String]? {
