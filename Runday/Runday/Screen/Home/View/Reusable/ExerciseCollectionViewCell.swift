@@ -24,7 +24,7 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
         $0.backgroundColor = .white
     }
     
-    private let titleLabel = UILabel().then {
+    private var titleLabel = UILabel().then {
         $0.numberOfLines = 0
         $0.font = .rundayBold(ofSize: 20)
         $0.text = "테스트\n임니다"
@@ -127,6 +127,17 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
         titleLabel.text = runModel.title
         routineLabel.text = runModel.routine
         stageLabel.text = runModel.stage
+        
+        guard let highlight = runModel.highlight else {return}
+        titleLabel.attributedText = changeTextColor(text: runModel.title, highlight: highlight)
+    }
+    
+    func levelDataBind(runModel: RunModel) {
+        titleLabel.text = runModel.title
+        routineLabel.text = runModel.routine
+        stageLabel.text = runModel.stage
+        
+        stageLabel.textColor = .rundayBlue
     }
     
     @objc
@@ -138,4 +149,10 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    func changeTextColor(text: String, highlight: String) -> NSAttributedString {
+        let attributtedString = NSMutableAttributedString(string: text)
+        attributtedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.rundayBlue, range: (text as NSString).range(of: highlight))
+
+        return attributtedString
+    }
 }

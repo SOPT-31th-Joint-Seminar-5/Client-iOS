@@ -39,7 +39,7 @@ class TimeExerciseViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        fetchRunList()
+         fetchRunList()
     }
 
     override func viewDidLoad() {
@@ -74,9 +74,12 @@ class TimeExerciseViewController: UIViewController {
     private func fetchRunList() {
         TimeExerciseAPI.shared.getTimeExercise(for: CommonRequestDTO(runId: 1)) { data in
             if let runList = data {
+                var list: [RunModel] = []
+                
                 for run in runList {
-                    self.runList.append(run.convertToRunList())
+                    list.append(run.convertToRunList())
                 }
+                self.runList = list
             }
             self.timeExerciseCollectionView.reloadData()
         }
