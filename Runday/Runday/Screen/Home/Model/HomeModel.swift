@@ -7,4 +7,9 @@
 
 import Foundation
 
-let tabList = ["나의 운동", "레벨 운동", "시간 운동", "맞춤 운동"]
+struct RunModel {
+    let title: String
+    let routine: String
+    let stage: String
+    var isLiked: Bool 
+}
