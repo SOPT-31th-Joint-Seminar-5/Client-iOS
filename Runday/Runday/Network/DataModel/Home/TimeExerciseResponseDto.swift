@@ -29,4 +29,8 @@ struct UserData: Codable {
         case id, title, routine, stage
         case isLiked = "is_liked"
     }
+    
+    func convertToRunList() -> RunModel {
+        return RunModel(title: self.title, routine: self.routine, stage: self.stage, isLiked: self.isLiked)
+    }
 }
