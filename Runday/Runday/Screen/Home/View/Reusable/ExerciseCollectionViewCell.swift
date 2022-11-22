@@ -20,7 +20,7 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
     
     // MARK: - UI Components
     
-    private let cellView = UIView().then {
+    private let cellImageView = UIImageView().then {
         $0.backgroundColor = .white
     }
     
@@ -76,10 +76,10 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
         backgroundColor = .clear
         contentView.backgroundColor = .clear
         
-        contentView.addSubviews(cellView)
-        cellView.addSubviews(titleLabel, routineLabel, stageLabel, arrowButton, likeButton)
+        contentView.addSubviews(cellImageView)
+        cellImageView.addSubviews(titleLabel, routineLabel, stageLabel, arrowButton, likeButton)
         
-        cellView.snp.makeConstraints {
+        cellImageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
         
@@ -113,8 +113,8 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
     }
     
     private func setShadow() {
-        cellView.layer.masksToBounds = true
-        cellView.layer.cornerRadius = 10
+        cellImageView.layer.masksToBounds = true
+        cellImageView.layer.cornerRadius = 10
 
         layer.masksToBounds = false
         layer.shadowOpacity = 0.5
@@ -123,7 +123,8 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
         layer.shadowRadius = 8
     }
     
-    func dataBind(runModel: RunModel) {
+    func dataBind(runModel: RunModel, photoModel: RunPhotoModel) {
+        cellImageView.image = UIImage(named: photoModel.image)
         titleLabel.text = runModel.title
         routineLabel.text = runModel.routine
         stageLabel.text = runModel.stage
@@ -132,7 +133,8 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
         titleLabel.attributedText = changeTextColor(text: runModel.title, highlight: highlight)
     }
     
-    func levelDataBind(runModel: RunModel) {
+    func levelDataBind(runModel: RunModel, photoModel: RunPhotoModel) {
+        cellImageView.image = UIImage(named: photoModel.image)
         titleLabel.text = runModel.title
         routineLabel.text = runModel.routine
         stageLabel.text = runModel.stage

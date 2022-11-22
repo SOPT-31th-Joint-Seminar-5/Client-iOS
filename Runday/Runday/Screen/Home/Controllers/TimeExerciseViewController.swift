@@ -97,7 +97,7 @@ extension TimeExerciseViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExerciseCollectionViewCell.identifier, for: indexPath) as? ExerciseCollectionViewCell else {return UICollectionViewCell()}
         
-        cell.dataBind(runModel: runList[indexPath.item])
+        cell.dataBind(runModel: runList[indexPath.item], photoModel: timePhotoDummyData[indexPath.row])
         return cell
     }
     

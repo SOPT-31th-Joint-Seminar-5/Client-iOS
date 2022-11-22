@@ -72,7 +72,7 @@ extension LevelExerciseViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExerciseCollectionViewCell.identifier, for: indexPath) as? ExerciseCollectionViewCell else {return UICollectionViewCell()}
         
-        cell.levelDataBind(runModel: levelRunDummyData[indexPath.row])
+        cell.levelDataBind(runModel: levelRunDummyData[indexPath.row], photoModel: levelPhotoDummyData[indexPath.row])
         return cell
     }
     

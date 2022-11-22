@@ -54,6 +54,7 @@
 		AB1CAE0F2924D458000AB433 /* TabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1CAE0E2924D458000AB433 /* TabCollectionViewCell.swift */; };
 		AB1CAE112924E2A8000AB433 /* RunModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1CAE102924E2A8000AB433 /* RunModel.swift */; };
 		AB89CFFB292CE8D1002BF039 /* TabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB89CFFA292CE8D1002BF039 /* TabModel.swift */; };
+		ABA01AD4292D436000223B1E /* RunPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA01AD3292D436000223B1E /* RunPhotoModel.swift */; };
 		ABEC7592292617990054B4B7 /* ExerciseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC7591292617990054B4B7 /* ExerciseCollectionViewCell.swift */; };
 		ABEC7594292622DE0054B4B7 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC7593292622DE0054B4B7 /* Exercise.swift */; };
 		B849DC4E29279A0C00841F97 /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC4D29279A0C00841F97 /* NetworkLoggerPlugin.swift */; };
@@ -125,6 +126,7 @@
 		AB1CAE0E2924D458000AB433 /* TabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB1CAE102924E2A8000AB433 /* RunModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunModel.swift; sourceTree = "<group>"; };
 		AB89CFFA292CE8D1002BF039 /* TabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabModel.swift; sourceTree = "<group>"; };
+		ABA01AD3292D436000223B1E /* RunPhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunPhotoModel.swift; sourceTree = "<group>"; };
 		ABEC7591292617990054B4B7 /* ExerciseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCollectionViewCell.swift; sourceTree = "<group>"; };
 		ABEC7593292622DE0054B4B7 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		B849DC4D29279A0C00841F97 /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
@@ -434,6 +436,7 @@
 			children = (
 				AB1CAE102924E2A8000AB433 /* RunModel.swift */,
 				AB89CFFA292CE8D1002BF039 /* TabModel.swift */,
+				ABA01AD3292D436000223B1E /* RunPhotoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -666,6 +669,7 @@
 				D6F8053A2925199B003ED937 /* ProfileModel.swift in Sources */,
 				D6F8054029251A95003ED937 /* MenuModel.swift in Sources */,
 				D6F8053E29251A17003ED937 /* BadgeModel.swift in Sources */,
+				ABA01AD4292D436000223B1E /* RunPhotoModel.swift in Sources */,
 				D6C979692925D9DC001F78BE /* ProfileTableViewCellType.swift in Sources */,
 				D6F8054829252473003ED937 /* MenuCell.swift in Sources */,
 				ABEC7592292617990054B4B7 /* ExerciseCollectionViewCell.swift in Sources */,
