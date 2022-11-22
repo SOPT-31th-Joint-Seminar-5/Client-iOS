@@ -30,13 +30,13 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
         $0.text = "테스트\n임니다"
     }
     
-    private let detailLabel = UILabel().then {
+    private let routineLabel = UILabel().then {
         $0.textColor = .rundayBlack
         $0.font = .rundayRegular(ofSize: 12)
         $0.text = "기간"
     }
     
-    private let levelLabel = UILabel().then {
+    private let stageLabel = UILabel().then {
         $0.textColor = .rundayBlack
         $0.font = .rundayBold(ofSize: 12)
         $0.text = "초급"
@@ -75,7 +75,7 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
         contentView.backgroundColor = .clear
         
         contentView.addSubviews(cellView)
-        cellView.addSubviews(titleLabel, detailLabel, levelLabel, arrowButton, heartButton)
+        cellView.addSubviews(titleLabel, routineLabel, stageLabel, arrowButton, heartButton)
         
         cellView.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -85,13 +85,13 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
             $0.top.leading.equalToSuperview().offset(13)
         }
         
-        detailLabel.snp.makeConstraints {
+        routineLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(6)
             $0.leading.equalTo(titleLabel)
         }
         
-        levelLabel.snp.makeConstraints {
-            $0.top.equalTo(detailLabel.snp.bottom)
+        stageLabel.snp.makeConstraints {
+            $0.top.equalTo(routineLabel.snp.bottom)
             $0.leading.equalTo(titleLabel)
         }
         
