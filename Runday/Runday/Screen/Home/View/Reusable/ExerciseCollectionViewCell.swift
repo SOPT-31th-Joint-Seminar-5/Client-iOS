@@ -121,4 +121,10 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
         layer.shadowRadius = 8
     }
     
+    func dataBind(runModel: RunModel) {
+        titleLabel.text = runModel.title
+        routineLabel.text = runModel.routine
+        stageLabel.text = runModel.stage
+    }
+    
 }
