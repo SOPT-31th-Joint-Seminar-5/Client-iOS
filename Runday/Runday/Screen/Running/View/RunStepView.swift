@@ -13,6 +13,7 @@ enum RunStepView {
     case previous(period: String, speed: Speed)
     case next(period: String, speed: Speed)
     
+    //MARK: - Properties
     
     private var runStepViewCornerMask :CACornerMask{
         
@@ -36,10 +37,8 @@ enum RunStepView {
     //MARK: - Custom Method
     
     private func makeRunStepView(_ period: String,_  speed: Speed) -> UIView{
-        let view = UIView()
-    
-       
         
+        let view = UIView()
         view.backgroundColor = .rundayGray2
         view.layer.cornerRadius = 50
         view.layer.maskedCorners = runStepViewCornerMask

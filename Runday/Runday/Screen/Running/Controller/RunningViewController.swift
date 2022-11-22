@@ -36,7 +36,7 @@ class RunningViewController : UIViewController{
     private let timeAlphaView : UIView = {
         let view = UIView()
         view.backgroundColor = .rundayWhite
-        view.alpha = 0.8                //커스텀: 생각보다 투명해서 0.6 -> 0.8
+        view.alpha = 0.9
         view.layer.cornerRadius = 60
         view.layer.maskedCorners = [ .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         view.layer.shadowColor = UIColor.rundayGray5.cgColor
@@ -88,20 +88,8 @@ class RunningViewController : UIViewController{
     
     private let previousStepView = RunStepView.previous(period: "03:00", speed: .slowRun).build()
     private let nextStepView = RunStepView.next(period: "01:00", speed: .fastRun).build()
+    private let gaugeStackView = RunGaugeStackView(runGauges: RunGaugeModel.sampleData)
     
-    private lazy var gaugeStackView = makeRunGaugeStackViews(speeds:
-                                                                    .walk,
-                                                                    .fastRun,
-                                                                    .slowRun,
-                                                                    .fastRun,
-                                                                    .slowRun,
-                                                                    .fastRun,
-                                                                    .slowRun,
-                                                                    .fastRun,
-                                                                    .slowRun,
-                                                                    .fastRun,
-                                                                    .walk
-                                                             )
     private let leftTimerLabel : UILabel = {
         let label = UILabel()
         label.text = "전체 남은 시간 22:58"
@@ -120,7 +108,6 @@ class RunningViewController : UIViewController{
         pageControl.pageIndicatorTintColor = .rundayGray2
         pageControl.currentPageIndicatorTintColor = .rundayGray4
         return pageControl
-        
     }()
     
     //MARK: - Life Cycle
@@ -298,20 +285,6 @@ class RunningViewController : UIViewController{
         return button
     }
     
-    private func makeRunGaugeStackViews(speeds: Speed...) -> UIStackView{
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.alignment = .bottom
-        stackView.spacing = 2
-        
-        for speed in speeds{
-            let gaugeView = speed.makeRunGaugeView()
-            stackView.addArrangedSubview(gaugeView)
-        }
-        
-        return stackView
-    }
-    
     //MARK: - Action Method
     
     @objc func decreaseRunningTimer(){
@@ -335,7 +308,6 @@ class RunningViewController : UIViewController{
 //MARK: - RunningTimerDelegate
 extension RunningViewController : RunningTimerDelegate{
     func secondsChange(_ timeString: String) {
-        print(timeString)
         timerLabel.text = timeString
     }
     

@@ -9,47 +9,76 @@ import UIKit
 import SnapKit
 import Then
 
-extension Speed{
+class RunGaugeView :UIView{
     
-    var gaugeBackGroundColor : UIColor{
-        
-        switch self{
+    //MARK: - Properties
+    private var speedType : Speed
+    private var second : Int
+    
+    private var gaugeBackGroundColor : UIColor{
+        switch speedType {
         case .walk: return .rundayGray2
         case .slowRun: return .rundayGray3
         case .fastRun: return .rundayGray4
         }
     }
     
-    var gaugeWidth : CGFloat{
-        
-        switch self{
-        case .walk:  return 36.adjusted
-        case .slowRun: return 40.adjusted
-        case .fastRun: return 20.adjusted
-        }
-    }
-    
-    var gaugeHeight : CGFloat{
-        
-        switch self{
+    private var gaugeHeight : CGFloat{
+        switch speedType{
         case .walk: return 14.adjusted
         case .slowRun: return 30.adjusted
         case .fastRun: return 70.adjusted
         }
     }
     
-    func makeRunGaugeView() -> UIView{
+    //MARK: - UI Components
+    
+    private lazy var rootView : UIView = {
         let view = UIView()
-        view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        view.layer.cornerRadius = 3
         view.backgroundColor = gaugeBackGroundColor
+        return view
+    }()
+    
+    //MARK: - Life Cycle
+   
+    init(runGauge: RunGaugeModel){
+        self.speedType = runGauge.speed
+        self.second = runGauge.second
         
-        view.snp.makeConstraints {
-            $0.width.equalTo(gaugeWidth)
+        super.init(frame: .zero)
+        
+        setUI()
+        setLayout()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override var intrinsicContentSize: CGSize{
+        return CGSize(width: CGFloat(second), height: gaugeHeight)
+    }
+    
+    //MARK: - Custom Method
+    
+    private func setUI(){
+        self.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        self.layer.cornerRadius = 3
+        self.clipsToBounds = true
+    }
+    
+    private func setLayout(){
+        
+        self.snp.makeConstraints {
             $0.height.equalTo(gaugeHeight)
         }
         
-        return view
+        self.addSubview(rootView)
+        
+        rootView.snp.makeConstraints {
+            $0.top.bottom.equalToSuperview()
+            $0.leading.trailing.equalToSuperview().inset(1)
+        }
     }
     
 }
