@@ -53,6 +53,7 @@
 		AB0FCDEB2925038F009314FF /* PersonalExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FCDEA2925038F009314FF /* PersonalExerciseViewController.swift */; };
 		AB1CAE0F2924D458000AB433 /* TabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1CAE0E2924D458000AB433 /* TabCollectionViewCell.swift */; };
 		AB1CAE112924E2A8000AB433 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1CAE102924E2A8000AB433 /* HomeModel.swift */; };
+		AB89CFFB292CE8D1002BF039 /* TabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB89CFFA292CE8D1002BF039 /* TabModel.swift */; };
 		ABEC7592292617990054B4B7 /* ExerciseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC7591292617990054B4B7 /* ExerciseCollectionViewCell.swift */; };
 		ABEC7594292622DE0054B4B7 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC7593292622DE0054B4B7 /* Exercise.swift */; };
 		B849DC4E29279A0C00841F97 /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC4D29279A0C00841F97 /* NetworkLoggerPlugin.swift */; };
@@ -123,6 +124,7 @@
 		AB0FCDEA2925038F009314FF /* PersonalExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalExerciseViewController.swift; sourceTree = "<group>"; };
 		AB1CAE0E2924D458000AB433 /* TabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB1CAE102924E2A8000AB433 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		AB89CFFA292CE8D1002BF039 /* TabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabModel.swift; sourceTree = "<group>"; };
 		ABEC7591292617990054B4B7 /* ExerciseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCollectionViewCell.swift; sourceTree = "<group>"; };
 		ABEC7593292622DE0054B4B7 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		B849DC4D29279A0C00841F97 /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
@@ -431,6 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				AB1CAE102924E2A8000AB433 /* HomeModel.swift */,
+				AB89CFFA292CE8D1002BF039 /* TabModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -687,6 +690,7 @@
 				87DFF00F29215379008D0FEF /* UITableViewCell+.swift in Sources */,
 				87DFF02129215924008D0FEF /* MenuViewController.swift in Sources */,
 				87DFF00D2921535F008D0FEF /* UIColor+.swift in Sources */,
+				AB89CFFB292CE8D1002BF039 /* TabModel.swift in Sources */,
 				D6F8054629252439003ED937 /* BadgeCell.swift in Sources */,
 				ABEC7594292622DE0054B4B7 /* Exercise.swift in Sources */,
 				AB0FCDE92925036B009314FF /* TimeExerciseViewController.swift in Sources */,
