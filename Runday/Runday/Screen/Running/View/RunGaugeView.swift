@@ -13,7 +13,7 @@ class RunGaugeView :UIView{
     
     //MARK: - Properties
     private var speedType : Speed
-    private var second : Int
+    var second : Int
     
     private var gaugeBackGroundColor : UIColor{
         switch speedType {
@@ -36,6 +36,13 @@ class RunGaugeView :UIView{
     private lazy var rootView : UIView = {
         let view = UIView()
         view.backgroundColor = gaugeBackGroundColor
+        view.clipsToBounds = true
+        return view
+    }()
+    
+    private lazy var fillView : UIView = {
+        let view = UIView()
+        view.backgroundColor = .rundayBlue
         return view
     }()
     
@@ -74,10 +81,26 @@ class RunGaugeView :UIView{
         }
         
         self.addSubview(rootView)
+        rootView.addSubview(fillView)
         
         rootView.snp.makeConstraints {
             $0.top.bottom.equalToSuperview()
             $0.leading.trailing.equalToSuperview().inset(1)
+        }
+        
+        fillView.snp.makeConstraints {
+            $0.top.bottom.leading.equalToSuperview()
+        }
+        
+    }
+    
+    func fillRunGaugeView(){
+        
+        UIView.animate(withDuration: TimeInterval(second)) {
+            self.fillView.snp.makeConstraints {
+                $0.trailing.equalToSuperview()
+            }
+            self.layoutIfNeeded()
         }
     }
     

@@ -26,4 +26,18 @@ extension RunGaugeModel {
         RunGaugeModel(speed: .fastRun, second: 5),
         RunGaugeModel(speed: .walk, second: 9)
     ]
+    
+    static let sampleData2 = [
+        RunGaugeModel(speed: .walk, second: 3),
+        RunGaugeModel(speed: .fastRun, second: 3),
+        RunGaugeModel(speed: .slowRun, second: 3),
+        RunGaugeModel(speed: .fastRun, second: 3),
+        RunGaugeModel(speed: .slowRun, second: 3),
+        RunGaugeModel(speed: .fastRun, second: 3),
+        RunGaugeModel(speed: .slowRun, second: 3),
+        RunGaugeModel(speed: .fastRun, second: 3),
+        RunGaugeModel(speed: .slowRun, second: 3),
+        RunGaugeModel(speed: .fastRun, second: 3),
+        RunGaugeModel(speed: .walk, second: 3)
+    ]
 }

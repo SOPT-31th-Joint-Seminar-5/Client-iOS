@@ -88,7 +88,7 @@ class RunningViewController : UIViewController{
     
     private let previousStepView = RunStepView.previous(period: "03:00", speed: .slowRun).build()
     private let nextStepView = RunStepView.next(period: "01:00", speed: .fastRun).build()
-    private let gaugeStackView = RunGaugeStackView(runGauges: RunGaugeModel.sampleData)
+    private let gaugeStackView = RunGaugeStackView(runGauges: RunGaugeModel.sampleData2)
     
     private let leftTimerLabel : UILabel = {
         let label = UILabel()
@@ -143,6 +143,7 @@ class RunningViewController : UIViewController{
     
     private func playAnimation(){
         voiceAnimationView.play()
+        gaugeStackView.fillRunGaugeStackView()
     }
     
     private func playTimer(){
@@ -295,7 +296,7 @@ class RunningViewController : UIViewController{
             timer?.invalidate()
             timerLabel.text = "00:00"
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.navigationController?.popViewController(animated: true)
+                //self.navigationController?.popViewController(animated: true)
             }
         }
         

@@ -43,4 +43,18 @@ class RunGaugeStackView : UIStackView{
             self.addArrangedSubview(RunGaugeView(runGauge: runGauge))
         }
     }
+    
+    func fillRunGaugeStackView(){
+        var lastSecond = 0
+        for view in arrangedSubviews{
+            guard let view = view as? RunGaugeView else { return }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(lastSecond)) {
+                view.fillRunGaugeView()
+            }
+            lastSecond += view.second - 1
+        }
+        
+    }
 }
+
