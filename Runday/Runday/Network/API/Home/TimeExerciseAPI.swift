@@ -14,7 +14,7 @@ final class TimeExerciseAPI{
 }
 
 extension TimeExerciseAPI{
-    func getTimeExercise(for data: CommonRequestDTO, completion: @escaping (TimeExerciseResponseData?) -> ()){
+    func getTimeExercise(for data: CommonRequestDTO, completion: @escaping ([TimeExerciseResponseData]?) -> ()){
         
         timeExerciseProvider.request(.timeExercise) { result in
             

@@ -73,7 +73,7 @@ class TimeExerciseViewController: UIViewController {
     
     private func fetchRunList() {
         TimeExerciseAPI.shared.getTimeExercise(for: CommonRequestDTO(runId: 1)) { data in
-            if let runList = data?.user {
+            if let runList = data {
                 for run in runList {
                     self.runList.append(run.convertToRunList())
                 }
