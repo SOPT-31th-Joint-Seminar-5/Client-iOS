@@ -46,8 +46,10 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
         $0.setImage(UIImage(named: "btn-mediumarrow"), for: .normal)
     }
     
-    private let heartButton = UIButton().then {
+    private lazy var heartButton = UIButton().then {
         $0.setImage(UIImage(named: "heart"), for: .normal)
+        $0.setImage(UIImage(named: "heart.fill"), for: .selected)
+        $0.addTarget(self, action: #selector(heartButtonDidTap), for: .touchUpInside)
     }
     
     // MARK: - Life Cycles
@@ -125,6 +127,15 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
         titleLabel.text = runModel.title
         routineLabel.text = runModel.routine
         stageLabel.text = runModel.stage
+    }
+    
+    @objc
+    private func heartButtonDidTap() {
+        if heartButton.isSelected {
+            heartButton.isSelected = false
+        } else {
+            heartButton.isSelected = true
+        }
     }
     
 }
