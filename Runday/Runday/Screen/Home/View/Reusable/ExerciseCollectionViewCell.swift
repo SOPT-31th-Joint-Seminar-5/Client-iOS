@@ -77,7 +77,8 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
         contentView.backgroundColor = .clear
         
         contentView.addSubviews(cellImageView)
-        cellImageView.addSubviews(titleLabel, routineLabel, stageLabel, arrowButton, likeButton)
+        contentView.sendSubviewToBack(cellImageView)
+        contentView.addSubviews(titleLabel, routineLabel, stageLabel, arrowButton, likeButton)
         
         cellImageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
