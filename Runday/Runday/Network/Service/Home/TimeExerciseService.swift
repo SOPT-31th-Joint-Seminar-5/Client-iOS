@@ -8,7 +8,7 @@
 import Moya
 
 enum TimeExerciseService {
-    case timeExercise(body: CommonRequestDTO)
+    case timeExercise
 }
 
 extension TimeExerciseService: BaseTargetType {
@@ -27,8 +27,8 @@ extension TimeExerciseService: BaseTargetType {
     
     var task: Moya.Task {
         switch self {
-        case .timeExercise(body: let body):
-            return .requestParameters(parameters: try! body.asParameter(), encoding: JSONEncoding.default)
+        case .timeExercise:
+            return .requestPlain
         }
     }
     

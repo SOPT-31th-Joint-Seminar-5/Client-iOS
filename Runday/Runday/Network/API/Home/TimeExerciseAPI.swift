@@ -16,7 +16,7 @@ final class TimeExerciseAPI{
 extension TimeExerciseAPI{
     func getTimeExercise(for data: CommonRequestDTO, completion: @escaping (TimeExerciseResponseData?) -> ()){
         
-        timeExerciseProvider.request(.timeExercise(body: data)) { result in
+        timeExerciseProvider.request(.timeExercise) { result in
             
             switch result{
             case .success(let response):
