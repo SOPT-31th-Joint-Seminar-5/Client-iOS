@@ -9,33 +9,41 @@ import UIKit
 
 class RunCircleGaugeView : UIView{
     
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        
-        let path = UIBezierPath(arcCenter: CGPoint(x: frame.width / 2, y: 0),
-                                radius: frame.width / 2,
-                                startAngle: .pi,
-                                endAngle: 0,
-                                clockwise: false)
-        path.lineCapStyle = .round
-
+    //MARK: - Properties
+    
+    private lazy var semiCirclePath : UIBezierPath = {
+        let bezierPath = UIBezierPath(arcCenter: CGPoint(x: frame.width / 2, y: 0),
+                                      radius: frame.width / 2,
+                                      startAngle: .pi,
+                                      endAngle: 0,
+                                      clockwise: false)
+        return bezierPath
+    }()
+    
+    private lazy var semiCircleLayer : CAShapeLayer = {
         let layer = CAShapeLayer()
-        layer.path = path.cgPath
+        layer.path = semiCirclePath.cgPath
+        layer.lineWidth = 7
         layer.lineCap = .round
-        
+        layer.strokeColor = UIColor.rundayBlue.cgColor
+        layer.fillColor = UIColor.clear.cgColor
+        return layer
+    }()
+    
+    private lazy var strokeEndAnimation : CABasicAnimation = {
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.fromValue = 0
         animation.toValue = 1
-        animation.duration = 5
-        
-        layer.lineWidth = 7
-        layer.strokeColor = UIColor.rundayBlue.cgColor
-        layer.fillColor = UIColor.clear.cgColor
-        
-        layer.add(animation, forKey: "strokeEnd")
-        
-        self.layer.addSublayer(layer)
-        
-        
+        animation.duration = 9
+        return animation
+    }()
+    
+    //MARK: - Life Cycle
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        self.layer.addSublayer(self.semiCircleLayer)
+        self.semiCircleLayer.add(self.strokeEndAnimation, forKey: "strokeEnd")
     }
+    
 }
