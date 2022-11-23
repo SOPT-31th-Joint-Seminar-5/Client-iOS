@@ -24,6 +24,7 @@
 		876D2A7929218FEC00EA19F2 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 87DFF03929216FA1008D0FEF /* NotoSansKR-Bold.otf */; };
 		876D2A7A29218FEE00EA19F2 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 87DFF03729216FA0008D0FEF /* NotoSansKR-Medium.otf */; };
 		876D2A7B29218FF000EA19F2 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 87DFF03829216FA1008D0FEF /* NotoSansKR-Regular.otf */; };
+		8793EA2D292E949D00D593AA /* CircleRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8793EA2C292E949D00D593AA /* CircleRunningViewController.swift */; };
 		87DFEFE5291F69B3008D0FEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFEFE4291F69B3008D0FEF /* AppDelegate.swift */; };
 		87DFEFE7291F69B3008D0FEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFEFE6291F69B3008D0FEF /* SceneDelegate.swift */; };
 		87DFEFE9291F69B3008D0FEF /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFEFE8291F69B3008D0FEF /* BaseTabBarController.swift */; };
@@ -93,6 +94,7 @@
 		87604955292D3AA400153459 /* RunGaugeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunGaugeModel.swift; sourceTree = "<group>"; };
 		87604957292D3D0E00153459 /* RunGaugeStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunGaugeStackView.swift; sourceTree = "<group>"; };
 		876D2A7629218DE300EA19F2 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		8793EA2C292E949D00D593AA /* CircleRunningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleRunningViewController.swift; sourceTree = "<group>"; };
 		87DFEFE1291F69B3008D0FEF /* Runday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87DFEFE4291F69B3008D0FEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87DFEFE6291F69B3008D0FEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -423,6 +425,7 @@
 			isa = PBXGroup;
 			children = (
 				87DFF02429215952008D0FEF /* RunningViewController.swift */,
+				8793EA2C292E949D00D593AA /* CircleRunningViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -670,6 +673,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B849DC602927B44100841F97 /* BaseTargetType.swift in Sources */,
+				8793EA2D292E949D00D593AA /* CircleRunningViewController.swift in Sources */,
 				8760494A292C015800153459 /* LikeAPI.swift in Sources */,
 				AB1CAE112924E2A8000AB433 /* RunModel.swift in Sources */,
 				D6F8053A2925199B003ED937 /* ProfileModel.swift in Sources */,
