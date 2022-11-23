@@ -10,7 +10,7 @@ import UIKit
 class BaseTabBarController: UITabBarController {
 
     let homeNVC = BaseNavigationController(rootViewController: HomeViewController())
-    let historyNVC = BaseNavigationController(rootViewController: CircleRunningViewController())
+    let historyNVC = BaseNavigationController(rootViewController: RunningViewController())
     let crewNVC = BaseNavigationController(rootViewController: CrewViewController())
     let challengeNVC = BaseNavigationController(rootViewController: UIViewController())
     let myProfileNVC = BaseNavigationController(rootViewController: MyProfileViewController())

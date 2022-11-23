@@ -34,7 +34,7 @@ class CircleRunningViewController : UIViewController{
         return view
     }()
     
-    private let circleGaugeView = RunCircleGaugeView()
+    private let runProgressView = RunCircleProgressView()
     
     private let weekDescriptionLabel : UILabel = {
         let label = UILabel()
@@ -146,7 +146,7 @@ class CircleRunningViewController : UIViewController{
                             previousStepView,
                             nextStepView,
                             timeView,
-                            circleGaugeView,
+                            runProgressView,
                             gaugeStackView,
                             leftTimerLabel,
                             musicButton,
@@ -172,7 +172,7 @@ class CircleRunningViewController : UIViewController{
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(488.adjusted)
         }
-        circleGaugeView.snp.makeConstraints {
+        runProgressView.snp.makeConstraints {
             $0.bottom.equalTo(timeView)
             $0.leading.trailing.equalToSuperview().inset(-3)
             $0.height.equalTo(self.view.frame.width / 2)
