@@ -15,13 +15,14 @@ class RunningViewController : UIViewController{
     
     //MARK: - Properties
     
-    var totalTime : Float = 10{
-        didSet{
-            runningTimer = RunningTimer(second: totalTime)
-        }
-    }
-    var timer : Timer?
-    lazy var runningTimer = RunningTimer(second: totalTime)
+    private var runGaugeData = RunGaugeModel.sampleData
+    private var totalTime : Float{
+                                    var sum = 0
+                                    runGaugeData.forEach{ sum += $0.second }
+                                    return Float(sum)
+                                 }
+    private var timer : Timer?
+    private lazy var runningTimer = RunningTimer(second: totalTime)
     
     //MARK: - UI Components
     
@@ -118,8 +119,7 @@ class RunningViewController : UIViewController{
         setDelegate()
         setUI()
         setLayout()
-        playAnimation()
-        playTimer()
+        play()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -141,17 +141,14 @@ class RunningViewController : UIViewController{
         
     }
     
-    private func playAnimation(){
-        voiceAnimationView.play()
-        gaugeStackView.fillRunGaugeStackView()
-    }
-    
-    private func playTimer(){
+    private func play(){
         timer = Timer.scheduledTimer(timeInterval: 0.05,
                                      target: self,
                                      selector: #selector(decreaseRunningTimer),
                                      userInfo: nil,
                                      repeats: true)
+        voiceAnimationView.play()
+        gaugeStackView.play()
     }
     
     private func setLayout(){
@@ -165,6 +162,7 @@ class RunningViewController : UIViewController{
                             lockButton,
                             pageControl
                         )
+        
         timeSuperView.addSubview(timeAlphaView)
         timeSuperView.addSubviews(
                                     weekDescriptionLabel,
@@ -275,8 +273,7 @@ class RunningViewController : UIViewController{
             $0.leading.equalTo(stopButton.snp.trailing).offset(54.adjusted)
             $0.height.equalTo(24)
         }
-        
-        
+    
     }
     
     private func makeButton(_ imageString: String)-> UIButton{
@@ -295,9 +292,7 @@ class RunningViewController : UIViewController{
             // 시간초과 발생시 타이머 중지 및 label 0초로 초기화.
             timer?.invalidate()
             timerLabel.text = "00:00"
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                //self.navigationController?.popViewController(animated: true)
-            }
+            print("타이머가 종료되었습니다.")
         }
         
         progressView.progress = runningTimer.ratio

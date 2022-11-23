@@ -44,7 +44,7 @@ class RunGaugeStackView : UIStackView{
         }
     }
     
-    func fillRunGaugeStackView(){
+    func play(){
         var lastSecond = 0
         for view in arrangedSubviews{
             guard let view = view as? RunGaugeView else { return }

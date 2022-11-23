@@ -15,16 +15,17 @@ class CircleRunningViewController : UIViewController{
     
     //MARK: - Properties
     
-    var totalTime : Float = 10{
-        didSet{
-            runningTimer = RunningTimer(second: totalTime)
-        }
-    }
-    var timer : Timer?
-    lazy var runningTimer = RunningTimer(second: totalTime)
+    private var runGaugeData = RunGaugeModel.sampleData
+    private var totalTime : Float {
+                                    var sum = 0
+                                    runGaugeData.forEach{ sum += $0.second }
+                                    return Float(sum)
+                                  }
+    private var timer : Timer?
+    private lazy var runningTimer = RunningTimer(second: totalTime)
+    
     
     //MARK: - UI Components
-    
     
     private var timeView : UIView = {
         let view = UIView()
@@ -71,7 +72,7 @@ class CircleRunningViewController : UIViewController{
     
     private let previousStepView = RunCircleStepView(time: "03:00", speed: .slowRun)
     private let nextStepView = RunCircleStepView(time: "01:00", speed: .fastRun)
-    private let gaugeStackView = RunGaugeStackView(runGauges: RunGaugeModel.sampleData)
+    private lazy var gaugeStackView = RunGaugeStackView(runGauges: runGaugeData)
     
     private let leftTimerLabel : UILabel = {
         let label = UILabel()
@@ -101,8 +102,7 @@ class CircleRunningViewController : UIViewController{
         setDelegate()
         setUI()
         setLayout()
-        playAnimation()
-        playTimer()
+        play()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -131,17 +131,14 @@ class CircleRunningViewController : UIViewController{
         
     }
     
-    private func playAnimation(){
-        voiceAnimationView.play()
-        gaugeStackView.fillRunGaugeStackView()
-    }
-    
-    private func playTimer(){
+    private func play(){
         timer = Timer.scheduledTimer(timeInterval: 0.05,
                                      target: self,
                                      selector: #selector(decreaseRunningTimer),
                                      userInfo: nil,
                                      repeats: true)
+        voiceAnimationView.play()
+        gaugeStackView.play()
     }
     
     private func setLayout(){
@@ -169,6 +166,7 @@ class CircleRunningViewController : UIViewController{
         
         
         //MARK: - Root View SubViews Contraints
+        
         timeView.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.leading.trailing.equalToSuperview()
@@ -183,14 +181,14 @@ class CircleRunningViewController : UIViewController{
         
         previousStepView.snp.makeConstraints {
             $0.top.equalTo(timeView.snp.bottom).offset(-12.adjusted)
-            $0.leading.equalToSuperview()
+            $0.leading.equalToSuperview().offset(-16)
             $0.height.equalTo(112.adjusted)
             $0.width.equalTo(112.adjusted)
         }
         
         nextStepView.snp.makeConstraints {
             $0.top.equalTo(timeView.snp.bottom).offset(-12.adjusted)
-            $0.trailing.equalToSuperview()
+            $0.trailing.equalToSuperview().offset(16)
             $0.height.equalTo(112.adjusted)
             $0.width.equalTo(112.adjusted)
         }
@@ -263,8 +261,6 @@ class CircleRunningViewController : UIViewController{
             $0.leading.equalTo(stopButton.snp.trailing).offset(54.adjusted)
             $0.height.equalTo(24)
         }
-        
-        
     }
     
     private func makeButton(_ imageString: String)-> UIButton{
@@ -279,13 +275,12 @@ class CircleRunningViewController : UIViewController{
     @objc func decreaseRunningTimer(){
         do {
             try runningTimer.decreaseTime(0.05)
+            
         } catch {
             // 시간초과 발생시 타이머 중지 및 label 0초로 초기화.
             timer?.invalidate()
             timerLabel.text = "00:00"
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                //self.navigationController?.popViewController(animated: true)
-            }
+            print("타이머가 종료되었습니다.")
         }
         
         
