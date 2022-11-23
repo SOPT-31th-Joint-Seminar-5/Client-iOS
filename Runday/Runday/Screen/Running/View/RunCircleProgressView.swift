@@ -34,11 +34,22 @@ class RunCircleProgressView : UIView{
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.fromValue = 0
         animation.toValue = 1
-        animation.duration = 9
+        animation.duration = 8
         return animation
     }()
     
     //MARK: - Life Cycle
+    
+    init(_ runningData: [RunningModel]){
+        super.init(frame: .zero)
+        var sum = 0
+        runningData.forEach { sum += $0.second }
+        strokeEndAnimation.duration = CFTimeInterval(sum)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)

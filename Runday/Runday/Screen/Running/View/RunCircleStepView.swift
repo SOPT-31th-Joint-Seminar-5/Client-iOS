@@ -14,20 +14,19 @@ class RunCircleStepView : UIView{
     //MARK: - Properties
     
     private var time: String
-    
     private var speed: Speed
     
     //MARK: - UI Components
     
     private let timeLabel = UILabel().then{
-        $0.font = .rundayRopaMixProExtraBoldItalic(ofSize: 18)
+        $0.font = .rundayRopaMixProExtraBoldItalic(ofSize: 17)
         $0.textColor = .black
         $0.alpha = 0.4
         $0.textAlignment = .center
     }
     
     private lazy var speedLabel = UILabel().then{
-        $0.font = .rundayBold(ofSize: 16)
+        $0.font = .rundayBold(ofSize: 15)
         $0.textColor = .rundayGray5
         $0.numberOfLines = 2
         $0.textAlignment = .center
@@ -44,13 +43,13 @@ class RunCircleStepView : UIView{
 
     //MARK: - Life Cycle
 
-    init(time: String, speed: Speed){
-        self.time = time
-        self.speed = speed
+    init(_ runningModel : RunningModel?){
+        self.time = String(runningModel?.second ?? 0)
+        self.speed = runningModel?.speed ?? .walk
         
         super.init(frame: .zero)
         
-        updateData()
+        updateData(runningModel)
         setUI()
         setLayout()
         
@@ -84,12 +83,34 @@ class RunCircleStepView : UIView{
         }
     }
     
-    private func updateData(){
-        timeLabel.text = time
-        speedLabel.text = speed.twoLineTitle
+    func updateData(_ runningModel: RunningModel?){
+        guard let runningModel = runningModel else { self.isHidden = true; return }
+        self.isHidden = false
+        timeLabel.text = transformToString(runningModel.second)
+        speedLabel.text = runningModel.speed.title
     }
     
+}
+extension RunCircleStepView{
+    private func transformToString(_ totalSeconds: Int) -> String{
+        
+        var minutes = String(totalSeconds / 60)
+        var seconds = String(totalSeconds % 60)
+        
+        minutes = makeTwoDigit(minutes)
+        seconds = makeTwoDigit(seconds)
+        
+        return "\(minutes):\(seconds)"
+    }
     
-    
-    
+    // 만약 분 혹은 초의 문자열이 한자릿수이면 앞에 0을 붙혀 무조건 두자리수의 String값이 나오게 한다.
+    private func makeTwoDigit(_ string:String) -> String{
+        
+        if string.count == 1{
+            return "0\(string)"
+        } else {
+            return string
+        }
+    }
+
 }

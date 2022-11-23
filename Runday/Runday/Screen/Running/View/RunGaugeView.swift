@@ -48,9 +48,9 @@ class RunGaugeView :UIView{
     
     //MARK: - Life Cycle
    
-    init(runGauge: RunGaugeModel){
-        self.speedType = runGauge.speed
-        self.second = runGauge.second
+    init(_ runningModel: RunningModel){
+        self.speedType = runningModel.speed
+        self.second = runningModel.second
         
         super.init(frame: .zero)
         

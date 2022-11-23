@@ -9,7 +9,9 @@ import Foundation
 
 //MARK: - Protocol
 protocol RunningTimerDelegate : AnyObject{
-    func secondsChange(_ timeString: String)
+    func secondsChanged(_ timeString: String)
+    func stepChanged(to stepIndex: Int)
+    func timeOver()
 }
 
 //MARK: - Error
@@ -21,49 +23,85 @@ enum TimeError : Error{
 class RunningTimer{
     
     //MARK: - Properties
-    
-    weak var delegate : RunningTimerDelegate?
-    var targetSecond : Float
-    var currentSecond : Float
-    var integerSecond : Int{
-        didSet(oldVal){
-            // timer가 1초에 한번씩 변환하게 하기 위한 프로퍼티.
-            // didSet(oldVal)을 통해 값이 할당되기 전과 후의 데이터가 다르다면 이벤트 발생.
-            // RunninTimer에서 발생한 이벤트를 VC에게 일을 전달하기 위해 delegate 패턴 사용.
-            if integerSecond != oldVal { delegate?.secondsChange(timeTitle) }
+    var timer : Timer?
+    weak var delegate : RunningTimerDelegate? {
+        didSet{
+            secondsChanged()
         }
     }
+    var runningData : [RunningModel]
+    var targetSecond : Int
+    var currentSecond : Int
     
-    var ratio : Float{
-        return (targetSecond - currentSecond) / targetSecond
-    }
-    
+    var passedTime = 0
+    var stepIndex = 0
+
     var timeTitle: String{
         return transformToString(currentSecond)
     }
     
     //MARK: - Life Cycle
     
-    init(second: Float){
-        self.targetSecond = second
-        self.currentSecond = second
-        self.integerSecond = Int(second)
+    init(_ runningData: [RunningModel]){
+        var totalSecond = 0
+        runningData.forEach { totalSecond += $0.second }
+        print(totalSecond)
+        self.runningData = runningData
+        self.targetSecond = totalSecond
+        self.currentSecond = totalSecond
     }
     
     //MARK: - Custom Method
     
-    func decreaseTime(_ second: Float) throws {
-        
-        // 남은 시간이 0초 미만이면 Time Over 예외 처리
-        guard currentSecond >= 0 else { throw TimeError.timeOver}
-        currentSecond -= second
-        integerSecond = Int(currentSecond)
+    func play(){
+        secondsChangedTimer()
+        stepChangedTimer()
+        timeOverTimer()
     }
     
-    private func transformToString(_ totalSeconds: Float) -> String{
+    private func secondsChangedTimer(){
+        delegate?.secondsChanged(timeTitle)
+        timer = Timer.scheduledTimer(timeInterval: 1,
+                                         target: self,
+                                         selector: #selector(secondsChanged),
+                                         userInfo: nil,
+                                         repeats: true)
+        
+    }
+    
+    private func stepChangedTimer(){
+        for runningModel in runningData{
+            DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(passedTime)) {
+                self.delegate?.stepChanged(to: self.stepIndex)
+                self.stepIndex += 1
+            }
+            passedTime += runningModel.second
+        }
+    }
+    
+    private func timeOverTimer(){
+        DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(targetSecond)) {
+                self.delegate?.timeOver()
+                self.timer?.invalidate()
+            
+        }
+    }
+    
+    @objc private func secondsChanged(){
+        currentSecond -= 1
+        delegate?.secondsChanged(timeTitle)
+    }
+}
+
+
+
+//MARK: - String 변환 함수
+extension RunningTimer{
+    
+    private func transformToString(_ totalSeconds: Int) -> String{
         
         // +1 한 이유 '9초 ~ 0초'가 아닌 '10초 ~ 1초'로 설정하고 timeOver 예외처리의 Catch부에서 0초로 설정한다. => '10초 ~ 0초'
-        let totalSeconds = Int(totalSeconds) + 1
+        let totalSeconds = totalSeconds + 1
         
         
         var minutes = String(totalSeconds / 60)
@@ -84,5 +122,4 @@ class RunningTimer{
             return string
         }
     }
-    
 }

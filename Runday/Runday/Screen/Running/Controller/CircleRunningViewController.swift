@@ -15,15 +15,8 @@ class CircleRunningViewController : UIViewController{
     
     //MARK: - Properties
     
-    private var runGaugeData = RunGaugeModel.sampleData
-    private var totalTime : Float {
-                                    var sum = 0
-                                    runGaugeData.forEach{ sum += $0.second }
-                                    return Float(sum)
-                                  }
-    private var timer : Timer?
-    private lazy var runningTimer = RunningTimer(second: totalTime)
-    
+    private var runningData = RunningModel.sampleData
+    private lazy var runningTimer = RunningTimer(runningData)
     
     //MARK: - UI Components
     
@@ -34,7 +27,7 @@ class CircleRunningViewController : UIViewController{
         return view
     }()
     
-    private let runProgressView = RunCircleProgressView()
+    private lazy var runProgressView = RunCircleProgressView(runningData)
     
     private let weekDescriptionLabel : UILabel = {
         let label = UILabel()
@@ -70,9 +63,9 @@ class CircleRunningViewController : UIViewController{
     private lazy var previousButton = makeButton("left-shift")
     private lazy var nextButton = makeButton("right-shift")
     
-    private let previousStepView = RunCircleStepView(time: "03:00", speed: .slowRun)
-    private let nextStepView = RunCircleStepView(time: "01:00", speed: .fastRun)
-    private lazy var gaugeStackView = RunGaugeStackView(runGauges: runGaugeData)
+    private lazy var previousStepView = RunCircleStepView(nil)
+    private lazy var nextStepView = RunCircleStepView(runningData[1])
+    private lazy var gaugeStackView = RunGaugeStackView(runningData: runningData)
     
     private let leftTimerLabel : UILabel = {
         let label = UILabel()
@@ -102,6 +95,7 @@ class CircleRunningViewController : UIViewController{
         setDelegate()
         setUI()
         setLayout()
+        addTarget()
         play()
     }
     
@@ -126,19 +120,19 @@ class CircleRunningViewController : UIViewController{
         runningTimer.delegate = self
     }
     
+    private func addTarget(){
+        stopButton.addTarget(self, action: #selector(stopButtonDidTapped), for: .touchUpInside)
+        musicButton.addTarget(self, action: #selector(stopButtonDidTapped), for: .touchUpInside)
+    }
+    
     private func setUI(){
         view.backgroundColor = .rundayGray1
-        
     }
     
     private func play(){
-        timer = Timer.scheduledTimer(timeInterval: 0.05,
-                                     target: self,
-                                     selector: #selector(decreaseRunningTimer),
-                                     userInfo: nil,
-                                     repeats: true)
+        runningTimer.play()
         voiceAnimationView.play()
-        gaugeStackView.play()
+        //gaugeStackView.play()
     }
     
     private func setLayout(){
@@ -181,14 +175,14 @@ class CircleRunningViewController : UIViewController{
         
         previousStepView.snp.makeConstraints {
             $0.top.equalTo(timeView.snp.bottom).offset(-12.adjusted)
-            $0.leading.equalToSuperview().offset(-16)
+            $0.leading.equalToSuperview().offset(-12)
             $0.height.equalTo(112.adjusted)
             $0.width.equalTo(112.adjusted)
         }
         
         nextStepView.snp.makeConstraints {
             $0.top.equalTo(timeView.snp.bottom).offset(-12.adjusted)
-            $0.trailing.equalToSuperview().offset(16)
+            $0.trailing.equalToSuperview().offset(12)
             $0.height.equalTo(112.adjusted)
             $0.width.equalTo(112.adjusted)
         }
@@ -271,27 +265,51 @@ class CircleRunningViewController : UIViewController{
     }
     
     //MARK: - Action Method
-    
-    @objc func decreaseRunningTimer(){
-        do {
-            try runningTimer.decreaseTime(0.05)
-            
-        } catch {
-            // 시간초과 발생시 타이머 중지 및 label 0초로 초기화.
-            timer?.invalidate()
-            timerLabel.text = "00:00"
-            print("타이머가 종료되었습니다.")
-        }
-        
-        
+
+    @objc private func stopButtonDidTapped(){
+        play()
+        print("asdf")
     }
+    
     
 }
 
 //MARK: - RunningTimerDelegate
 extension CircleRunningViewController : RunningTimerDelegate{
-    func secondsChange(_ timeString: String) {
+   
+    func secondsChanged(_ timeString: String) {
+        //print(timeString)
         timerLabel.text = timeString
+        leftTimerLabel.text = "전체 남은 시간 \(timeString)"
+    }
+    
+    func stepChanged(to stepIndex: Int) {
+        print("현재 단계: \(stepIndex)")
+        guard let gaugeView = gaugeStackView.arrangedSubviews[stepIndex] as? RunGaugeView else { return }
+        gaugeView.fillRunGaugeView()
+        
+        let previousData = checkArrayIndex(stepIndex - 1)
+        let currentData = checkArrayIndex(stepIndex)
+        let nextData = checkArrayIndex(stepIndex + 1)
+        
+        previousStepView.updateData(previousData)
+        speedLabel.text = currentData?.speed.title
+        nextStepView.updateData(nextData)
+        
+    }
+    
+    func checkArrayIndex(_ index: Int) -> RunningModel?{
+        if index < 0 || index >= runningData.count{
+            return nil
+        } else {
+            return runningData[index]
+        }
+    }
+     
+    func timeOver() {
+        timerLabel.text = "00:00"
+        leftTimerLabel.text = "전체 남은 시간 00:00"
+        print("타이머 종료")
     }
     
     
