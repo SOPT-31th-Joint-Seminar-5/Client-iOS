@@ -26,13 +26,14 @@ class CircleRunningViewController : UIViewController{
     //MARK: - UI Components
     
     
-    private lazy var timeView : UIView = {
+    private var timeView : UIView = {
         let view = UIView()
         view.backgroundColor = .rundayWhite
-        view.layer.cornerRadius =  self.view.frame.width / 2
         view.layer.maskedCorners = [ .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         return view
     }()
+    
+    private let circleGaugeView = RunCircleGaugeView()
     
     private let weekDescriptionLabel : UILabel = {
         let label = UILabel()
@@ -68,8 +69,8 @@ class CircleRunningViewController : UIViewController{
     private lazy var previousButton = makeButton("left-shift")
     private lazy var nextButton = makeButton("right-shift")
     
-    private let previousStepView = RuncircleStepView(time: "03:00", speed: .slowRun)
-    private let nextStepView = RuncircleStepView(time: "01:00", speed: .fastRun)
+    private let previousStepView = RunCircleStepView(time: "03:00", speed: .slowRun)
+    private let nextStepView = RunCircleStepView(time: "01:00", speed: .fastRun)
     private let gaugeStackView = RunGaugeStackView(runGauges: RunGaugeModel.sampleData)
     
     private let leftTimerLabel : UILabel = {
@@ -112,6 +113,13 @@ class CircleRunningViewController : UIViewController{
         tabBarController?.tabBar.isHidden = false
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        timeView.layer.cornerRadius =  self.view.frame.width / 2
+        
+    }
+    
     //MARK: - Custom Method
     
     private func setDelegate(){
@@ -141,6 +149,7 @@ class CircleRunningViewController : UIViewController{
                             previousStepView,
                             nextStepView,
                             timeView,
+                            circleGaugeView,
                             gaugeStackView,
                             leftTimerLabel,
                             musicButton,
@@ -158,12 +167,19 @@ class CircleRunningViewController : UIViewController{
                                     nextButton
                                   )
         
+        
         //MARK: - Root View SubViews Contraints
-    timeView.snp.makeConstraints {
+        timeView.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(488.adjusted)
         }
+        circleGaugeView.snp.makeConstraints {
+            $0.bottom.equalTo(timeView)
+            $0.leading.trailing.equalToSuperview().inset(-3)
+            $0.height.equalTo(self.view.frame.width / 2)
+        }
+        
         
         previousStepView.snp.makeConstraints {
             $0.top.equalTo(timeView.snp.bottom).offset(-12.adjusted)
@@ -226,7 +242,7 @@ class CircleRunningViewController : UIViewController{
         }
         
         speedLabel.snp.makeConstraints {
-            $0.top.equalTo(timerLabel.snp.bottom).offset(-10.adjusted)  //글자가 커서 커스텀
+            $0.top.equalTo(timerLabel.snp.bottom)  //글자가 커서 커스텀
             $0.centerX.equalToSuperview()
         }
         

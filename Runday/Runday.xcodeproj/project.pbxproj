@@ -26,6 +26,7 @@
 		876D2A7B29218FF000EA19F2 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 87DFF03829216FA1008D0FEF /* NotoSansKR-Regular.otf */; };
 		8793EA2D292E949D00D593AA /* CircleRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8793EA2C292E949D00D593AA /* CircleRunningViewController.swift */; };
 		8793EA2F292E96F100D593AA /* RunCircleStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8793EA2E292E96F100D593AA /* RunCircleStepView.swift */; };
+		8793EA31292E9F6800D593AA /* RunCircleGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8793EA30292E9F6800D593AA /* RunCircleGaugeView.swift */; };
 		87DFEFE5291F69B3008D0FEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFEFE4291F69B3008D0FEF /* AppDelegate.swift */; };
 		87DFEFE7291F69B3008D0FEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFEFE6291F69B3008D0FEF /* SceneDelegate.swift */; };
 		87DFEFE9291F69B3008D0FEF /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFEFE8291F69B3008D0FEF /* BaseTabBarController.swift */; };
@@ -97,6 +98,7 @@
 		876D2A7629218DE300EA19F2 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		8793EA2C292E949D00D593AA /* CircleRunningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleRunningViewController.swift; sourceTree = "<group>"; };
 		8793EA2E292E96F100D593AA /* RunCircleStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunCircleStepView.swift; sourceTree = "<group>"; };
+		8793EA30292E9F6800D593AA /* RunCircleGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunCircleGaugeView.swift; sourceTree = "<group>"; };
 		87DFEFE1291F69B3008D0FEF /* Runday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87DFEFE4291F69B3008D0FEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87DFEFE6291F69B3008D0FEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -418,6 +420,7 @@
 			children = (
 				87E221D4292424C7003EE72A /* RunStepView.swift */,
 				8793EA2E292E96F100D593AA /* RunCircleStepView.swift */,
+				8793EA30292E9F6800D593AA /* RunCircleGaugeView.swift */,
 				87E221D829243440003EE72A /* RunGaugeView.swift */,
 				87604957292D3D0E00153459 /* RunGaugeStackView.swift */,
 			);
@@ -690,6 +693,7 @@
 				AB0FCDEB2925038F009314FF /* PersonalExerciseViewController.swift in Sources */,
 				87604943292BFAB800153459 /* CommonRequestDTO.swift in Sources */,
 				AB0FCDE729250352009314FF /* LevelExerciseViewController.swift in Sources */,
+				8793EA31292E9F6800D593AA /* RunCircleGaugeView.swift in Sources */,
 				AB0FCDE529250304009314FF /* MyExerciseViewController.swift in Sources */,
 				B849DC652928A53100841F97 /* TimeExerciseService.swift in Sources */,
 				D64434902924C5F500B2658B /* MyProfileView.swift in Sources */,
