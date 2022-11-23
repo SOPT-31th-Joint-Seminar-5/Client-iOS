@@ -30,7 +30,17 @@ class TimeExerciseViewController: UIViewController {
         return collectionView
     }()
     
+    // MARK: - Variables
+    
+    var runList: [RunModel] = []
+    
     // MARK: - Life Cycles
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+         fetchRunList()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +70,20 @@ class TimeExerciseViewController: UIViewController {
     private func register() {
         timeExerciseCollectionView.register(ExerciseCollectionViewCell.self, forCellWithReuseIdentifier: ExerciseCollectionViewCell.identifier)
     }
+    
+    private func fetchRunList() {
+        TimeExerciseAPI.shared.getTimeExercise(for: CommonRequestDTO(runId: 1)) { data in
+            if let runList = data {
+                var list: [RunModel] = []
+                
+                for run in runList {
+                    list.append(run.convertToRunList())
+                }
+                self.runList = list
+            }
+            self.timeExerciseCollectionView.reloadData()
+        }
+    }
 
 }
 
@@ -67,12 +91,13 @@ class TimeExerciseViewController: UIViewController {
 
 extension TimeExerciseViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 7
+        return runList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExerciseCollectionViewCell.identifier, for: indexPath) as? ExerciseCollectionViewCell else {return UICollectionViewCell()}
         
+        cell.dataBind(runModel: runList[indexPath.item], photoModel: timePhotoDummyData[indexPath.row])
         return cell
     }
     

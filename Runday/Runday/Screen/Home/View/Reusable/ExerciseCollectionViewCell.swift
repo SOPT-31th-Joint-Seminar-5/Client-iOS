@@ -20,34 +20,34 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
     
     // MARK: - UI Components
     
-    private let cellView = UIView().then {
+    private let cellImageView = UIImageView().then {
         $0.backgroundColor = .white
+        $0.isUserInteractionEnabled = true
     }
     
-    private let titleLabel = UILabel().then {
+    private var titleLabel = UILabel().then {
         $0.numberOfLines = 0
         $0.font = .rundayBold(ofSize: 20)
-        $0.text = "테스트\n임니다"
     }
     
-    private let detailLabel = UILabel().then {
+    private let routineLabel = UILabel().then {
         $0.textColor = .rundayBlack
         $0.font = .rundayRegular(ofSize: 12)
-        $0.text = "기간"
     }
     
-    private let levelLabel = UILabel().then {
+    private let stageLabel = UILabel().then {
         $0.textColor = .rundayBlack
         $0.font = .rundayBold(ofSize: 12)
-        $0.text = "초급"
     }
     
     private let arrowButton = UIButton().then {
         $0.setImage(UIImage(named: "btn-mediumarrow"), for: .normal)
     }
     
-    private let heartButton = UIButton().then {
+    private lazy var likeButton = UIButton().then {
         $0.setImage(UIImage(named: "heart"), for: .normal)
+        $0.setImage(UIImage(named: "heart.fill"), for: .selected)
+        $0.addTarget(self, action: #selector(heartButtonDidTap), for: .touchUpInside)
     }
     
     // MARK: - Life Cycles
@@ -74,10 +74,10 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
         backgroundColor = .clear
         contentView.backgroundColor = .clear
         
-        contentView.addSubviews(cellView)
-        cellView.addSubviews(titleLabel, detailLabel, levelLabel, arrowButton, heartButton)
+        contentView.addSubviews(cellImageView)
+        cellImageView.addSubviews(titleLabel, routineLabel, stageLabel, arrowButton, likeButton)
         
-        cellView.snp.makeConstraints {
+        cellImageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
         
@@ -85,13 +85,13 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
             $0.top.leading.equalToSuperview().offset(13)
         }
         
-        detailLabel.snp.makeConstraints {
+        routineLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(6)
             $0.leading.equalTo(titleLabel)
         }
         
-        levelLabel.snp.makeConstraints {
-            $0.top.equalTo(detailLabel.snp.bottom)
+        stageLabel.snp.makeConstraints {
+            $0.top.equalTo(routineLabel.snp.bottom)
             $0.leading.equalTo(titleLabel)
         }
         
@@ -102,7 +102,7 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
             $0.height.equalTo(12)
         }
         
-        heartButton.snp.makeConstraints {
+        likeButton.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(12)
             $0.bottom.equalToSuperview().offset(-12)
             $0.width.equalTo(14)
@@ -111,8 +111,8 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
     }
     
     private func setShadow() {
-        cellView.layer.masksToBounds = true
-        cellView.layer.cornerRadius = 10
+        cellImageView.layer.masksToBounds = true
+        cellImageView.layer.cornerRadius = 10
 
         layer.masksToBounds = false
         layer.shadowOpacity = 0.5
@@ -121,4 +121,38 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
         layer.shadowRadius = 8
     }
     
+    func dataBind(runModel: RunModel, photoModel: RunPhotoModel) {
+        cellImageView.image = UIImage(named: photoModel.image)
+        titleLabel.text = runModel.title
+        routineLabel.text = runModel.routine
+        stageLabel.text = runModel.stage
+        
+        guard let highlight = runModel.highlight else {return}
+        titleLabel.attributedText = changeTextColor(text: runModel.title, highlight: highlight)
+    }
+    
+    func levelDataBind(runModel: RunModel, photoModel: RunPhotoModel) {
+        cellImageView.image = UIImage(named: photoModel.image)
+        titleLabel.text = runModel.title
+        routineLabel.text = runModel.routine
+        stageLabel.text = runModel.stage
+        
+        stageLabel.textColor = .rundayBlue
+    }
+    
+    @objc
+    private func heartButtonDidTap() {
+        if likeButton.isSelected {
+            likeButton.isSelected = false
+        } else {
+            likeButton.isSelected = true
+        }
+    }
+    
+    func changeTextColor(text: String, highlight: String) -> NSAttributedString {
+        let attributtedString = NSMutableAttributedString(string: text)
+        attributtedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.rundayBlue, range: (text as NSString).range(of: highlight))
+
+        return attributtedString
+    }
 }

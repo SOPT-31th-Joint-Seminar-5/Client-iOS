@@ -67,12 +67,13 @@ class MyExerciseViewController: UIViewController {
 
 extension MyExerciseViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return myRunDummyData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExerciseCollectionViewCell.identifier, for: indexPath) as? ExerciseCollectionViewCell else {return UICollectionViewCell()}
         
+        cell.dataBind(runModel: myRunDummyData[indexPath.row], photoModel: myPhotoDummyData[indexPath.row])
         return cell
     }
     

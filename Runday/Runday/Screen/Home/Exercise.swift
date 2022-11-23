@@ -8,7 +8,7 @@
 import UIKit
 
 struct Exercise {
-    static let exerciseInset: UIEdgeInsets = UIEdgeInsets(top: 20, left: 16, bottom: 0, right: 16)
+    static let exerciseInset: UIEdgeInsets = UIEdgeInsets(top: 20, left: 16, bottom: 20, right: 16)
     static let exerciseLineSpacing: CGFloat = 12
     static let exerciseInterItemSpacing: CGFloat = 6
     static let exerciseCellHeight: CGFloat = 240
