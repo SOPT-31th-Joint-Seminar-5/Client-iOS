@@ -22,24 +22,22 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
     
     private let cellImageView = UIImageView().then {
         $0.backgroundColor = .white
+        $0.isUserInteractionEnabled = true
     }
     
     private var titleLabel = UILabel().then {
         $0.numberOfLines = 0
         $0.font = .rundayBold(ofSize: 20)
-        $0.text = "테스트\n임니다"
     }
     
     private let routineLabel = UILabel().then {
         $0.textColor = .rundayBlack
         $0.font = .rundayRegular(ofSize: 12)
-        $0.text = "기간"
     }
     
     private let stageLabel = UILabel().then {
         $0.textColor = .rundayBlack
         $0.font = .rundayBold(ofSize: 12)
-        $0.text = "초급"
     }
     
     private let arrowButton = UIButton().then {
@@ -77,8 +75,7 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
         contentView.backgroundColor = .clear
         
         contentView.addSubviews(cellImageView)
-        contentView.sendSubviewToBack(cellImageView)
-        contentView.addSubviews(titleLabel, routineLabel, stageLabel, arrowButton, likeButton)
+        cellImageView.addSubviews(titleLabel, routineLabel, stageLabel, arrowButton, likeButton)
         
         cellImageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
