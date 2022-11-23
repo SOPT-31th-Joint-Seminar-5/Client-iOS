@@ -25,24 +25,12 @@ class CircleRunningViewController : UIViewController{
     
     //MARK: - UI Components
     
-    private let timeSuperView : UIView = {
-        let view = UIView()
-        view.backgroundColor = .clear
-        view.layer.cornerRadius = 60
-        view.layer.maskedCorners = [ .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        return view
-    }()
     
-    private let timeAlphaView : UIView = {
+    private lazy var timeView : UIView = {
         let view = UIView()
         view.backgroundColor = .rundayWhite
-        view.alpha = 0.9
-        view.layer.cornerRadius = 60
+        view.layer.cornerRadius =  self.view.frame.width / 2
         view.layer.maskedCorners = [ .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        view.layer.shadowColor = UIColor.rundayGray5.cgColor
-        view.layer.shadowRadius = 5
-        view.layer.shadowOffset = CGSize(width: 0, height: 11)
-        view.layer.shadowOpacity = 0.15
         return view
     }()
     
@@ -76,19 +64,13 @@ class CircleRunningViewController : UIViewController{
         return label
     }()
     
-    private let progressView : UIProgressView = {
-        let progressView = UIProgressView()
-        progressView.tintColor = .rundayBlue
-        return progressView
-    }()
-    
     private lazy var stopButton = makeButton("stop")
     private lazy var previousButton = makeButton("left-shift")
     private lazy var nextButton = makeButton("right-shift")
     
-    private let previousStepView = RunStepView.previous(period: "03:00", speed: .slowRun).build()
-    private let nextStepView = RunStepView.next(period: "01:00", speed: .fastRun).build()
-    private let gaugeStackView = RunGaugeStackView(runGauges: RunGaugeModel.sampleData2)
+    private let previousStepView = RuncircleStepView(time: "03:00", speed: .slowRun)
+    private let nextStepView = RuncircleStepView(time: "01:00", speed: .fastRun)
+    private let gaugeStackView = RunGaugeStackView(runGauges: RunGaugeModel.sampleData)
     
     private let leftTimerLabel : UILabel = {
         let label = UILabel()
@@ -158,49 +140,47 @@ class CircleRunningViewController : UIViewController{
         view.addSubviews(
                             previousStepView,
                             nextStepView,
-                            timeSuperView,
+                            timeView,
                             gaugeStackView,
                             leftTimerLabel,
                             musicButton,
                             lockButton,
                             pageControl
                         )
-        timeSuperView.addSubview(timeAlphaView)
-        timeSuperView.addSubviews(
+        
+        timeView.addSubviews(
                                     weekDescriptionLabel,
                                     voiceAnimationView,
                                     timerLabel,
                                     speedLabel,
-                                    progressView,
                                     stopButton,
                                     previousButton,
                                     nextButton
                                   )
         
         //MARK: - Root View SubViews Contraints
-    
-        timeSuperView.snp.makeConstraints {
+    timeView.snp.makeConstraints {
             $0.top.equalToSuperview()
-            $0.leading.trailing.equalToSuperview().inset(10.adjusted)
-            $0.height.equalTo(464.adjusted)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(488.adjusted)
         }
         
         previousStepView.snp.makeConstraints {
-            $0.top.equalTo(timeSuperView.snp.bottom).offset(-42.adjusted)
+            $0.top.equalTo(timeView.snp.bottom).offset(-12.adjusted)
             $0.leading.equalToSuperview()
-            $0.height.equalTo(157.adjusted)
-            $0.width.equalTo(140.adjusted)
+            $0.height.equalTo(112.adjusted)
+            $0.width.equalTo(112.adjusted)
         }
         
         nextStepView.snp.makeConstraints {
-            $0.top.equalTo(timeSuperView.snp.bottom).offset(-42.adjusted)
+            $0.top.equalTo(timeView.snp.bottom).offset(-12.adjusted)
             $0.trailing.equalToSuperview()
-            $0.height.equalTo(157.adjusted)
-            $0.width.equalTo(140.adjusted)
+            $0.height.equalTo(112.adjusted)
+            $0.width.equalTo(112.adjusted)
         }
         
         gaugeStackView.snp.makeConstraints {
-            $0.top.equalTo(previousStepView.snp.bottom).offset(60.adjusted)
+            $0.top.equalTo(previousStepView.snp.bottom).offset(55.adjusted)
             $0.leading.trailing.equalToSuperview().inset(20.adjusted)
             $0.height.equalTo(70.adjusted)
         }
@@ -226,10 +206,8 @@ class CircleRunningViewController : UIViewController{
         }
         
                 
-        //MARK: - TimeSuperView SubViews Contraints
-        timeAlphaView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
+        //MARK: - TimeView SubViews Contraints
+       
 
         weekDescriptionLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(54.adjusted)
@@ -252,14 +230,8 @@ class CircleRunningViewController : UIViewController{
             $0.centerX.equalToSuperview()
         }
         
-        progressView.snp.makeConstraints {
-            $0.top.equalTo(speedLabel.snp.bottom).offset(49.adjusted)
-            $0.leading.trailing.equalToSuperview().inset(41.adjusted)
-            $0.height.equalTo(7.adjusted)
-        }
-        
         stopButton.snp.makeConstraints {
-            $0.top.equalTo(progressView.snp.bottom).offset(15.adjusted) // 커스텀
+            $0.top.equalTo(speedLabel.snp.bottom).offset(22.adjusted) // 커스텀
             $0.centerX.equalToSuperview()
             $0.height.width.equalTo(68)
         }
@@ -300,7 +272,6 @@ class CircleRunningViewController : UIViewController{
             }
         }
         
-        progressView.progress = runningTimer.ratio
         
     }
     
