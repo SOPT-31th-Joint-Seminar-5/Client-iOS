@@ -102,7 +102,7 @@ extension TimeExerciseViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let runningViewController = RunningViewController()
+        let runningViewController = CircleRunningViewController()
         navigationController?.pushViewController(runningViewController, animated: true)
     }
 }

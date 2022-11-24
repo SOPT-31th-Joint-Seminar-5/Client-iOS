@@ -11,40 +11,23 @@ import Lottie
 
 //MARK: -  석우도 화이팅!
 
-class RunningViewController : UIViewController{
+class CircleRunningViewController : UIViewController{
     
     //MARK: - Properties
     
-    var totalTime : Float = 10{
-        didSet{
-            runningTimer = RunningTimer(second: totalTime)
-        }
-    }
-    var timer : Timer?
-    lazy var runningTimer = RunningTimer(second: totalTime)
+    private var runningData = RunningModel.sampleData
+    private lazy var runningTimer = RunningTimer(runningData)
     
     //MARK: - UI Components
     
-    private let timeSuperView : UIView = {
+    private var timeView : UIView = {
         let view = UIView()
-        view.backgroundColor = .clear
-        view.layer.cornerRadius = 60
+        view.backgroundColor = .rundayWhite
         view.layer.maskedCorners = [ .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         return view
     }()
     
-    private let timeAlphaView : UIView = {
-        let view = UIView()
-        view.backgroundColor = .rundayWhite
-        view.alpha = 0.9
-        view.layer.cornerRadius = 60
-        view.layer.maskedCorners = [ .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        view.layer.shadowColor = UIColor.rundayGray5.cgColor
-        view.layer.shadowRadius = 5
-        view.layer.shadowOffset = CGSize(width: 0, height: 11)
-        view.layer.shadowOpacity = 0.15
-        return view
-    }()
+    private lazy var runProgressView = RunCircleProgressView(runningData)
     
     private let weekDescriptionLabel : UILabel = {
         let label = UILabel()
@@ -60,7 +43,7 @@ class RunningViewController : UIViewController{
         return animationView
     }()
     
-    private let timerLabel : UILabel = {
+    private let stepTimerLabel : UILabel = {
         let label = UILabel()
         label.text = "00:00"
         label.font = .rundayRopaMixProExtraBoldItalic(ofSize: 96)
@@ -76,23 +59,17 @@ class RunningViewController : UIViewController{
         return label
     }()
     
-    private let progressView : UIProgressView = {
-        let progressView = UIProgressView()
-        progressView.tintColor = .rundayBlue
-        return progressView
-    }()
-    
     private lazy var stopButton = makeButton("stop")
     private lazy var previousButton = makeButton("left-shift")
     private lazy var nextButton = makeButton("right-shift")
     
-    private let previousStepView = RunStepView.previous(period: "03:00", speed: .slowRun).build()
-    private let nextStepView = RunStepView.next(period: "01:00", speed: .fastRun).build()
-    private let gaugeStackView = RunGaugeStackView(runGauges: RunGaugeModel.sampleData2)
+    private lazy var previousStepView = RunCircleStepView(nil)
+    private lazy var nextStepView = RunCircleStepView(runningData[1])
+    private lazy var gaugeStackView = RunGaugeStackView(runningData: runningData)
     
-    private let leftTimerLabel : UILabel = {
+    private let totalTimerLabel : UILabel = {
         let label = UILabel()
-        label.text = "전체 남은 시간 22:58"
+        label.text = "전체 남은 시간 00:00"
         label.font = .rundayMedium(ofSize: 14)
         label.textColor = .rundayGray3
         return label
@@ -118,16 +95,24 @@ class RunningViewController : UIViewController{
         setDelegate()
         setUI()
         setLayout()
-        playAnimation()
-        playTimer()
+        addTarget()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = true
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        play()
+    }
+
     override func viewWillDisappear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        timeView.layer.cornerRadius =  self.view.frame.width / 2
     }
     
     //MARK: - Custom Method
@@ -136,76 +121,78 @@ class RunningViewController : UIViewController{
         runningTimer.delegate = self
     }
     
+    private func addTarget(){
+        musicButton.addTarget(self, action: #selector(musicButtonDidTapped), for: .touchUpInside)
+    }
+    
     private func setUI(){
         view.backgroundColor = .rundayGray1
-        
     }
     
-    private func playAnimation(){
+    private func play(){
+        runningTimer.play()
         voiceAnimationView.play()
-        gaugeStackView.fillRunGaugeStackView()
-    }
-    
-    private func playTimer(){
-        timer = Timer.scheduledTimer(timeInterval: 0.05,
-                                     target: self,
-                                     selector: #selector(decreaseRunningTimer),
-                                     userInfo: nil,
-                                     repeats: true)
     }
     
     private func setLayout(){
         view.addSubviews(
                             previousStepView,
                             nextStepView,
-                            timeSuperView,
+                            timeView,
+                            runProgressView,
                             gaugeStackView,
-                            leftTimerLabel,
+                            totalTimerLabel,
                             musicButton,
                             lockButton,
                             pageControl
                         )
-        timeSuperView.addSubview(timeAlphaView)
-        timeSuperView.addSubviews(
+        
+        timeView.addSubviews(
                                     weekDescriptionLabel,
                                     voiceAnimationView,
-                                    timerLabel,
+                                    stepTimerLabel,
                                     speedLabel,
-                                    progressView,
                                     stopButton,
                                     previousButton,
                                     nextButton
-                                  )
+                            )
+        
         
         //MARK: - Root View SubViews Contraints
-    
-        timeSuperView.snp.makeConstraints {
+        
+        timeView.snp.makeConstraints {
             $0.top.equalToSuperview()
-            $0.leading.trailing.equalToSuperview().inset(10.adjusted)
-            $0.height.equalTo(464.adjusted)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(488.adjusted)
+        }
+        runProgressView.snp.makeConstraints {
+            $0.bottom.equalTo(timeView)
+            $0.leading.trailing.equalToSuperview().inset(-3)
+            $0.height.equalTo(self.view.frame.width / 2)
         }
         
+        
         previousStepView.snp.makeConstraints {
-            $0.top.equalTo(timeSuperView.snp.bottom).offset(-42.adjusted)
-            $0.leading.equalToSuperview()
-            $0.height.equalTo(157.adjusted)
-            $0.width.equalTo(140.adjusted)
+            $0.top.equalTo(timeView.snp.bottom).offset(-12.adjusted)
+            $0.leading.equalToSuperview().offset(-12)
+            $0.height.equalTo(112.adjusted)
+            $0.width.equalTo(112.adjusted)
         }
         
         nextStepView.snp.makeConstraints {
-            $0.top.equalTo(timeSuperView.snp.bottom).offset(-42.adjusted)
-            $0.trailing.equalToSuperview()
-            $0.height.equalTo(157.adjusted)
-            $0.width.equalTo(140.adjusted)
+            $0.top.equalTo(timeView.snp.bottom).offset(-12.adjusted)
+            $0.trailing.equalToSuperview().offset(12)
+            $0.height.equalTo(112.adjusted)
+            $0.width.equalTo(112.adjusted)
         }
         
         gaugeStackView.snp.makeConstraints {
-            $0.top.equalTo(previousStepView.snp.bottom).offset(60.adjusted)
+            $0.top.equalTo(previousStepView.snp.bottom).offset(55.adjusted)
             $0.leading.trailing.equalToSuperview().inset(20.adjusted)
             $0.height.equalTo(70.adjusted)
         }
         
-        leftTimerLabel.snp.makeConstraints {
+        totalTimerLabel.snp.makeConstraints {
             $0.top.equalTo(gaugeStackView.snp.bottom).offset(5.adjusted)
             $0.trailing.equalTo(gaugeStackView)
         }
@@ -226,10 +213,8 @@ class RunningViewController : UIViewController{
         }
         
                 
-        //MARK: - TimeSuperView SubViews Contraints
-        timeAlphaView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
+        //MARK: - TimeView SubViews Contraints
+       
 
         weekDescriptionLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(54.adjusted)
@@ -242,24 +227,18 @@ class RunningViewController : UIViewController{
             $0.height.width.equalTo(70)
         }
         
-        timerLabel.snp.makeConstraints {
+        stepTimerLabel.snp.makeConstraints {
             $0.top.equalTo(voiceAnimationView.snp.bottom).offset(-20.adjusted) //글자가 커서 커스텀
             $0.centerX.equalToSuperview()
         }
         
         speedLabel.snp.makeConstraints {
-            $0.top.equalTo(timerLabel.snp.bottom).offset(-10.adjusted)  //글자가 커서 커스텀
+            $0.top.equalTo(stepTimerLabel.snp.bottom)  //글자가 커서 커스텀
             $0.centerX.equalToSuperview()
         }
         
-        progressView.snp.makeConstraints {
-            $0.top.equalTo(speedLabel.snp.bottom).offset(49.adjusted)
-            $0.leading.trailing.equalToSuperview().inset(41.adjusted)
-            $0.height.equalTo(7.adjusted)
-        }
-        
         stopButton.snp.makeConstraints {
-            $0.top.equalTo(progressView.snp.bottom).offset(15.adjusted) // 커스텀
+            $0.top.equalTo(speedLabel.snp.bottom).offset(22.adjusted) // 커스텀
             $0.centerX.equalToSuperview()
             $0.height.width.equalTo(68)
         }
@@ -275,8 +254,6 @@ class RunningViewController : UIViewController{
             $0.leading.equalTo(stopButton.snp.trailing).offset(54.adjusted)
             $0.height.equalTo(24)
         }
-        
-        
     }
     
     private func makeButton(_ imageString: String)-> UIButton{
@@ -286,30 +263,48 @@ class RunningViewController : UIViewController{
         return button
     }
     
-    //MARK: - Action Method
-    
-    @objc func decreaseRunningTimer(){
-        do {
-            try runningTimer.decreaseTime(0.05)
-        } catch {
-            // 시간초과 발생시 타이머 중지 및 label 0초로 초기화.
-            timer?.invalidate()
-            timerLabel.text = "00:00"
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                //self.navigationController?.popViewController(animated: true)
-            }
+    func getRunningModel(_ index: Int) -> RunningModel?{
+        if index < 0 || index >= runningData.count{
+            return nil
+        } else {
+            return runningData[index]
         }
-        
-        progressView.progress = runningTimer.ratio
-        
     }
     
+    //MARK: - Action Method
+
+    @objc private func musicButtonDidTapped(){
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 //MARK: - RunningTimerDelegate
-extension RunningViewController : RunningTimerDelegate{
-    func secondsChange(_ timeString: String) {
-        timerLabel.text = timeString
+extension CircleRunningViewController : RunningTimerDelegate{
+   
+    func secondsChanged(_ stepTime: String,_ totalTime: String) {
+        stepTimerLabel.text = stepTime
+        totalTimerLabel.text = "전체 남은 시간 \(totalTime)"
+    }
+    
+    func stepChanged(to stepIndex: Int) {
+        guard let gaugeView = gaugeStackView.arrangedSubviews[stepIndex] as? RunGaugeView else { return }
+        gaugeView.fillRunGaugeView()
+        
+        let previousData = getRunningModel(stepIndex - 1)
+        let currentData = getRunningModel(stepIndex)
+        let nextData = getRunningModel(stepIndex + 1)
+        
+        previousStepView.updateData(previousData)
+        speedLabel.text = currentData?.speed.title
+        nextStepView.updateData(nextData)
+    }
+    
+    func timeOver() {
+        stepTimerLabel.text = "00:00"
+        totalTimerLabel.text = "전체 남은 시간 00:00"
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     

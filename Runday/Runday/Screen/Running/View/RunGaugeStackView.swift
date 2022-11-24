@@ -12,12 +12,12 @@ class RunGaugeStackView : UIStackView{
     
     //MARK: - Properties
     
-    private var runGauges: [RunGaugeModel]
+    private var runningData: [RunningModel]
     
     //MARK: - Life Cycle
     
-    init(runGauges: [RunGaugeModel]) {
-        self.runGauges = runGauges
+    init(runningData: [RunningModel]) {
+        self.runningData = runningData
         
         super.init(frame: .zero)
         
@@ -39,22 +39,9 @@ class RunGaugeStackView : UIStackView{
     }
     
     private func addArrangedRunGaugeViews(){
-        for runGauge in runGauges{
-            self.addArrangedSubview(RunGaugeView(runGauge: runGauge))
+        for runningModel in runningData{
+            self.addArrangedSubview(RunGaugeView(runningModel))
         }
-    }
-    
-    func fillRunGaugeStackView(){
-        var lastSecond = 0
-        for view in arrangedSubviews{
-            guard let view = view as? RunGaugeView else { return }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(lastSecond)) {
-                view.fillRunGaugeView()
-            }
-            lastSecond += view.second - 1
-        }
-        
     }
 }
 
