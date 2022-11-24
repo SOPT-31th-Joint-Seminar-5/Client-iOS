@@ -69,7 +69,7 @@ class CircleRunningViewController : UIViewController{
     
     private let leftTimerLabel : UILabel = {
         let label = UILabel()
-        label.text = "전체 남은 시간 22:58"
+        label.text = "전체 남은 시간 00:00"
         label.font = .rundayMedium(ofSize: 14)
         label.textColor = .rundayGray3
         return label
@@ -288,9 +288,9 @@ extension CircleRunningViewController : RunningTimerDelegate{
         guard let gaugeView = gaugeStackView.arrangedSubviews[stepIndex] as? RunGaugeView else { return }
         gaugeView.fillRunGaugeView()
         
-        let previousData = checkArrayIndex(stepIndex - 1)
-        let currentData = checkArrayIndex(stepIndex)
-        let nextData = checkArrayIndex(stepIndex + 1)
+        let previousData = getRunningModel(stepIndex - 1)
+        let currentData = getRunningModel(stepIndex)
+        let nextData = getRunningModel(stepIndex + 1)
         
         previousStepView.updateData(previousData)
         speedLabel.text = currentData?.speed.title
@@ -298,7 +298,7 @@ extension CircleRunningViewController : RunningTimerDelegate{
         
     }
     
-    func checkArrayIndex(_ index: Int) -> RunningModel?{
+    func getRunningModel(_ index: Int) -> RunningModel?{
         if index < 0 || index >= runningData.count{
             return nil
         } else {
@@ -307,8 +307,6 @@ extension CircleRunningViewController : RunningTimerDelegate{
     }
      
     func timeOver() {
-        timerLabel.text = "00:00"
-        leftTimerLabel.text = "전체 남은 시간 00:00"
         print("타이머 종료")
     }
     

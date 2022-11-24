@@ -14,11 +14,6 @@ protocol RunningTimerDelegate : AnyObject{
     func timeOver()
 }
 
-//MARK: - Error
-enum TimeError : Error{
-    case timeOver
-}
-
 //MARK: - Running Timer
 class RunningTimer{
     
@@ -56,7 +51,6 @@ class RunningTimer{
     func play(){
         secondsChangedTimer()
         stepChangedTimer()
-        timeOverTimer()
     }
     
     private func secondsChangedTimer(){
@@ -79,16 +73,16 @@ class RunningTimer{
         }
     }
     
-    private func timeOverTimer(){
-        DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(targetSecond)) {
-                self.delegate?.timeOver()
-                self.timer?.invalidate()
-            
-        }
+    private func timeOver(){
+        delegate?.timeOver()
+        timer?.invalidate()
     }
     
     @objc private func secondsChanged(){
         currentSecond -= 1
+        if currentSecond < 0 {
+            timeOver()
+        }
         delegate?.secondsChanged(timeTitle)
     }
 }
