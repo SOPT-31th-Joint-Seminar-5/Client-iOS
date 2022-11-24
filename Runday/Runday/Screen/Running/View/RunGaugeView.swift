@@ -42,7 +42,7 @@ class RunGaugeView :UIView{
     
     private lazy var fillView : UIView = {
         let view = UIView()
-        view.backgroundColor = .rundayBlue
+        view.backgroundColor = .rundayBlue.withAlphaComponent(0.8)
         return view
     }()
     
@@ -75,7 +75,6 @@ class RunGaugeView :UIView{
     }
     
     private func setLayout(){
-        
         self.snp.makeConstraints {
             $0.height.equalTo(gaugeHeight)
         }
@@ -91,11 +90,9 @@ class RunGaugeView :UIView{
         fillView.snp.makeConstraints {
             $0.top.bottom.leading.equalToSuperview()
         }
-        
     }
     
     func fillRunGaugeView(){
-        
         UIView.animate(withDuration: TimeInterval(second)) {
             self.fillView.snp.makeConstraints {
                 $0.trailing.equalToSuperview()

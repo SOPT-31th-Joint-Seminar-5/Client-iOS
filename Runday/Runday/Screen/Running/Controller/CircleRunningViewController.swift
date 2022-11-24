@@ -43,7 +43,7 @@ class CircleRunningViewController : UIViewController{
         return animationView
     }()
     
-    private let timerLabel : UILabel = {
+    private let stepTimerLabel : UILabel = {
         let label = UILabel()
         label.text = "00:00"
         label.font = .rundayRopaMixProExtraBoldItalic(ofSize: 96)
@@ -67,7 +67,7 @@ class CircleRunningViewController : UIViewController{
     private lazy var nextStepView = RunCircleStepView(runningData[1])
     private lazy var gaugeStackView = RunGaugeStackView(runningData: runningData)
     
-    private let leftTimerLabel : UILabel = {
+    private let totalTimerLabel : UILabel = {
         let label = UILabel()
         label.text = "전체 남은 시간 00:00"
         label.font = .rundayMedium(ofSize: 14)
@@ -96,22 +96,23 @@ class CircleRunningViewController : UIViewController{
         setUI()
         setLayout()
         addTarget()
-        play()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = true
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        play()
+    }
+
     override func viewWillDisappear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
     }
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         timeView.layer.cornerRadius =  self.view.frame.width / 2
-        
     }
     
     //MARK: - Custom Method
@@ -121,8 +122,7 @@ class CircleRunningViewController : UIViewController{
     }
     
     private func addTarget(){
-        stopButton.addTarget(self, action: #selector(stopButtonDidTapped), for: .touchUpInside)
-        musicButton.addTarget(self, action: #selector(stopButtonDidTapped), for: .touchUpInside)
+        musicButton.addTarget(self, action: #selector(musicButtonDidTapped), for: .touchUpInside)
     }
     
     private func setUI(){
@@ -132,7 +132,6 @@ class CircleRunningViewController : UIViewController{
     private func play(){
         runningTimer.play()
         voiceAnimationView.play()
-        //gaugeStackView.play()
     }
     
     private func setLayout(){
@@ -142,7 +141,7 @@ class CircleRunningViewController : UIViewController{
                             timeView,
                             runProgressView,
                             gaugeStackView,
-                            leftTimerLabel,
+                            totalTimerLabel,
                             musicButton,
                             lockButton,
                             pageControl
@@ -151,12 +150,12 @@ class CircleRunningViewController : UIViewController{
         timeView.addSubviews(
                                     weekDescriptionLabel,
                                     voiceAnimationView,
-                                    timerLabel,
+                                    stepTimerLabel,
                                     speedLabel,
                                     stopButton,
                                     previousButton,
                                     nextButton
-                                  )
+                            )
         
         
         //MARK: - Root View SubViews Contraints
@@ -193,7 +192,7 @@ class CircleRunningViewController : UIViewController{
             $0.height.equalTo(70.adjusted)
         }
         
-        leftTimerLabel.snp.makeConstraints {
+        totalTimerLabel.snp.makeConstraints {
             $0.top.equalTo(gaugeStackView.snp.bottom).offset(5.adjusted)
             $0.trailing.equalTo(gaugeStackView)
         }
@@ -228,13 +227,13 @@ class CircleRunningViewController : UIViewController{
             $0.height.width.equalTo(70)
         }
         
-        timerLabel.snp.makeConstraints {
+        stepTimerLabel.snp.makeConstraints {
             $0.top.equalTo(voiceAnimationView.snp.bottom).offset(-20.adjusted) //글자가 커서 커스텀
             $0.centerX.equalToSuperview()
         }
         
         speedLabel.snp.makeConstraints {
-            $0.top.equalTo(timerLabel.snp.bottom)  //글자가 커서 커스텀
+            $0.top.equalTo(stepTimerLabel.snp.bottom)  //글자가 커서 커스텀
             $0.centerX.equalToSuperview()
         }
         
@@ -264,27 +263,30 @@ class CircleRunningViewController : UIViewController{
         return button
     }
     
-    //MARK: - Action Method
-
-    @objc private func stopButtonDidTapped(){
-        play()
-        print("asdf")
+    func getRunningModel(_ index: Int) -> RunningModel?{
+        if index < 0 || index >= runningData.count{
+            return nil
+        } else {
+            return runningData[index]
+        }
     }
     
-    
+    //MARK: - Action Method
+
+    @objc private func musicButtonDidTapped(){
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 //MARK: - RunningTimerDelegate
 extension CircleRunningViewController : RunningTimerDelegate{
    
-    func secondsChanged(_ timeString: String) {
-        //print(timeString)
-        timerLabel.text = timeString
-        leftTimerLabel.text = "전체 남은 시간 \(timeString)"
+    func secondsChanged(_ stepTime: String,_ totalTime: String) {
+        stepTimerLabel.text = stepTime
+        totalTimerLabel.text = "전체 남은 시간 \(totalTime)"
     }
     
     func stepChanged(to stepIndex: Int) {
-        print("현재 단계: \(stepIndex)")
         guard let gaugeView = gaugeStackView.arrangedSubviews[stepIndex] as? RunGaugeView else { return }
         gaugeView.fillRunGaugeView()
         
@@ -295,19 +297,14 @@ extension CircleRunningViewController : RunningTimerDelegate{
         previousStepView.updateData(previousData)
         speedLabel.text = currentData?.speed.title
         nextStepView.updateData(nextData)
-        
     }
     
-    func getRunningModel(_ index: Int) -> RunningModel?{
-        if index < 0 || index >= runningData.count{
-            return nil
-        } else {
-            return runningData[index]
-        }
-    }
-     
     func timeOver() {
-        print("타이머 종료")
+        stepTimerLabel.text = "00:00"
+        totalTimerLabel.text = "전체 남은 시간 00:00"
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     

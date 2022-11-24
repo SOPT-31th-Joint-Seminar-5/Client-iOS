@@ -8,8 +8,8 @@
 import Foundation
 
 //MARK: - Protocol
-protocol RunningTimerDelegate : AnyObject{
-    func secondsChanged(_ timeString: String)
+protocol RunningTimerDelegate  : AnyObject{
+    func secondsChanged(_ stepTime: String,_ totalTime: String)
     func stepChanged(to stepIndex: Int)
     func timeOver()
 }
@@ -18,21 +18,21 @@ protocol RunningTimerDelegate : AnyObject{
 class RunningTimer{
     
     //MARK: - Properties
-    var timer : Timer?
-    weak var delegate : RunningTimerDelegate? {
-        didSet{
-            secondsChanged()
-        }
-    }
-    var runningData : [RunningModel]
-    var targetSecond : Int
-    var currentSecond : Int
+    private var timer : Timer?
+    weak var delegate : RunningTimerDelegate?
+    private var runningData : [RunningModel]
     
-    var passedTime = 0
-    var stepIndex = 0
-
-    var timeTitle: String{
-        return transformToString(currentSecond)
+    private var totalSecond : Int
+    private var currentTotalSecond : Int
+    private var currentStepSecond : Int
+    
+    private var stepIndex = 0
+    
+    private var stepTime: String{
+        return transformToString(currentStepSecond)
+    }
+    private var totalTime: String{
+        return transformToString(currentTotalSecond)
     }
     
     //MARK: - Life Cycle
@@ -40,37 +40,25 @@ class RunningTimer{
     init(_ runningData: [RunningModel]){
         var totalSecond = 0
         runningData.forEach { totalSecond += $0.second }
-        print(totalSecond)
+        
         self.runningData = runningData
-        self.targetSecond = totalSecond
-        self.currentSecond = totalSecond
+        self.currentTotalSecond = totalSecond
+        self.totalSecond = totalSecond
+        self.currentStepSecond = runningData[0].second
     }
     
     //MARK: - Custom Method
     
     func play(){
-        secondsChangedTimer()
-        stepChangedTimer()
-    }
-    
-    private func secondsChangedTimer(){
-        delegate?.secondsChanged(timeTitle)
         timer = Timer.scheduledTimer(timeInterval: 1,
                                          target: self,
                                          selector: #selector(secondsChanged),
                                          userInfo: nil,
                                          repeats: true)
         
-    }
-    
-    private func stepChangedTimer(){
-        for runningModel in runningData{
-            DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(passedTime)) {
-                self.delegate?.stepChanged(to: self.stepIndex)
-                self.stepIndex += 1
-            }
-            passedTime += runningModel.second
-        }
+        delegate?.secondsChanged(stepTime, totalTime)
+        delegate?.stepChanged(to: stepIndex)
+
     }
     
     private func timeOver(){
@@ -79,11 +67,25 @@ class RunningTimer{
     }
     
     @objc private func secondsChanged(){
-        currentSecond -= 1
-        if currentSecond < 0 {
-            timeOver()
+        currentTotalSecond -= 1
+        currentStepSecond -= 1
+    
+        if currentStepSecond == 0 {
+            stepChanged()
+            return
         }
-        delegate?.secondsChanged(timeTitle)
+        delegate?.secondsChanged(stepTime, totalTime)
+    }
+    
+    private func stepChanged(){
+        stepIndex += 1
+        if stepIndex == runningData.count {
+            timeOver()
+            return
+        }
+        currentStepSecond = runningData[stepIndex].second
+        delegate?.secondsChanged(stepTime,totalTime)
+        delegate?.stepChanged(to: stepIndex)
     }
 }
 
@@ -92,19 +94,14 @@ class RunningTimer{
 //MARK: - String 변환 함수
 extension RunningTimer{
     
-    private func transformToString(_ totalSeconds: Int) -> String{
+    private func transformToString(_ totalSecond: Int) -> String{
+        var minute = String(totalSecond / 60)
+        var second = String(totalSecond % 60)
         
-        // +1 한 이유 '9초 ~ 0초'가 아닌 '10초 ~ 1초'로 설정하고 timeOver 예외처리의 Catch부에서 0초로 설정한다. => '10초 ~ 0초'
-        let totalSeconds = totalSeconds + 1
+        minute = makeTwoDigit(minute)
+        second = makeTwoDigit(second)
         
-        
-        var minutes = String(totalSeconds / 60)
-        var seconds = String(totalSeconds % 60)
-        
-        minutes = makeTwoDigit(minutes)
-        seconds = makeTwoDigit(seconds)
-        
-        return "\(minutes):\(seconds)"
+        return "\(minute):\(second)"
     }
     
     // 만약 분 혹은 초의 문자열이 한자릿수이면 앞에 0을 붙혀 무조건 두자리수의 String값이 나오게 한다.

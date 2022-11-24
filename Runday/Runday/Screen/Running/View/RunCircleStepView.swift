@@ -84,23 +84,29 @@ class RunCircleStepView : UIView{
     }
     
     func updateData(_ runningModel: RunningModel?){
-        guard let runningModel = runningModel else { self.isHidden = true; return }
+        guard let runningModel = runningModel else {
+            self.isHidden = true
+            return
+        }
+        
         self.isHidden = false
         timeLabel.text = transformToString(runningModel.second)
         speedLabel.text = runningModel.speed.title
     }
     
 }
+
+
 extension RunCircleStepView{
-    private func transformToString(_ totalSeconds: Int) -> String{
+    
+    private func transformToString(_ totalSecond: Int) -> String{
+        var minute = String(totalSecond / 60)
+        var second = String(totalSecond % 60)
         
-        var minutes = String(totalSeconds / 60)
-        var seconds = String(totalSeconds % 60)
+        minute = makeTwoDigit(minute)
+        second = makeTwoDigit(second)
         
-        minutes = makeTwoDigit(minutes)
-        seconds = makeTwoDigit(seconds)
-        
-        return "\(minutes):\(seconds)"
+        return "\(minute):\(second)"
     }
     
     // 만약 분 혹은 초의 문자열이 한자릿수이면 앞에 0을 붙혀 무조건 두자리수의 String값이 나오게 한다.
@@ -112,5 +118,4 @@ extension RunCircleStepView{
             return string
         }
     }
-
 }
