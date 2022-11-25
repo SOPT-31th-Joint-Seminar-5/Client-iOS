@@ -128,3 +128,17 @@ extension TimeExerciseViewController: UICollectionViewDelegateFlowLayout {
         return Exercise.exerciseInset
     }
 }
+
+// MARK: - Network
+
+extension TimeExerciseViewController {
+    func like() {
+        LikeAPI.shared.putLike(for: CommonRequestDTO(runId: 1)) { data in
+        }
+    }
+    
+    func disLike() {
+        LikeAPI.shared.putDislike(for: CommonRequestDTO(runId: 1)) { data in
+        }
+    }
+}

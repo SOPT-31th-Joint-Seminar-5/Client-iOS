@@ -45,8 +45,8 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
     }
     
     private lazy var likeButton = UIButton().then {
-        $0.setImage(UIImage(named: "heart")?.withRenderingMode(.alwaysOriginal), for: .disabled)
-        $0.setImage(UIImage(named: "heart.fill")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        $0.setImage(UIImage(named: "heart")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        $0.setImage(UIImage(named: "heart.fill")?.withRenderingMode(.alwaysOriginal), for: .selected)
         $0.addTarget(self, action: #selector(heartButtonDidTap), for: .touchUpInside)
     }
     
@@ -54,7 +54,6 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         setUI()
         setLayout()
     }
@@ -126,7 +125,7 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
         titleLabel.text = runModel.title
         routineLabel.text = runModel.routine
         stageLabel.text = runModel.stage
-        likeButton.isEnabled = runModel.isLiked
+        likeButton.isSelected = runModel.isLiked
         
         guard let highlight = runModel.highlight else {return}
         titleLabel.attributedText = changeTextColor(text: runModel.title, highlight: highlight)
@@ -142,13 +141,14 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
     }
     
     @objc
-    private func heartButtonDidTap() {
-        likeButton.isSelected.toggle()
+    func heartButtonDidTap() {
+        let timeExerciseViewController = TimeExerciseViewController()
         if likeButton.isSelected {
-            likeButton.isSelected = false
+            timeExerciseViewController.disLike()
         } else {
-            likeButton.isSelected = true
+            timeExerciseViewController.like()
         }
+        likeButton.isSelected.toggle()
     }
     
     func changeTextColor(text: String, highlight: String) -> NSAttributedString {
