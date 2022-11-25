@@ -14,20 +14,27 @@ final class MyProfileAPI{
 }
 
 extension MyProfileAPI{
-    func getMyProfile(completion: @escaping ([MyProfileResponseData]?) -> ()){
-        
+    func getMyProfile(completion: @escaping (MyProfileResponseData?) -> ()) {
         
         myProfileProvider.request(.myProfile) { result in
             
             switch result{
             case .success(let response):
+                
+                
+                print(555,  response.data)
+                print(444, response.statusCode)
+    
                 do {
-                    guard let response =  try response.map(MyProfileResponseDTO?.self)
+                    guard let response =  try?
+                        response.map(MyProfileResponseDTO?.self)
                     else {
                         print("[디코딩 오류] 서버의 Response 파일과 프로젝트의 response파일이 일치한지 확인하세요.")
                         return
                     }
+                    
                     completion(response.data)
+                    print(response.data)
                 } catch(let err){
                     print("서버와 통신은 가능한데 음.. 서버쪽 오류?")
                     print(err.localizedDescription, 500)

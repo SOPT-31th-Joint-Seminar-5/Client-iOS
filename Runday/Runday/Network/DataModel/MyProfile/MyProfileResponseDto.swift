@@ -11,7 +11,7 @@ import Foundation
 struct MyProfileResponseDTO: Codable {
     let status: Int
     let message: String
-    let data: [MyProfileResponseData]
+    let data: MyProfileResponseData
 }
 
 // MARK: - MyProfileResponseData

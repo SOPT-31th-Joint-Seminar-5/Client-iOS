@@ -7,12 +7,14 @@
 
 import UIKit
 import SnapKit
+import Moya
 
 //MARK: -  승헌이형 가보즈아~
 
 class MyProfileViewController : UIViewController{
     
     var myProfileView: MyProfileView = MyProfileView()
+    var profileResponse: MyProfileResponseData?
     
     //MARK: - Properties
     
@@ -24,7 +26,6 @@ class MyProfileViewController : UIViewController{
         super.viewDidLoad()
         
         setUI()
-        setLayout()
     }
     
     override func loadView() {
@@ -32,6 +33,10 @@ class MyProfileViewController : UIViewController{
         
         myProfileView = MyProfileView(frame: self.view.frame)
         self.view = myProfileView
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getMyProfileData()
     }
     
     //MARK: - Action Method
@@ -45,7 +50,15 @@ extension MyProfileViewController {
         view.backgroundColor = .white
     }
     
-    private func setLayout() {
-
+    private func getMyProfileData() {
+        MyProfileAPI.shared.getMyProfile() { data in
+            
+            if let data = data {
+                DispatchQueue.main.async {
+                    self.myProfileView.nameLabel.text = data.name
+                    self.myProfileView.profileData = data
+                }
+            }
+        }
     }
 }
