@@ -84,7 +84,6 @@ class TimeExerciseViewController: UIViewController {
             self.timeExerciseCollectionView.reloadData()
         }
     }
-
 }
 
 // MARK: - UICollectionViewDataSource
@@ -127,5 +126,19 @@ extension TimeExerciseViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return Exercise.exerciseInset
+    }
+}
+
+// MARK: - Network
+
+extension TimeExerciseViewController {
+    func like() {
+        LikeAPI.shared.putLike(for: CommonRequestDTO(runId: 1)) { data in
+        }
+    }
+    
+    func disLike() {
+        LikeAPI.shared.putDislike(for: CommonRequestDTO(runId: 1)) { data in
+        }
     }
 }
