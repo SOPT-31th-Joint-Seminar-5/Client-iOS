@@ -93,7 +93,7 @@ class RunGaugeView :UIView{
     }
     
     func fillRunGaugeView(){
-        UIView.animate(withDuration: TimeInterval(second)) {
+        UIView.animate(withDuration: TimeInterval(second + 1)) {
             self.fillView.snp.makeConstraints {
                 $0.trailing.equalToSuperview()
             }
