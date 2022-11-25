@@ -35,7 +35,7 @@ class ExerciseCell: UITableViewCell {
         $0.textColor = .rundayGray6
     }
     
-    private let timeDataLabel: UILabel = UILabel().then {
+    public let timeDataLabel: UILabel = UILabel().then {
         $0.text = "00:00"
         $0.font = .rundayMedium(ofSize: 20)
     }
@@ -46,7 +46,7 @@ class ExerciseCell: UITableViewCell {
         $0.textColor = .rundayGray6
     }
     
-    private let distanceDataLabel: UILabel = UILabel().then {
+    public let distanceDataLabel: UILabel = UILabel().then {
         $0.text = "00.00km"
         $0.font = .rundayMedium(ofSize: 20)
     }
@@ -57,7 +57,7 @@ class ExerciseCell: UITableViewCell {
         $0.textColor = .rundayGray6
     }
     
-    private let paceDataLabel: UILabel = UILabel().then {
+    public let paceDataLabel: UILabel = UILabel().then {
         $0.text = "0km/h"
         $0.font = .rundayMedium(ofSize: 20)
     }
@@ -68,12 +68,12 @@ class ExerciseCell: UITableViewCell {
         $0.textColor = .rundayGray6
     }
     
-    private let calorieDataLabel: UILabel = UILabel().then {
+    public let calorieDataLabel: UILabel = UILabel().then {
         $0.text = "0kcal"
         $0.font = .rundayMedium(ofSize: 20)
     }
     
-    private let dateLabel: UILabel = UILabel().then {
+    public let dateLabel: UILabel = UILabel().then {
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy년 MM월 dd일 HH:mm"
         $0.text = dateFormatter.string(from: Date())

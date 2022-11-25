@@ -8,6 +8,10 @@
 import UIKit
 
 final class MyProfileView: UIView {
+    var profileData: MyProfileResponseData?
+    
+    var exerciseModel: ExerciseModel?
+    
     
     //MARK: - UI Component
     private let tableViewHeader: UIView = UIView().then {
@@ -22,7 +26,7 @@ final class MyProfileView: UIView {
         $0.backgroundColor = .white
     }
     
-    private let nameLabel: UILabel = UILabel().then {
+    public let nameLabel: UILabel = UILabel().then {
         $0.text = "강규태"
         $0.font = .rundayMedium(ofSize: 20)
         $0.sizeToFit()
@@ -36,7 +40,7 @@ final class MyProfileView: UIView {
         $0.backgroundColor = .rundayGray7
     }
     
-    private lazy var tableView: UITableView = UITableView().then {
+    public lazy var tableView: UITableView = UITableView().then {
         $0.backgroundColor = .clear
         $0.separatorStyle = .none
         $0.tableHeaderView = tableViewHeader
@@ -138,12 +142,19 @@ extension MyProfileView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case Cell.ExerciseCell.rawValue:
             guard let exerciseCell: ExerciseCell = tableView.dequeueReusableCell(withIdentifier: ExerciseCell.identifier, for: indexPath) as? ExerciseCell else { return UITableViewCell() }
             
+            exerciseModel = ExerciseModel(
+                time: profileData?.time ?? exerciseDummyData.time,
+                distance: profileData?.distance ?? exerciseDummyData.distance,
+                pace: profileData?.pace ?? exerciseDummyData.pace,
+                calorie: profileData?.calorie ?? exerciseDummyData.calorie
+            )
+            exerciseCell.dataBind(model: exerciseModel ?? exerciseDummyData)
             return exerciseCell
         case Cell.BadgeCell.rawValue:
             guard let badgeCell: BadgeCell = tableView.dequeueReusableCell(withIdentifier: BadgeCell.identifier, for: indexPath) as? BadgeCell else { return UITableViewCell() }
