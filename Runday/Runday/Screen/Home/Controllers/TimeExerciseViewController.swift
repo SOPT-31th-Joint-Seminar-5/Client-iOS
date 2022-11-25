@@ -84,7 +84,6 @@ class TimeExerciseViewController: UIViewController {
             self.timeExerciseCollectionView.reloadData()
         }
     }
-
 }
 
 // MARK: - UICollectionViewDataSource
