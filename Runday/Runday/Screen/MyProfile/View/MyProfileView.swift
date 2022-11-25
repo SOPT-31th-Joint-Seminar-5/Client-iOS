@@ -47,6 +47,7 @@ final class MyProfileView: UIView {
         $0.tableHeaderView?.frame.size.height = 308
         $0.delegate = self
         $0.dataSource = self
+        $0.showsVerticalScrollIndicator = false
     }
     
     override init(frame: CGRect) {
