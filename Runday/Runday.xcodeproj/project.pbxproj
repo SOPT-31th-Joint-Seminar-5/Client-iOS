@@ -58,10 +58,10 @@
 		AB0FCDEB2925038F009314FF /* PersonalExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FCDEA2925038F009314FF /* PersonalExerciseViewController.swift */; };
 		AB1CAE0F2924D458000AB433 /* TabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1CAE0E2924D458000AB433 /* TabCollectionViewCell.swift */; };
 		AB1CAE112924E2A8000AB433 /* RunModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1CAE102924E2A8000AB433 /* RunModel.swift */; };
+		AB7ACB0F293F8D0A0019F183 /* BaseHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7ACB0E293F8D0A0019F183 /* BaseHomeViewController.swift */; };
 		AB89CFFB292CE8D1002BF039 /* TabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB89CFFA292CE8D1002BF039 /* TabModel.swift */; };
 		ABA01AD4292D436000223B1E /* RunPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA01AD3292D436000223B1E /* RunPhotoModel.swift */; };
 		ABEC7592292617990054B4B7 /* ExerciseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC7591292617990054B4B7 /* ExerciseCollectionViewCell.swift */; };
-		ABEC7594292622DE0054B4B7 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC7593292622DE0054B4B7 /* Exercise.swift */; };
 		B849DC4E29279A0C00841F97 /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC4D29279A0C00841F97 /* NetworkLoggerPlugin.swift */; };
 		B849DC5029279A4C00841F97 /* Encodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC4F29279A4C00841F97 /* Encodable+.swift */; };
 		B849DC542927A68D00841F97 /* MyProfileResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849DC532927A68D00841F97 /* MyProfileResponseDTO.swift */; };
@@ -135,10 +135,10 @@
 		AB0FCDEA2925038F009314FF /* PersonalExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalExerciseViewController.swift; sourceTree = "<group>"; };
 		AB1CAE0E2924D458000AB433 /* TabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB1CAE102924E2A8000AB433 /* RunModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunModel.swift; sourceTree = "<group>"; };
+		AB7ACB0E293F8D0A0019F183 /* BaseHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHomeViewController.swift; sourceTree = "<group>"; };
 		AB89CFFA292CE8D1002BF039 /* TabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabModel.swift; sourceTree = "<group>"; };
 		ABA01AD3292D436000223B1E /* RunPhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunPhotoModel.swift; sourceTree = "<group>"; };
 		ABEC7591292617990054B4B7 /* ExerciseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCollectionViewCell.swift; sourceTree = "<group>"; };
-		ABEC7593292622DE0054B4B7 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		B849DC4D29279A0C00841F97 /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
 		B849DC4F29279A4C00841F97 /* Encodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+.swift"; sourceTree = "<group>"; };
 		B849DC532927A68D00841F97 /* MyProfileResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileResponseDTO.swift; sourceTree = "<group>"; };
@@ -323,7 +323,6 @@
 		87DFF004291F88C0008D0FEF /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				ABEC7593292622DE0054B4B7 /* Exercise.swift */,
 				AB1CAE0A2924ACDD000AB433 /* Model */,
 				AB1CAE0B2924ACE3000AB433 /* View */,
 				AB1CAE0C2924ACE9000AB433 /* Controllers */,
@@ -475,6 +474,7 @@
 		AB1CAE0C2924ACE9000AB433 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AB7ACB0E293F8D0A0019F183 /* BaseHomeViewController.swift */,
 				87DFF01E29215900008D0FEF /* HomeViewController.swift */,
 				AB0FCDE429250304009314FF /* MyExerciseViewController.swift */,
 				AB0FCDE629250352009314FF /* LevelExerciseViewController.swift */,
@@ -724,7 +724,6 @@
 				87DFF00D2921535F008D0FEF /* UIColor+.swift in Sources */,
 				AB89CFFB292CE8D1002BF039 /* TabModel.swift in Sources */,
 				D6F8054629252439003ED937 /* BadgeCell.swift in Sources */,
-				ABEC7594292622DE0054B4B7 /* Exercise.swift in Sources */,
 				AB0FCDE92925036B009314FF /* TimeExerciseViewController.swift in Sources */,
 				87DFF03029216B6C008D0FEF /* URLConstant.swift in Sources */,
 				87604948292C015000153459 /* TimeExerciseAPI.swift in Sources */,
@@ -744,6 +743,7 @@
 				B849DC562927A77B00841F97 /* TimeExerciseResponseDTO.swift in Sources */,
 				871B12792924114C000C6D6D /* Adjusted+.swift in Sources */,
 				B849DC4E29279A0C00841F97 /* NetworkLoggerPlugin.swift in Sources */,
+				AB7ACB0F293F8D0A0019F183 /* BaseHomeViewController.swift in Sources */,
 				8760494C292C016000153459 /* MyProfileAPI.swift in Sources */,
 				87E221D5292424C7003EE72A /* RunStepView.swift in Sources */,
 				B849DC5029279A4C00841F97 /* Encodable+.swift in Sources */,
