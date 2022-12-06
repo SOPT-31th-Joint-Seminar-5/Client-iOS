@@ -33,7 +33,7 @@ class HomeViewController : UIViewController {
         $0.image = UIImage(named: "logo-runday")
     }
     
-    private let menuButton = UIButton().then {
+    private lazy var menuButton = UIButton().then {
         $0.setImage(UIImage(named: "hamburger"), for: .normal)
         $0.addTarget(self, action: #selector(menuButtonDidTapped), for: .touchUpInside)
     }
